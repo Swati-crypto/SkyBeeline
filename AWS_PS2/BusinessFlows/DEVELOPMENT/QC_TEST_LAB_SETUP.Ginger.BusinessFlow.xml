@@ -1,0 +1,100 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<GingerRepositoryItem><Header ItemGuid="eea36510-7ba7-4ed5-8d27-dc7105cd2c7b" ItemType="BusinessFlow" CreatedBy="shrpatil" Created="201811151216" GingerVersion="3.0.0.0" Version="2" LastUpdateBy="shrpatil" LastUpdate="201811161151" />
+<BusinessFlow Guid="eea36510-7ba7-4ed5-8d27-dc7105cd2c7b" Name="QC_TEST_LAB_SETUP" ParentGuid="00000000-0000-0000-0000-000000000000" Source="Ginger" Status="Unknown">
+<Activities>
+<Activity ActionRunOption="ContinueActionsRunOnFailure" Active="True" ActivityName="Initiate_Execution" AutomationStatus="Automated" Description="Driver Activity" ErrorHandlerMappingType="AllAvailableHandlers" Guid="9d1ea3e7-cb3b-4d7c-b53a-30c6eefe87ae" Mandatory="True" ParentGuid="96a6c744-af4a-4b72-b280-73db6e022ca9" PercentAutomated="100%" TargetApplication="MyWebIE">
+<Acts>
+<ActDummy Active="True" Description="Clear some of the variables" Guid="16c71365-1bfd-469d-b9fd-86cd90761e72" LocateBy="NA" MaxNumberOfRetries="2" ParentGuid="00000000-0000-0000-0000-000000000000" Platform="NA" RetryMechanismInterval="5" StatusConverter="None" WaitVE="0" WindowsToCapture="OnlyActiveWindow">
+<InputValues>
+<ActInputValue Guid="cbe12663-1de5-47b6-b3fa-9c79e9df275f" Param="Value" ParentGuid="00000000-0000-0000-0000-000000000000" />
+</InputValues>
+
+<ReturnValues>
+<ActReturnValue Active="True" Guid="7ea95bcb-cad5-418b-8700-a41b6eb0ce37" Param="BF_CALENDER_EXCEL_PATH" ParentGuid="00000000-0000-0000-0000-000000000000" StoreTo="Variable" StoreToValue="BF_CALENDER_EXCEL_PATH" />
+<ActReturnValue Active="True" Guid="fc2cf9fe-7ee0-4f47-ac00-bd29cbc7cc7a" Param="BF_CALENDER_ROW_DATA" ParentGuid="00000000-0000-0000-0000-000000000000" StoreTo="Variable" StoreToValue="BF_CALENDER_ROW_DATA" />
+<ActReturnValue Active="True" Guid="e80ac4d6-186c-4c4e-81e9-3ac70bb98b60" Param="BF_TEMP" ParentGuid="00000000-0000-0000-0000-000000000000" StoreTo="Variable" StoreToValue="BF_TEMP" />
+<ActReturnValue Active="True" Guid="ed6ca180-af11-4be2-9f4c-7edb7e316bc0" Param="BF_TEMP1" ParentGuid="00000000-0000-0000-0000-000000000000" StoreTo="Variable" StoreToValue="BF_TEMP1" />
+</ReturnValues>
+</ActDummy>
+<ActScript Active="True" Description="Script - Create Folder Structure" Guid="34f055c8-13e6-493e-b483-cf559be1605c" LocateBy="NA" MaxNumberOfRetries="2" ParentGuid="815a14eb-2d52-4644-aaaa-7daaa6133120" Platform="NA" RetryMechanismInterval="5" ScriptCommand="Script" ScriptInterpreterType="VBS" ScriptName="Excel_Servers.vbs" ScriptPath="C:\GingerSourceControl\Solutions\AGAP\Ginger_Framework_Solution\\Documents\Scripts\" StatusConverter="None" TakeScreenShot="True" WaitVE="0" WindowsToCapture="OnlyActiveWindow">
+<FlowControls>
+<FlowControl Active="True" BusinessFlowControlAction="GoToBusinessFlow" Condition="&quot;{ActionStatus}&quot; = &quot;Passed&quot;" FlowControlAction="GoToAction" Guid="9ccad681-4d6b-40f4-9dd2-6ba9c894fe0c" ParentGuid="00000000-0000-0000-0000-000000000000" Value="874e1df7-e556-42af-af4b-94554d80dc8c#GUID_NAME#READ ACTION-FIND UNCHECKED ROWS (CALENDER)" />
+<FlowControl Active="True" BusinessFlowControlAction="GoToBusinessFlow" Condition="&quot;{ActionStatus}&quot; = &quot;Failed&quot;" FlowControlAction="MessageBox" Guid="f06e6277-4025-4a2b-9745-cabbf9633e34" ParentGuid="00000000-0000-0000-0000-000000000000" Value="Folder structure was not created. Please check." />
+<FlowControl Active="True" BusinessFlowControlAction="GoToBusinessFlow" Condition="&quot;{ActionStatus}&quot; = &quot;Failed&quot;" FlowControlAction="StopBusinessFlow" Guid="dc4f2685-4bae-4bcf-b0f2-1482f78c4507" ParentGuid="00000000-0000-0000-0000-000000000000" />
+</FlowControls>
+
+<InputValues>
+<ActInputValue Guid="4b4ec7cc-2f1f-4460-a2d5-094e1873ca5c" Param=" EXECUTION_MODE" ParentGuid="00000000-0000-0000-0000-000000000000" StoreToVariable="{Var Name=BF_EXECUTION_MODE}" Value="{Var Name=BF_EXECUTION_MODE}" />
+<ActInputValue Guid="053bfd05-ae22-423f-b2af-e4f6dd6b261b" Param=" EXCEL_FILE" ParentGuid="00000000-0000-0000-0000-000000000000" StoreToVariable="{Var Name=BF_EXCEL_FILE_NAME}" Value="{Var Name=BF_EXCEL_FILE_NAME}" />
+<ActInputValue Guid="598af2c5-4d26-4d7b-a4c3-713e9fa45a95" Param=" RELEASE" ParentGuid="00000000-0000-0000-0000-000000000000" StoreToVariable="{Var Name=BF_RELEASE}" Value="{Var Name=BF_RELEASE}" />
+<ActInputValue Guid="fb735753-ec28-4541-8f48-7beb96a00e24" Param=" ENVIRONMENT" ParentGuid="00000000-0000-0000-0000-000000000000" StoreToVariable="{EnvParam App=MyWeb Param=ENV_NAME}" Value="{EnvParam App=MyWeb Param=ENV_NAME}" />
+</InputValues>
+
+<ReturnValues>
+<ActReturnValue Active="True" Guid="a393c027-edf1-4e91-87e7-1a3c3ac281d7" mExpected="Success" Param="Run Status " ParentGuid="00000000-0000-0000-0000-000000000000" StoreTo="None" />
+<ActReturnValue Active="True" Guid="af699ac3-7139-4553-a02c-bc2455364e7f" mExpected="Len({Actual})&gt;0" Param="XLSfilePath " ParentGuid="00000000-0000-0000-0000-000000000000" StoreTo="Variable" StoreToValue="BF_CALENDER_EXCEL_PATH" />
+</ReturnValues>
+</ActScript>
+<ActScript Active="True" Description="READ ACTION-FIND UNCHECKED ROWS (CALENDER)" Guid="874e1df7-e556-42af-af4b-94554d80dc8c" LocateBy="NA" MaxNumberOfRetries="2" ParentGuid="00000000-0000-0000-0000-000000000000" Platform="NA" RetryMechanismInterval="5" ScriptCommand="Script" ScriptInterpreterType="VBS" ScriptName="Initiate_Execution.vbs" ScriptPath="C:\GingerSourceControl\Solutions\AGAP\Ginger_Framework_Solution\\Documents\Scripts\" StatusConverter="None" TakeScreenShot="True" WaitVE="1" WindowsToCapture="OnlyActiveWindow">
+<FlowControls>
+<FlowControl Active="True" BusinessFlowControlAction="GoToBusinessFlow" Condition="{Var Name=BF_TEMP}=none" FlowControlAction="StopBusinessFlow" Guid="e69b146d-59ff-45b0-beed-468abccd36ca" ParentGuid="00000000-0000-0000-0000-000000000000" />
+</FlowControls>
+
+<InputValues>
+<ActInputValue Guid="4dfe3056-6c92-4e7e-bb8c-f2b2e84707ad" Param="excelFilePath" ParentGuid="00000000-0000-0000-0000-000000000000" StoreToVariable="{Var Name=BF_CALENDER_EXCEL_PATH}" Value="{Var Name=BF_CALENDER_EXCEL_PATH}" />
+<ActInputValue Guid="598fd793-c017-4245-b2f8-90a3d181c971" Param="excelSheetName" ParentGuid="00000000-0000-0000-0000-000000000000" StoreToVariable="{Var Name=BF_CALENDER_SHEET_NAME_MAIN}" Value="{Var Name=BF_CALENDER_SHEET_NAME_MAIN}" />
+</InputValues>
+
+<ReturnValues>
+<ActReturnValue Active="True" Guid="707ba087-e000-4e59-9085-92c4080c0e61" mExpected="Len({Actual})&gt;0" Param="???" ParentGuid="00000000-0000-0000-0000-000000000000" StoreTo="Variable" StoreToValue="BF_TEMP" />
+</ReturnValues>
+</ActScript>
+<ActScript Active="True" Description="READ EXCEL ROW DATA" Guid="5d690581-e710-4a48-a9af-234dd063cfc1" LocateBy="NA" MaxNumberOfRetries="2" ParentGuid="00000000-0000-0000-0000-000000000000" Platform="NA" RetryMechanismInterval="5" ScriptCommand="Script" ScriptInterpreterType="VBS" ScriptName="Read_By_Concatinate.vbs" ScriptPath="C:\GingerSourceControl\Solutions\Ginger_Framework_Solution\\Documents\Scripts\" StatusConverter="None" TakeScreenShot="True" WaitVE="1" WindowsToCapture="OnlyActiveWindow">
+<FlowControls>
+<FlowControl Active="True" BusinessFlowControlAction="GoToBusinessFlow" Condition="&quot;{ActionStatus}&quot; = &quot;Passed&quot;" FlowControlAction="GoToActivityByName" Guid="86d56b91-9b57-4e36-8f60-2bbb4ae97dc9" ParentGuid="00000000-0000-0000-0000-000000000000" Value="Call Activity" />
+<FlowControl Active="True" BusinessFlowControlAction="GoToBusinessFlow" Condition="&quot;{ActionStatus}&quot; = &quot;Failed&quot;" FlowControlAction="GoToActivityByName" Guid="0755e4bf-27cc-48de-958f-8e309897562b" ParentGuid="00000000-0000-0000-0000-000000000000" Value="UpdateExecutionStatus_FAIL" />
+</FlowControls>
+
+<InputValues>
+<ActInputValue Guid="c283107b-cf17-4680-aa48-8388a8d7a19e" Param="excelFilePath" ParentGuid="00000000-0000-0000-0000-000000000000" StoreToVariable="&quot;{Var Name=BF_CALENDER_EXCEL_PATH}&quot;" Value="&quot;{Var Name=BF_CALENDER_EXCEL_PATH}&quot;" />
+<ActInputValue Guid="7ad1ae3e-ba2b-40e3-b7d3-d8b38bb998bf" Param="excelSheetName" ParentGuid="00000000-0000-0000-0000-000000000000" StoreToVariable="{Var Name=BF_CALENDER_SHEET_NAME_MAIN}" Value="{Var Name=BF_CALENDER_SHEET_NAME_MAIN}" />
+</InputValues>
+
+<ReturnValues>
+<ActReturnValue Active="True" Guid="be9fba37-be68-44ea-886f-3949d15521d6" mExpected="Left({Actual},9)=&quot;TEST_NAME&quot;" Param="Outputvalue " ParentGuid="00000000-0000-0000-0000-000000000000" StoreTo="Variable" StoreToValue="BF_CALENDER_ROW_DATA" />
+</ReturnValues>
+</ActScript>
+</Acts>
+</Activity>
+<Activity ActionRunOption="StopActionsRunOnFailure" Active="True" ActivityName="Create Test Case in Test Plan and Test Lab" AutomationStatus="Development" ErrorHandlerMappingType="AllAvailableHandlers" Guid="f381cf42-3e08-48cf-9752-91fa2f0f4c38" ParentGuid="00000000-0000-0000-0000-000000000000" PercentAutomated="100%" TargetApplication="SFF">
+<Acts>
+<ActScript Active="True" Description="Script Action" Guid="0899b619-927b-4f44-a3a9-cba78f71149c" LocateBy="NA" MaxNumberOfRetries="2" ParentGuid="71709155-0a6c-479f-ba0e-d433d1df125c" Platform="NA" RetryMechanismInterval="5" ScriptCommand="Script" ScriptInterpreterType="VBS" ScriptName="AutoScan.vbs" ScriptPath="C:\GingerSourceControl\Solutions\AGAP\Ginger_Framework_Solution\\Documents\Scripts\" StatusConverter="None" WaitVE="0" WindowsToCapture="OnlyActiveWindow">
+<InputValues>
+<ActInputValue Guid="1103be57-d2be-4f14-bd65-0489e7429674" Param="Value" ParentGuid="00000000-0000-0000-0000-000000000000" />
+<ActInputValue Guid="0c4cc1af-6e75-4c25-84d4-ef4aaac0fcbf" Param="excelFilePath" ParentGuid="00000000-0000-0000-0000-000000000000" StoreToVariable="{Var Name=BF_CALENDER_EXCEL_PATH}" Value="{Var Name=BF_CALENDER_EXCEL_PATH}" />
+<ActInputValue Guid="573b5bdc-33e1-4e09-be48-3ac6ac856338" Param="excelSheetName" ParentGuid="00000000-0000-0000-0000-000000000000" StoreToVariable="{Var Name=BF_CALENDER_SHEET_NAME_MAIN}" Value="{Var Name=BF_CALENDER_SHEET_NAME_MAIN}" />
+<ActInputValue Guid="dd1f1ad3-03d7-421d-bafe-d479a774ee0f" Param="QC_URL" ParentGuid="00000000-0000-0000-0000-000000000000" StoreToVariable="{EnvParam App=MyWeb Param=ENV_QC_URL}" Value="{EnvParam App=MyWeb Param=ENV_QC_URL}" />
+<ActInputValue Guid="d4abf3a2-11b2-4b2c-af49-a1694d99c667" Param="QC_USERNAME" ParentGuid="00000000-0000-0000-0000-000000000000" StoreToVariable="{EnvParam App=MyWeb Param=ENV_QC_USER_NAME}" Value="{EnvParam App=MyWeb Param=ENV_QC_USER_NAME}" />
+<ActInputValue Guid="671b2103-578a-4fbc-87e6-2e7709b3a2f0" Param="QC_PASSWORD" ParentGuid="00000000-0000-0000-0000-000000000000" StoreToVariable="{EnvParam App=MyWeb Param=ENV_QC_PASSWORD}" Value="{EnvParam App=MyWeb Param=ENV_QC_PASSWORD}" />
+<ActInputValue Guid="ce11f62d-fd7b-4b14-ab9e-7df25b4ca347" Param="QC_DOMAIN" ParentGuid="00000000-0000-0000-0000-000000000000" StoreToVariable="{EnvParam App=MyWeb Param=ENV_QC_DOMAIN}" Value="{EnvParam App=MyWeb Param=ENV_QC_DOMAIN}" />
+<ActInputValue Guid="d29b2fa1-6bce-47e1-9d3a-83177e627c96" Param="QC_PROJECT" ParentGuid="00000000-0000-0000-0000-000000000000" StoreToVariable="{EnvParam App=MyWeb Param=ENV_QC_PROJECT}" Value="{EnvParam App=MyWeb Param=ENV_QC_PROJECT}" />
+<ActInputValue Guid="80d4837d-a6f8-4b52-a447-c053df688ba5" Param="QC_PATH" ParentGuid="00000000-0000-0000-0000-000000000000" StoreToVariable="{EnvParam App=MyWeb Param=ENV_QC_TEST_LAB_PATH}" Value="{EnvParam App=MyWeb Param=ENV_QC_TEST_LAB_PATH}" />
+<ActInputValue Guid="3b328b8e-838b-4200-863a-905abffb7007" Param="QC_AutoScanParam_REQUIRED" ParentGuid="00000000-0000-0000-0000-000000000000" />
+</InputValues>
+</ActScript>
+</Acts>
+</Activity>
+</Activities>
+
+<TargetApplications>
+<TargetApplication AppName="MyWebIE" Guid="1453c9cc-173f-4974-8f3c-976267eb8ada" ParentGuid="00000000-0000-0000-0000-000000000000" />
+</TargetApplications>
+
+<Variables>
+<VariableString Guid="857237fc-5479-4a4f-8f96-79f8c1bcaaa8" MappedOutputType="None" Name="BF_CALENDER_EXCEL_PATH" ParentGuid="73e27f6b-c2f1-4929-be39-4d3d7dff6da7" ParentName="NSORD_Driver_NEW" ParentType="Business Flow" />
+<VariableString Guid="9ca494f8-f5ad-4593-b2dc-a72e1da4f440" InitialStringValue="S-REGRESSION_PMT 445705_EDITS_FIDS_S&amp;E SECT_1.52_NSORD.0388/$/Value is Blank/$/CREATED_IN_RELEASE/$/Value is Blank/$/COMMENT/$/Madhuri_Phase_2/$/HEADER/$/Value is Blank/$/ACTION/$/Act_S-REGRESSION_PMT 445705_EDITS_FIDS_S&amp;E SECT_1.52_NSORD.0388/$/ORDER_TYPE/$/N/$/STATE_CODE/$/Value is Blank/$/NEW_ORDER_NUM/$/N663784/$/EXPECTED_EDIT/$/NOEDIT/$/SKIP_EDIT/$/Value is Blank/$/ST/$/O/$/EXPECTED_STRING/$/READY FOR DISTRIBUTION/$/SKIP_ACTIVITY/$/Value is Blank/$/U5RRX/$/I    U5RRX /LRS OPDA/$/FL_FID/$/Value is Blank/$/ACTION_I_LH_FID/$/ICLT 41.SFGS.219.033.6825/$/FL_FID_/PIC/$//PIC NO/$/FID_/LPIC/$//LPIC NONE/$/SM_DATA/$/SM   CE 01-25-2017 0830A/$/CS_DATA/$/WSQ" MappedOutputType="None" Name="BF_CALENDER_ROW_DATA" ParentGuid="93b67e0d-da1c-4169-92e6-32d59ae9f657" Value="S-REGRESSION_PMT 445705_EDITS_FIDS_S&amp;E SECT_1.52_NSORD.0388/$/Value is Blank/$/CREATED_IN_RELEASE/$/Value is Blank/$/COMMENT/$/Madhuri_Phase_2/$/HEADER/$/Value is Blank/$/ACTION/$/Act_S-REGRESSION_PMT 445705_EDITS_FIDS_S&amp;E SECT_1.52_NSORD.0388/$/ORDER_TYPE/$/N/$/STATE_CODE/$/Value is Blank/$/NEW_ORDER_NUM/$/N663784/$/EXPECTED_EDIT/$/NOEDIT/$/SKIP_EDIT/$/Value is Blank/$/ST/$/O/$/EXPECTED_STRING/$/READY FOR DISTRIBUTION/$/SKIP_ACTIVITY/$/Value is Blank/$/U5RRX/$/I    U5RRX /LRS OPDA/$/FL_FID/$/Value is Blank/$/ACTION_I_LH_FID/$/ICLT 41.SFGS.219.033.6825/$/FL_FID_/PIC/$//PIC NO/$/FID_/LPIC/$//LPIC NONE/$/SM_DATA/$/SM   CE 01-25-2017 0830A/$/CS_DATA/$/WSQ" />
+<VariableString Description="&gt;&gt; Update this variable &lt;&lt;" Guid="5df87262-6ed8-47cf-9895-4eaae355dc09" InitialStringValue="GOOGLE_SEARCH_CALENDER.xlsx" MappedOutputType="None" Name="BF_EXCEL_FILE_NAME" ParentGuid="25be3544-3bc2-4242-8d1f-79a61cea7404" Value="GOOGLE_SEARCH_CALENDER.xlsx" />
+<VariableString Description="&gt;&gt; Update this variable &lt;&lt;" Guid="b904c33b-a8f6-4ec5-8e74-d969ca81f10f" InitialStringValue="DEVELOPMENT" MappedOutputType="None" Name="BF_EXECUTION_MODE" ParentGuid="e8ea44cc-3439-49d0-9b6f-d339b5c3f984" Value="DEVELOPMENT" />
+<VariableString Description="&gt;&gt; Update this variable &lt;&lt;" Guid="62f87476-7513-43b8-86a1-eba059516e15" InitialStringValue="1802" MappedOutputType="None" Name="BF_RELEASE" ParentGuid="1acfa99e-57b0-46b6-b8a3-29324e1403a5" Value="1802" />
+</Variables>
+</BusinessFlow></GingerRepositoryItem>

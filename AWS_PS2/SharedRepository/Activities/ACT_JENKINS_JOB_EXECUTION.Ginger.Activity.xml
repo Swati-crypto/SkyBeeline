@@ -1,0 +1,156 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<GingerRepositoryItem><Header ItemGuid="9e93723a-1325-4589-9d30-506f0c5393ec" ItemType="Activity" CreatedBy="shrpatil" Created="201811151216" GingerVersion="3.0.0.0" Version="52" LastUpdateBy="harshima" LastUpdate="202001081018" />
+<Activity ActionRunOption="StopActionsRunOnFailure" Active="True" ActivityName="ACT_JENKINS_JOB_EXECUTION" AutomationStatus="Development" ErrorHandlerMappingType="AllAvailableHandlers" Guid="9e93723a-1325-4589-9d30-506f0c5393ec" ParentGuid="00000000-0000-0000-0000-000000000000" PercentAutomated="100%" TargetApplication="MyWebApp">
+<Acts>
+<ActGenElement Active="True" Description="Enter job name" GenElementAction="SendKeys" Guid="a17721db-efc0-48af-af39-8e6aa3979ed6" LocateBy="ByXPath" LocateValue="{DS Name=JENKINS_REPOSITORY DST=JENKINS_HOME ACT=MASD MASD=N MR=N IDEN=Cust ICOLVAL=LOCATOR_VALUE IROW=Where COND=  [LOCATOR_BY] = 'XPATH' AND [OBJECT_NAME] = 'TEXT_SEARCH'}" MaxNumberOfRetries="2" ParentGuid="00000000-0000-0000-0000-000000000000" Platform="NA" RetryMechanismInterval="5" StatusConverter="None" WaitVE="2" WindowsToCapture="OnlyActiveWindow">
+<FlowControls>
+<FlowControl Active="True" BusinessFlowControlAction="GoToBusinessFlow" Condition="&quot;{ActionStatus}&quot; = &quot;Failed&quot;" FlowControlAction="GoToActivityByName" Guid="771c07ab-0350-4dbd-91b9-fe646bfdb9d9" ParentGuid="00000000-0000-0000-0000-000000000000" Value="UpdateExecutionStatus_FAIL" />
+</FlowControls>
+
+<InputValues>
+<ActInputValue Guid="03ae19a6-c8c5-4133-8bf6-665df74a1906" Param="Value" ParentGuid="00000000-0000-0000-0000-000000000000" StoreToVariable="NTPS_Extract" Value="NTPS_Extract" />
+<ActInputValue Guid="6775b385-78b2-4a31-b3db-1ad639a8e1ab" Param="Xoffset" ParentGuid="00000000-0000-0000-0000-000000000000" />
+<ActInputValue Guid="6ff08705-b309-41ce-832a-ff3ebc54bc9c" Param="Yoffset" ParentGuid="00000000-0000-0000-0000-000000000000" />
+</InputValues>
+</ActGenElement>
+<ActSendKeys Active="True" Description="Click Enter" Guid="953955d2-fa50-4b56-b94c-a7d0592c7cd1" LocateBy="ByTitle" LocateValue="Dashboard [Jenkins]" MaxNumberOfRetries="2" ParentGuid="00000000-0000-0000-0000-000000000000" Platform="NA" RetryMechanismInterval="5" StatusConverter="None" WaitVE="0" WindowsToCapture="OnlyActiveWindow">
+<InputValues>
+<ActInputValue Guid="bf11b114-65dc-4dcd-a08f-10bb5c0e48a3" Param="Value" ParentGuid="00000000-0000-0000-0000-000000000000" StoreToVariable="{ENTER}" Value="{ENTER}" />
+</InputValues>
+</ActSendKeys>
+<ActGenElement Active="True" Description="ClicK on build parameters" GenElementAction="Click" Guid="d55bbba8-9085-4720-8328-c2ecf1d87134" LocateBy="ByXPath" LocateValue="//a[@href='/job/NTPS_Extract/build?delay=0sec' and contains(text(),'Build with Parameters')]" MaxNumberOfRetries="2" ParentGuid="00000000-0000-0000-0000-000000000000" Platform="NA" RetryMechanismInterval="5" StatusConverter="None" WaitVE="2" WindowsToCapture="OnlyActiveWindow">
+<FlowControls>
+<FlowControl Active="True" BusinessFlowControlAction="GoToBusinessFlow" Condition="&quot;{ActionStatus}&quot; = &quot;Failed&quot;" FlowControlAction="GoToActivityByName" Guid="9bf41349-1601-4237-a065-b861dcc28831" ParentGuid="00000000-0000-0000-0000-000000000000" Value="UpdateExecutionStatus_FAIL" />
+</FlowControls>
+
+<InputValues>
+<ActInputValue Guid="05a79f85-02b3-4f95-b186-06eec03889ce" Param="Value" ParentGuid="00000000-0000-0000-0000-000000000000" />
+<ActInputValue Guid="39b171a5-6f05-4f27-82ef-f3164a7fce10" Param="Xoffset" ParentGuid="00000000-0000-0000-0000-000000000000" />
+<ActInputValue Guid="36ebfd46-4898-406e-a128-539def110f11" Param="Yoffset" ParentGuid="00000000-0000-0000-0000-000000000000" />
+</InputValues>
+</ActGenElement>
+<ActUIElement Active="True" Description="select source SOM server" ElementAction="SelectByText" ElementLocateBy="ByXPath" ElementType="ComboBox" Guid="765dad5f-9080-4659-ab1a-55f5392052b5" HandleActionType="Unknown" HandleElementType="Unknown" LocateBy="NA" MaxNumberOfRetries="2" ParentGuid="00000000-0000-0000-0000-000000000000" Platform="Web" RetryMechanismInterval="5" StatusConverter="None" TargetElementType="Unknown" TargetLocateBy="NA" WaitVE="0" WindowsToCapture="OnlyActiveWindow">
+<InputValues>
+<ActInputValue Guid="923cccae-abca-4e55-942b-a23be6ec1cc8" Param="ElementLocateValue" ParentGuid="00000000-0000-0000-0000-000000000000" StoreToVariable="//*[@name='labels']" Value="//*[@name='labels']" />
+<ActInputValue Guid="b920e27d-f847-4371-9f9e-855111f3ef30" Param="Value" ParentGuid="00000000-0000-0000-0000-000000000000" StoreToVariable="skysom01_inossky024" Value="skysom01_inossky024" />
+</InputValues>
+</ActUIElement>
+<ActUIElement Active="True" Description="set DB user name" ElementAction="SendKeys" ElementLocateBy="ByXPath" ElementType="TextBox" Guid="82b77fc2-4223-41d7-afc2-d1afda137e36" HandleActionType="Unknown" HandleElementType="Unknown" LocateBy="NA" MaxNumberOfRetries="2" ParentGuid="00000000-0000-0000-0000-000000000000" Platform="Web" RetryMechanismInterval="5" StatusConverter="None" TargetElementType="Unknown" TargetLocateBy="NA" WaitVE="0" WindowsToCapture="OnlyActiveWindow">
+<InputValues>
+<ActInputValue Guid="870bffe1-7b15-4cf5-ae66-8c543fb2c4f8" Param="ElementLocateValue" ParentGuid="00000000-0000-0000-0000-000000000000" StoreToVariable="//input[@name='name' and @type='hidden'and @value='DBUser']/following-sibling::input[@name='value']" Value="//input[@name='name' and @type='hidden'and @value='DBUser']/following-sibling::input[@name='value']" />
+<ActInputValue Guid="c25f84ba-cc25-4d1c-ba82-8265f4474132" Param="Value" ParentGuid="00000000-0000-0000-0000-000000000000" StoreToVariable="{EnvParam App=Mediation Param=SOM_DB_USER}" Value="{EnvParam App=Mediation Param=SOM_DB_USER}" />
+<ActInputValue Guid="0cc4b980-db5a-438f-af1d-d0ffe8c0e7d9" Param="XCoordinate" ParentGuid="00000000-0000-0000-0000-000000000000" />
+<ActInputValue Guid="03fa3d75-ae56-44c9-9b14-42ca8f4ac402" Param="ValueToSelect" ParentGuid="00000000-0000-0000-0000-000000000000" />
+<ActInputValue Guid="57c67896-ba32-4175-a3c6-aa04e3ea5741" Param="YCoordinate" ParentGuid="00000000-0000-0000-0000-000000000000" />
+<ActInputValue Guid="93033b16-07b5-4c0b-a64e-0914ea7fb70c" Param="ControlAction" ParentGuid="00000000-0000-0000-0000-000000000000" />
+</InputValues>
+</ActUIElement>
+<ActUIElement Active="True" Description="clear DB password" ElementAction="ClearValue" ElementLocateBy="ByXPath" ElementType="TextBox" Guid="cb78a998-552c-4121-b7fb-aca2764ec102" HandleActionType="Unknown" HandleElementType="Unknown" LocateBy="NA" MaxNumberOfRetries="2" ParentGuid="00000000-0000-0000-0000-000000000000" Platform="Web" RetryMechanismInterval="5" StatusConverter="None" TargetElementType="Unknown" TargetLocateBy="NA" WaitVE="0" WindowsToCapture="OnlyActiveWindow">
+<InputValues>
+<ActInputValue Guid="450e4543-cb13-43b7-a988-ec590c30bde7" Param="ElementLocateValue" ParentGuid="00000000-0000-0000-0000-000000000000" StoreToVariable="//*[@name='value' and @type='password']" Value="//*[@name='value' and @type='password']" />
+<ActInputValue Guid="1fba0651-ec06-4e5e-bde7-08302b88c4b9" Param="Value" ParentGuid="00000000-0000-0000-0000-000000000000" />
+<ActInputValue Guid="6ad2eb97-8f97-4a81-9a67-a5e73764e1c1" Param="XCoordinate" ParentGuid="00000000-0000-0000-0000-000000000000" />
+<ActInputValue Guid="291dd1fc-99f1-4641-a433-a9566aa48e1b" Param="ValueToSelect" ParentGuid="00000000-0000-0000-0000-000000000000" />
+<ActInputValue Guid="f57d751e-0939-49ab-b994-a750500ef1bb" Param="YCoordinate" ParentGuid="00000000-0000-0000-0000-000000000000" />
+<ActInputValue Guid="bbb6031d-f05b-4155-a357-c9ddce66de45" Param="ControlAction" ParentGuid="00000000-0000-0000-0000-000000000000" />
+</InputValues>
+</ActUIElement>
+<ActUIElement Active="True" Description="set DB password" ElementAction="SendKeys" ElementLocateBy="ByXPath" ElementType="TextBox" Guid="7ebc655a-ed2e-4621-80fd-7af04c6a127e" HandleActionType="Unknown" HandleElementType="Unknown" LocateBy="NA" MaxNumberOfRetries="2" ParentGuid="00000000-0000-0000-0000-000000000000" Platform="Web" RetryMechanismInterval="5" StatusConverter="None" TargetElementType="Unknown" TargetLocateBy="NA" WaitVE="0" WindowsToCapture="OnlyActiveWindow">
+<InputValues>
+<ActInputValue Guid="069256f2-de84-4cdd-a490-c77ffcfae584" Param="ElementLocateValue" ParentGuid="00000000-0000-0000-0000-000000000000" StoreToVariable="//*[@name='value' and @type='password']" Value="//*[@name='value' and @type='password']" />
+<ActInputValue Guid="83849100-9d28-4ced-bb81-237bc38155e8" Param="Value" ParentGuid="00000000-0000-0000-0000-000000000000" StoreToVariable="{EnvParam App=Mediation Param=SOM_DB_PASSWORD}" Value="{EnvParam App=Mediation Param=SOM_DB_PASSWORD}" />
+<ActInputValue Guid="7db5ea74-a255-4127-a0d4-1ee503fb3974" Param="XCoordinate" ParentGuid="00000000-0000-0000-0000-000000000000" />
+<ActInputValue Guid="e7f99c9e-5474-4e07-a145-96db5e5a101f" Param="ValueToSelect" ParentGuid="00000000-0000-0000-0000-000000000000" />
+<ActInputValue Guid="c9de3ff3-9db4-4158-855c-a7c65eeb253b" Param="YCoordinate" ParentGuid="00000000-0000-0000-0000-000000000000" />
+<ActInputValue Guid="9bd5978a-4db7-481f-9e74-5222f355efe1" Param="ControlAction" ParentGuid="00000000-0000-0000-0000-000000000000" />
+</InputValues>
+</ActUIElement>
+<ActUIElement Active="True" Description="set DB Host" ElementAction="SendKeys" ElementLocateBy="ByXPath" ElementType="TextBox" Guid="254905c5-5e07-40ab-9225-09aef351d472" HandleActionType="Unknown" HandleElementType="Unknown" LocateBy="NA" MaxNumberOfRetries="2" ParentGuid="00000000-0000-0000-0000-000000000000" Platform="Web" RetryMechanismInterval="5" StatusConverter="None" TargetElementType="Unknown" TargetLocateBy="NA" WaitVE="0" WindowsToCapture="OnlyActiveWindow">
+<InputValues>
+<ActInputValue Guid="330481d6-5373-431a-8fd2-2d1a26091769" Param="ElementLocateValue" ParentGuid="00000000-0000-0000-0000-000000000000" StoreToVariable="//input[@name='name' and @type='hidden' and @value='DBHost']/following-sibling::input[@name='value']" Value="//input[@name='name' and @type='hidden' and @value='DBHost']/following-sibling::input[@name='value']" />
+<ActInputValue Guid="4e29a542-4892-4567-b9b6-0d07d161a257" Param="Value" ParentGuid="00000000-0000-0000-0000-000000000000" StoreToVariable="{EnvParam App=Mediation Param=SOM_DB_HOST}" Value="{EnvParam App=Mediation Param=SOM_DB_HOST}" />
+<ActInputValue Guid="250b366a-b4a7-4bd3-8dc8-5a9ab1e71d99" Param="XCoordinate" ParentGuid="00000000-0000-0000-0000-000000000000" />
+<ActInputValue Guid="c3cf08bb-adf2-4d3d-9fd8-09bf7f06409c" Param="ValueToSelect" ParentGuid="00000000-0000-0000-0000-000000000000" />
+<ActInputValue Guid="3f33ed94-ad65-410c-8b0f-b7e355e898b7" Param="YCoordinate" ParentGuid="00000000-0000-0000-0000-000000000000" />
+<ActInputValue Guid="ac448cd6-6117-4480-b4c2-3ab47db24ae8" Param="ControlAction" ParentGuid="00000000-0000-0000-0000-000000000000" />
+</InputValues>
+</ActUIElement>
+<ActUIElement Active="True" Description="set DB INSTANCE" ElementAction="SetValue" ElementLocateBy="ByXPath" ElementType="TextBox" Guid="a1f1242b-08e1-43d1-9795-b0fcd374626e" HandleActionType="Unknown" HandleElementType="Unknown" LocateBy="NA" MaxNumberOfRetries="2" ParentGuid="00000000-0000-0000-0000-000000000000" Platform="Web" RetryMechanismInterval="5" StatusConverter="None" TargetElementType="Unknown" TargetLocateBy="NA" WaitVE="0" WindowsToCapture="OnlyActiveWindow">
+<InputValues>
+<ActInputValue Guid="ebd56e74-efab-48e2-a4a1-00af8959b7bd" Param="ElementLocateValue" ParentGuid="00000000-0000-0000-0000-000000000000" StoreToVariable="//input[@name='name' and @value='DBInstance']/following-sibling::input[@name='value']" Value="//input[@name='name' and @value='DBInstance']/following-sibling::input[@name='value']" />
+<ActInputValue Guid="09ff23e8-2ab4-4d69-838e-748af0370866" Param="Value" ParentGuid="00000000-0000-0000-0000-000000000000" StoreToVariable="{EnvParam App=Mediation Param=SOM_DB_INSTANCE}" Value="{EnvParam App=Mediation Param=SOM_DB_INSTANCE}" />
+<ActInputValue Guid="3627ef42-5db3-4a45-b154-a0b663c9a1fc" Param="XCoordinate" ParentGuid="00000000-0000-0000-0000-000000000000" />
+<ActInputValue Guid="29f8e503-c2d4-4caf-aabc-ffd142ccbcd0" Param="ValueToSelect" ParentGuid="00000000-0000-0000-0000-000000000000" />
+<ActInputValue Guid="b572fd00-fbff-4427-bab3-def42cb4e514" Param="YCoordinate" ParentGuid="00000000-0000-0000-0000-000000000000" />
+<ActInputValue Guid="0ba2e702-aaa3-44e9-9340-7d95367ff0f1" Param="ControlAction" ParentGuid="00000000-0000-0000-0000-000000000000" />
+</InputValues>
+</ActUIElement>
+<ActGenElement Active="True" Description="click on button build" GenElementAction="Click" Guid="39315d2f-9007-442a-ada0-c905d2283b71" LocateBy="ByXPath" LocateValue="{DS Name=JENKINS_REPOSITORY DST=JENKINS_JOB_PAGE ACT=MASD MASD=N MR=N IDEN=Cust ICOLVAL=LOCATOR_VALUE IROW=Where COND=  [LOCATOR_BY] = 'XPATH' AND [OBJECT_NAME] = 'BUTTON_BUILD'}" MaxNumberOfRetries="2" ParentGuid="00000000-0000-0000-0000-000000000000" Platform="NA" RetryMechanismInterval="5" StatusConverter="None" WaitVE="2" WindowsToCapture="OnlyActiveWindow">
+<FlowControls>
+<FlowControl Active="True" BusinessFlowControlAction="GoToBusinessFlow" Condition="&quot;{ActionStatus}&quot; = &quot;Failed&quot;" FlowControlAction="GoToActivityByName" Guid="09f53da5-6ed4-4468-89cd-98307629a29c" ParentGuid="00000000-0000-0000-0000-000000000000" Value="UpdateExecutionStatus_FAIL" />
+</FlowControls>
+
+<InputValues>
+<ActInputValue Guid="dae26548-c628-4193-976e-7aa987267642" Param="Value" ParentGuid="00000000-0000-0000-0000-000000000000" />
+<ActInputValue Guid="990f3c8f-08ec-4621-a442-0c74b3307750" Param="Xoffset" ParentGuid="00000000-0000-0000-0000-000000000000" />
+<ActInputValue Guid="d9e3b252-64ec-45be-9ca8-2b5f19835c92" Param="Yoffset" ParentGuid="00000000-0000-0000-0000-000000000000" />
+</InputValues>
+</ActGenElement>
+<ActGenElement Active="True" Description="click on build status link" GenElementAction="Click" Guid="58d060e0-ca60-4dd6-b7be-6e9d71924c4e" LocateBy="ByXPath" LocateValue="//*[@id=&quot;buildHistory&quot;]/div[2]/table/tbody/tr[2]/td/div[1]/div/a/img" MaxNumberOfRetries="2" ParentGuid="00000000-0000-0000-0000-000000000000" Platform="NA" RetryMechanismInterval="5" StatusConverter="None" WaitVE="2" WindowsToCapture="OnlyActiveWindow">
+<FlowControls>
+<FlowControl Active="True" BusinessFlowControlAction="GoToBusinessFlow" Condition="&quot;{ActionStatus}&quot; = &quot;Failed&quot;" FlowControlAction="GoToActivityByName" Guid="6015458c-d5ef-4086-94ae-c7d640330a01" ParentGuid="00000000-0000-0000-0000-000000000000" Value="UpdateExecutionStatus_FAIL" />
+</FlowControls>
+
+<InputValues>
+<ActInputValue Guid="48eb2a05-5cba-479f-b3da-52209bdd9b18" Param="Value" ParentGuid="00000000-0000-0000-0000-000000000000" />
+<ActInputValue Guid="69bfa0a5-66d1-4fb3-aa36-006e45642a87" Param="Xoffset" ParentGuid="00000000-0000-0000-0000-000000000000" />
+<ActInputValue Guid="4fde481b-0c95-4195-8267-0ab57d76a283" Param="Yoffset" ParentGuid="00000000-0000-0000-0000-000000000000" />
+</InputValues>
+</ActGenElement>
+<ActSetVariableValue Active="True" Description="set order_id value" Guid="adcec551-0523-494d-824c-51f5d860c843" LocateBy="NA" MaxNumberOfRetries="2" ParentGuid="00000000-0000-0000-0000-000000000000" Platform="NA" RetryMechanismInterval="5" SetVariableValueOption="SetValue" StatusConverter="None" VariableName="ACT_ORDERID" WaitVE="0" WindowsToCapture="OnlyActiveWindow">
+<InputValues>
+<ActInputValue Guid="b80d670f-718d-43e8-b3a6-ebb8e49c2091" Param="Value" ParentGuid="00000000-0000-0000-0000-000000000000" StoreToVariable="PID_{VBS Eval=mid(&quot;{Var Name=BF_CALENDER_ROW_DATA}&quot;,InStr(&quot;{Var Name=BF_CALENDER_ROW_DATA}&quot;,&quot;/$/ORDER_ID/$/&quot;)+Len(&quot;/$/ORDER_ID/$/&quot;),InStr(mid(&quot;{Var Name=BF_CALENDER_ROW_DATA}&quot;,InStr(&quot;{Var Name=BF_CALENDER_ROW_DATA}&quot;,&quot;/$/ORDER_ID/$/&quot;)+Len(&quot;/$/ORDER_ID/$/&quot;),1000),&quot;/$/&quot;)-1)}" Value="PID_{VBS Eval=mid(&quot;{Var Name=BF_CALENDER_ROW_DATA}&quot;,InStr(&quot;{Var Name=BF_CALENDER_ROW_DATA}&quot;,&quot;/$/ORDER_ID/$/&quot;)+Len(&quot;/$/ORDER_ID/$/&quot;),InStr(mid(&quot;{Var Name=BF_CALENDER_ROW_DATA}&quot;,InStr(&quot;{Var Name=BF_CALENDER_ROW_DATA}&quot;,&quot;/$/ORDER_ID/$/&quot;)+Len(&quot;/$/ORDER_ID/$/&quot;),1000),&quot;/$/&quot;)-1)}" />
+</InputValues>
+</ActSetVariableValue>
+<ActDBValidation Active="True" AppName="Web" DBName="SOM" DBValidationType="FreeSQL" Description="check in NPTS_MONITORING table for c_access" Guid="a48cf1d1-e5bc-4b8c-9e33-ca73239ec31c" LocateBy="NA" MaxNumberOfRetries="2" ParentGuid="00000000-0000-0000-0000-000000000000" Platform="NA" RetryMechanismInterval="5" SQL="SELECT count(*) FROM  X_NPTS_MONITORING WHERE ORDER_ID='{Var Name=ACT_ORDERID}' and SERVICE_TYPE='c_Access' and donating_olo1 ='TLC' and donating_olo2='OPI' and DN is null and status=1 and communication_typology=0 and operation_typology=0" StatusConverter="None" WaitVE="0" WindowsToCapture="OnlyActiveWindow">
+<FlowControls>
+<FlowControl Active="True" BusinessFlowControlAction="GoToBusinessFlow" Condition="&quot;{ActionStatus}&quot; = &quot;Failed&quot;" FlowControlAction="GoToActivity" Guid="0502f8c9-21bb-49e9-9d03-3960a20244b4" ParentGuid="00000000-0000-0000-0000-000000000000" Value="8a7dc9da-b97e-4788-82f4-5cccf4bccde9#GUID_NAME#UpdateExecutionStatus_FAIL" />
+</FlowControls>
+
+<InputValues>
+<ActInputValue Guid="69e3ffa0-5320-480c-8629-a3843c582a50" Param="SQL" ParentGuid="00000000-0000-0000-0000-000000000000" StoreToVariable="SELECT count(*) FROM  X_NPTS_MONITORING WHERE ORDER_ID='{Var Name=ACT_ORDERID}' and SERVICE_TYPE='c_Access' and donating_olo1 ='TLC' and donating_olo2='OPI' and DN is null and status=1 and communication_typology=0 and operation_typology=0" Value="SELECT count(*) FROM  X_NPTS_MONITORING WHERE ORDER_ID='{Var Name=ACT_ORDERID}' and SERVICE_TYPE='c_Access' and donating_olo1 ='TLC' and donating_olo2='OPI' and DN is null and status=1 and communication_typology=0 and operation_typology=0" />
+<ActInputValue Guid="ba0bce40-b930-470e-8f2b-161b2c01d78a" Param="QueryTypeRadioButton" ParentGuid="00000000-0000-0000-0000-000000000000" StoreToVariable="FreeSQL" Value="FreeSQL" />
+<ActInputValue Guid="d0e89e4c-bcfb-47c9-955e-f98b68571b78" Param="QueryFile" ParentGuid="00000000-0000-0000-0000-000000000000" />
+<ActInputValue Guid="2137e64c-277d-4e63-aae3-587d5853b2c0" Param="ImportFile" ParentGuid="00000000-0000-0000-0000-000000000000" StoreToVariable="True" Value="True" />
+<ActInputValue Guid="b381d305-1065-42b4-83d1-6c3dfac71e62" Param="CommitDB" ParentGuid="00000000-0000-0000-0000-000000000000" />
+</InputValues>
+
+<ReturnValues>
+<ActReturnValue Active="True" Guid="25734964-2dec-4477-b709-fff8220efec3" mExpected="1" Param="COUNT(*)" ParentGuid="00000000-0000-0000-0000-000000000000" StoreTo="None" />
+</ReturnValues>
+</ActDBValidation>
+<ActDBValidation Active="True" AppName="Web" DBName="SOM" DBValidationType="FreeSQL" Description="check in NPTS_MONITORING table for c_voice" Guid="88adc969-9692-4af7-8751-8a6dc5a41a53" LocateBy="NA" MaxNumberOfRetries="2" ParentGuid="00000000-0000-0000-0000-000000000000" Platform="NA" RetryMechanismInterval="5" SQL="SELECT count(*) FROM  X_NPTS_MONITORING WHERE ORDER_ID='{Var Name=ACT_ORDERID}' and SERVICE_TYPE='c_Voice' and donating_olo1 is null and donating_olo2 is null and DN is not null and status=1 and communication_typology=1 and operation_typology=0 and donor='TLC'" StatusConverter="None" WaitVE="0" WindowsToCapture="OnlyActiveWindow">
+<FlowControls>
+<FlowControl Active="True" BusinessFlowControlAction="GoToBusinessFlow" Condition="&quot;{ActionStatus}&quot; = &quot;Failed&quot;" FlowControlAction="GoToActivity" Guid="ab895abb-5da2-4503-b284-73056564e5f8" ParentGuid="00000000-0000-0000-0000-000000000000" Value="8a7dc9da-b97e-4788-82f4-5cccf4bccde9#GUID_NAME#UpdateExecutionStatus_FAIL" />
+<FlowControl Active="True" BusinessFlowControlAction="GoToBusinessFlow" Condition="&quot;{ActionStatus}&quot; = &quot;Passed&quot;" FlowControlAction="GoToActivity" Guid="08183296-d7db-42c9-94e0-da63dcdd183a" ParentGuid="00000000-0000-0000-0000-000000000000" Value="a38c0538-edec-4107-918d-b95533d241c0#GUID_NAME#UpdateExecutionStatus_PASS" />
+</FlowControls>
+
+<InputValues>
+<ActInputValue Guid="c4a33b1c-9e58-453a-bbda-bde2e2a4ee94" Param="SQL" ParentGuid="00000000-0000-0000-0000-000000000000" StoreToVariable="SELECT count(*) FROM  X_NPTS_MONITORING WHERE ORDER_ID='{Var Name=ACT_ORDERID}' and SERVICE_TYPE='c_Voice' and donating_olo1 is null and donating_olo2 is null and DN is not null and status=1 and communication_typology=1 and operation_typology=0 and donor='TLC'" Value="SELECT count(*) FROM  X_NPTS_MONITORING WHERE ORDER_ID='{Var Name=ACT_ORDERID}' and SERVICE_TYPE='c_Voice' and donating_olo1 is null and donating_olo2 is null and DN is not null and status=1 and communication_typology=1 and operation_typology=0 and donor='TLC'" />
+<ActInputValue Guid="128af429-5263-4d72-93f7-6ba9f19730bb" Param="QueryTypeRadioButton" ParentGuid="00000000-0000-0000-0000-000000000000" StoreToVariable="FreeSQL" Value="FreeSQL" />
+<ActInputValue Guid="883d5422-333d-4ba8-a15e-fdca6d904026" Param="QueryFile" ParentGuid="00000000-0000-0000-0000-000000000000" />
+<ActInputValue Guid="188528f9-37fc-4491-be9e-4b1ac0cb1304" Param="ImportFile" ParentGuid="00000000-0000-0000-0000-000000000000" StoreToVariable="True" Value="True" />
+<ActInputValue Guid="cacbff63-cb2d-47d5-9635-0b0f4942926c" Param="CommitDB" ParentGuid="00000000-0000-0000-0000-000000000000" />
+</InputValues>
+
+<ReturnValues>
+<ActReturnValue Active="True" Guid="38ac97de-8e7f-4ccc-b64b-1a04bdfceda3" mExpected="1" Param="COUNT(*)" ParentGuid="00000000-0000-0000-0000-000000000000" StoreTo="None" />
+</ReturnValues>
+</ActDBValidation>
+</Acts>
+
+<Variables>
+<VariableString Guid="b5ec1005-89d8-4244-92ae-98bb043e3259" InitialStringValue="PID_41292" MappedOutputType="None" Name="ACT_ORDERID" ParentGuid="00000000-0000-0000-0000-000000000000" Value="PID_41292" />
+<VariableString Guid="31461660-3b3a-4d61-ab93-e61e35510ee5" InitialStringValue="S-REGRESSION_PMT 445705_EDITS_FIDS_S&amp;E SECT_1.52_NSORD.0388/$/Value is Blank/$/CREATED_IN_RELEASE/$/Value is Blank/$/COMMENT/$/Madhuri_Phase_2/$/HEADER/$/Value is Blank/$/ACTION/$/Act_S-REGRESSION_PMT 445705_EDITS_FIDS_S&amp;E SECT_1.52_NSORD.0388/$/ORDER_TYPE/$/N/$/STATE_CODE/$/Value is Blank/$/NEW_ORDER_NUM/$/N663784/$/EXPECTED_EDIT/$/NOEDIT/$/SKIP_EDIT/$/Value is Blank/$/ST/$/O/$/EXPECTED_STRING/$/READY FOR DISTRIBUTION/$/SKIP_ACTIVITY/$/Value is Blank/$/U5RRX/$/I    U5RRX /LRS OPDA/$/FL_FID/$/Value is Blank/$/ACTION_I_LH_FID/$/ICLT 41.SFGS.219.033.6825/$/FL_FID_/PIC/$//PIC NO/$/FID_/LPIC/$//LPIC NONE/$/SM_DATA/$/SM   CE 01-25-2017 0830A/$/CS_DATA/$/WSQ" MappedOutputType="None" Name="BF_CALENDER_ROW_DATA" ParentGuid="00000000-0000-0000-0000-000000000000" Value="S-REGRESSION_PMT 445705_EDITS_FIDS_S&amp;E SECT_1.52_NSORD.0388/$/Value is Blank/$/CREATED_IN_RELEASE/$/Value is Blank/$/COMMENT/$/Madhuri_Phase_2/$/HEADER/$/Value is Blank/$/ACTION/$/Act_S-REGRESSION_PMT 445705_EDITS_FIDS_S&amp;E SECT_1.52_NSORD.0388/$/ORDER_TYPE/$/N/$/STATE_CODE/$/Value is Blank/$/NEW_ORDER_NUM/$/N663784/$/EXPECTED_EDIT/$/NOEDIT/$/SKIP_EDIT/$/Value is Blank/$/ST/$/O/$/EXPECTED_STRING/$/READY FOR DISTRIBUTION/$/SKIP_ACTIVITY/$/Value is Blank/$/U5RRX/$/I    U5RRX /LRS OPDA/$/FL_FID/$/Value is Blank/$/ACTION_I_LH_FID/$/ICLT 41.SFGS.219.033.6825/$/FL_FID_/PIC/$//PIC NO/$/FID_/LPIC/$//LPIC NONE/$/SM_DATA/$/SM   CE 01-25-2017 0830A/$/CS_DATA/$/WSQ" />
+</Variables>
+</Activity></GingerRepositoryItem>

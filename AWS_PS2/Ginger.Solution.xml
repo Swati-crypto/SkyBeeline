@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<GingerRepositoryItem><Header ItemGuid="341d68f8-27ed-4bc6-8aec-a6b7939d48be" ItemType="Solution" CreatedBy="Administrator" Created="202009062015" GingerVersion="3.5.0.0" Version="2" LastUpdateBy="Administrator" LastUpdate="202009062015" />
+<Solution AlmType="QC" Guid="341d68f8-27ed-4bc6-8aec-a6b7939d48be" Name="Test" ParentGuid="00000000-0000-0000-0000-000000000000">
+<ApplicationPlatforms>
+<ApplicationPlatform AppName="MyWebApp" CoreGUID="00000000-0000-0000-0000-000000000000" Guid="13999d4b-2b95-41fd-aced-758c549e0f55" GUID="00000000-0000-0000-0000-000000000000" ParentGuid="00000000-0000-0000-0000-000000000000" Platform="Web" />
+</ApplicationPlatforms>
+
+<ExecutionLoggerConfigurationSetList>
+<ExecutionLoggerConfiguration ExecutionLoggerConfigurationExecResultsFolder="~\ExecutionResults" ExecutionLoggerConfigurationIsEnabled="True" ExecutionLoggerConfigurationMaximalFolderSize="250" Guid="5e05936f-be06-40df-82bf-3a5523cd7486" IsSelected="True" ParentGuid="00000000-0000-0000-0000-000000000000" SelectedDataRepositoryMethod="TextFile" Seq="0" />
+</ExecutionLoggerConfigurationSetList>
+
+<HTMLReportsConfigurationSetList>
+<HTMLReportsConfiguration Guid="902bdf04-ad4a-49ac-ad13-f21982ef88c0" HTMLReportConfigurationMaximalFolderSize="0" HTMLReportsFolder="~\HTMLReports" HTMLReportTemplatesSeq="1" IsSelected="True" ParentGuid="00000000-0000-0000-0000-000000000000" Seq="0" />
+</HTMLReportsConfigurationSetList>
+</Solution></GingerRepositoryItem>

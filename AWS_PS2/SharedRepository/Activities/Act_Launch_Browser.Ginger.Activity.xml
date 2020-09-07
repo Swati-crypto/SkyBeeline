@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<GingerRepositoryItem><Header ItemGuid="a904f588-8675-4fcb-b061-761b1ba84bb0" ItemType="Activity" CreatedBy="shrpatil" Created="201811151216" GingerVersion="3.0.0.0" Version="1" LastUpdateBy="shrpatil" LastUpdate="201811151216" />
+<Activity ActionRunOption="StopActionsRunOnFailure" Active="True" ActivityName="Act_Launch_Browser" AutomationStatus="Development" ErrorHandlerMappingType="AllAvailableHandlers" Guid="a904f588-8675-4fcb-b061-761b1ba84bb0" ParentGuid="00000000-0000-0000-0000-000000000000" PercentAutomated="100%" TargetApplication="Web_APP">
+<Acts>
+<ActGotoURL Active="True" Description="Go to URL" Guid="aad1c546-8139-4a15-8c1b-957f64e5a0de" LocateBy="NA" ParentGuid="00000000-0000-0000-0000-000000000000" Platform="NA" StatusConverter="None" WaitVE="0" WindowsToCapture="OnlyActiveWindow">
+<InputValues>
+<ActInputValue Guid="d3feee8b-eea7-494e-9775-6e7b3855cf40" Param="Value" ParentGuid="00000000-0000-0000-0000-000000000000" StoreToVariable="{VBS Eval=mid(&quot;{Var Name=EXL_ROW_DATA}&quot;,InStr(&quot;{Var Name=EXL_ROW_DATA}&quot;,&quot;URL/$/&quot;)+Len(&quot;URL/$/&quot;),InStr(mid(&quot;{Var Name=EXL_ROW_DATA}&quot;,InStr(&quot;{Var Name=EXL_ROW_DATA}&quot;,&quot;URL/$/&quot;)+Len(&quot;URL/$/&quot;),100),&quot;/$/&quot;)-1)}" Value="{VBS Eval=mid(&quot;{Var Name=EXL_ROW_DATA}&quot;,InStr(&quot;{Var Name=EXL_ROW_DATA}&quot;,&quot;URL/$/&quot;)+Len(&quot;URL/$/&quot;),InStr(mid(&quot;{Var Name=EXL_ROW_DATA}&quot;,InStr(&quot;{Var Name=EXL_ROW_DATA}&quot;,&quot;URL/$/&quot;)+Len(&quot;URL/$/&quot;),100),&quot;/$/&quot;)-1)}" />
+</InputValues>
+</ActGotoURL>
+<ActGenElement Active="True" Description="Check if &quot;Sign In&quot; is visible" GenElementAction="Visible" Guid="a03d1646-c832-4dbe-b9cb-6e7e637b20fe" LocateBy="ByXPath" LocateValue="{VBS Eval=mid(&quot;{Var Name=EXL_ROW_DATA}&quot;,InStr(&quot;{Var Name=EXL_ROW_DATA}&quot;,&quot;Sign-in_Name&#xD;&#xA;/$/&quot;)+Len(&quot;Sign-in_Name&#xD;&#xA;/$/&quot;),InStr(mid(&quot;{Var Name=EXL_ROW_DATA}&quot;,InStr(&quot;{Var Name=EXL_ROW_DATA}&quot;,&quot;Sign-in_Name&#xD;&#xA;/$/&quot;)+Len(&quot;Sign-in_Name&#xD;&#xA;/$/&quot;),100),&quot;/$/&quot;)-1)}" ParentGuid="00000000-0000-0000-0000-000000000000" Platform="NA" StatusConverter="None" WaitVE="0" WindowsToCapture="OnlyActiveWindow">
+<InputValues>
+<ActInputValue Guid="fa306898-4453-4320-b1c1-e2e46edcb31f" Param="Value" ParentGuid="00000000-0000-0000-0000-000000000000" />
+</InputValues>
+
+<ReturnValues>
+<ActReturnValue Active="True" Guid="e3008ed4-d93a-457b-a56d-5422e4e22608" mExpected="True" Param="Actual" ParentGuid="00000000-0000-0000-0000-000000000000" StoreTo="None" />
+</ReturnValues>
+</ActGenElement>
+</Acts>
+
+<Variables>
+<VariableString Guid="a5b1ead3-2ef6-43eb-9940-ad280ebf407a" MappedOutputType="None" Name="EXL_ROW_DATA" ParentGuid="00000000-0000-0000-0000-000000000000" />
+</Variables>
+</Activity></GingerRepositoryItem>

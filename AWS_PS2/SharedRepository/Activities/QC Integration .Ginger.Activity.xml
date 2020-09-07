@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<GingerRepositoryItem><Header ItemGuid="15ee5631-39d0-4629-a709-9ec9665f6770" ItemType="Activity" CreatedBy="shrpatil" Created="201811151216" GingerVersion="3.0.0.0" Version="1" LastUpdateBy="shrpatil" LastUpdate="201811151216" />
+<Activity ActionRunOption="StopActionsRunOnFailure" ActivityName="QC Integration " AutomationStatus="Development" ErrorHandlerMappingType="AllAvailableHandlers" Guid="15ee5631-39d0-4629-a709-9ec9665f6770" ParentGuid="00000000-0000-0000-0000-000000000000" PercentAutomated="100%" TargetApplication="MyWebServicesApp">
+<Acts>
+<ActScript Active="True" Description="Script Action" Guid="4e2904e7-f763-49af-8419-dc97796a9d6f" LocateBy="NA" MaxNumberOfRetries="2" ParentGuid="04162f1d-7ca4-479e-991f-fb2a8d2a9191" Platform="NA" RetryMechanismInterval="5" ScriptCommand="Script" ScriptInterpreterType="VBS" ScriptName="AutoScan.vbs" ScriptPath="C:\Sky_Italy\Solutions\Sky_Italy\\Documents\Scripts\" StatusConverter="None" WaitVE="0" WindowsToCapture="OnlyActiveWindow">
+<InputValues>
+<ActInputValue Guid="1103be57-d2be-4f14-bd65-0489e7429674" Param="Value" ParentGuid="00000000-0000-0000-0000-000000000000" />
+<ActInputValue Guid="0c4cc1af-6e75-4c25-84d4-ef4aaac0fcbf" Param="excelFilePath" ParentGuid="00000000-0000-0000-0000-000000000000" StoreToVariable="{Var Name=BF_CALENDER_EXCEL_PATH}" Value="{Var Name=BF_CALENDER_EXCEL_PATH}" />
+<ActInputValue Guid="573b5bdc-33e1-4e09-be48-3ac6ac856338" Param="excelSheetName" ParentGuid="00000000-0000-0000-0000-000000000000" StoreToVariable="{Var Name=BF_CALENDER_SHEET_NAME_MAIN}" Value="{Var Name=BF_CALENDER_SHEET_NAME_MAIN}" />
+<ActInputValue Guid="dd1f1ad3-03d7-421d-bafe-d479a774ee0f" Param="QC_URL" ParentGuid="00000000-0000-0000-0000-000000000000" StoreToVariable="{EnvParam App=MyWeb Param=ENV_QC_URL}" Value="{EnvParam App=MyWeb Param=ENV_QC_URL}" />
+<ActInputValue Guid="d4abf3a2-11b2-4b2c-af49-a1694d99c667" Param="QC_USERNAME" ParentGuid="00000000-0000-0000-0000-000000000000" StoreToVariable="{EnvParam App=MyWeb Param=ENV_QC_USER_NAME}" Value="{EnvParam App=MyWeb Param=ENV_QC_USER_NAME}" />
+<ActInputValue Guid="671b2103-578a-4fbc-87e6-2e7709b3a2f0" Param="QC_PASSWORD" ParentGuid="00000000-0000-0000-0000-000000000000" StoreToVariable="{EnvParam App=MyWeb Param=ENV_QC_PASSWORD}" Value="{EnvParam App=MyWeb Param=ENV_QC_PASSWORD}" />
+<ActInputValue Guid="ce11f62d-fd7b-4b14-ab9e-7df25b4ca347" Param="QC_DOMAIN" ParentGuid="00000000-0000-0000-0000-000000000000" StoreToVariable="{EnvParam App=MyWeb Param=ENV_QC_DOMAIN}" Value="{EnvParam App=MyWeb Param=ENV_QC_DOMAIN}" />
+<ActInputValue Guid="d29b2fa1-6bce-47e1-9d3a-83177e627c96" Param="QC_PROJECT" ParentGuid="00000000-0000-0000-0000-000000000000" StoreToVariable="{EnvParam App=MyWeb Param=ENV_QC_PROJECT}" Value="{EnvParam App=MyWeb Param=ENV_QC_PROJECT}" />
+<ActInputValue Guid="80d4837d-a6f8-4b52-a447-c053df688ba5" Param="QC_PATH" ParentGuid="00000000-0000-0000-0000-000000000000" StoreToVariable="{EnvParam App=MyWeb Param=ENV_QC_TEST_LAB_PATH}" Value="{EnvParam App=MyWeb Param=ENV_QC_TEST_LAB_PATH}" />
+<ActInputValue Guid="3b328b8e-838b-4200-863a-905abffb7007" Param="QC_AutoScanParam_REQUIRED" ParentGuid="00000000-0000-0000-0000-000000000000" />
+</InputValues>
+</ActScript>
+</Acts>
+
+<Variables>
+<VariableString Guid="1ad5782a-b346-41f4-b031-3567cb23d08c" MappedOutputType="None" Name="BF_CALENDER_EXCEL_PATH" ParentGuid="f83cb156-f0f6-4255-ae15-fa63033f2e37" ParentName="NSORD_Driver_NEW" ParentType="Business Flow" Value="C:\Sky_Italy\Solutions\Sky_Italy\Documents\1802\DATA_FILES_PER_CALENDAR\DEVELOPMENT\SIT\SHRPATIL\SKY_CALENDER\SKY_CALENDER.xlsx" />
+<VariableString Guid="fe11f062-3fe5-4b8e-b158-5e3b5ad8442f" InitialStringValue="MAIN" MappedOutputType="None" Name="BF_CALENDER_SHEET_NAME_MAIN" ParentGuid="f83cb156-f0f6-4255-ae15-fa63033f2e37" ParentName="NSORD_Driver_NEW" ParentType="Business Flow" Value="MAIN" />
+</Variables>
+</Activity></GingerRepositoryItem>

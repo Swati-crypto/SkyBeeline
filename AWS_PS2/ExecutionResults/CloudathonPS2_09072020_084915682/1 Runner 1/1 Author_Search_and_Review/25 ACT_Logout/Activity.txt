@@ -1,0 +1,1 @@
+{"Seq":25,"GUID":"ae386f99-4037-4306-9485-29f6e9f9a55b","ActivityName":"ACT_Logout","StartTimeStamp":"2020-09-07T08:51:24.5454379Z","EndTimeStamp":"2020-09-07T08:51:27.3397295Z","Elapsed":1844,"RunStatus":"Passed","VariablesBeforeExec":["ACT_Unique_Number_:_65338_:_"],"VariablesAfterExec":["ACT_Unique_Number_:_65338_:_"]}

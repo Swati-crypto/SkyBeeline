@@ -1,0 +1,1 @@
+{"Seq":5,"GUID":"6ab897b8-bf41-4efe-826b-6ef98007c0bc","ActivityName":"ACT_Launch_Application","StartTimeStamp":"2020-09-07T13:03:33.008502Z","EndTimeStamp":"2020-09-07T13:03:45.3025613Z","Elapsed":6950,"RunStatus":"Passed","VariablesBeforeExec":[],"VariablesAfterExec":[]}

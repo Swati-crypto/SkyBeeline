@@ -1,0 +1,73 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<GingerRepositoryItem><Header ItemGuid="125e509e-b304-4e8d-bb37-45a528ea7bf0" ItemType="Activity" CreatedBy="shrpatil" Created="201811151216" GingerVersion="3.0.0.0" Version="1" LastUpdateBy="shrpatil" LastUpdate="201811151216" />
+<Activity ActionRunOption="ContinueActionsRunOnFailure" Active="True" ActivityName="Act_Execute_Jobs" AutomationStatus="Development" ErrorHandlerMappingType="AllAvailableHandlers" Guid="125e509e-b304-4e8d-bb37-45a528ea7bf0" ParentGuid="ca42673c-fc3d-4ff7-851f-f5d956829ea2" PercentAutomated="100%" TargetApplication="MyUnix">
+<Acts>
+<ActConsoleCommand Active="True" ConsoleCommand="FreeCommand" Description="Run the 1st Job" Guid="49e39d69-277e-48d8-800d-a73878850b3e" LocateBy="NA" ParentGuid="00000000-0000-0000-0000-000000000000" Platform="NA" StatusConverter="None" TakeScreenShot="True" WaitTime="2" WaitVE="0" WindowsToCapture="OnlyActiveWindow">
+<FlowControls>
+<FlowControl Active="True" BusinessFlowControlAction="GoToBusinessFlow" Condition="&quot;{ActionStatus}&quot; = &quot;Fail&quot;" FlowControlAction="GoToActivity" Guid="f9b93ece-0bfe-4bcd-90df-28234da945aa" ParentGuid="00000000-0000-0000-0000-000000000000" Value="467a2b66-b32a-4704-941f-d44be462ac80#GUID_NAME#UpdateExecutionStatus_FAIL" />
+</FlowControls>
+
+<InputValues>
+<ActInputValue Guid="1d15cdd1-c322-43c0-81c1-a956f2cefb75" Param="Free Command" ParentGuid="00000000-0000-0000-0000-000000000000" StoreToVariable="echo &quot;{VBS Eval=mid(&quot;{Var Name=BF_CALENDER_ROW_DATA}&quot;,InStr(&quot;{Var Name=BF_CALENDER_ROW_DATA}&quot;,&quot;PROCESS_NAME_1/$/&quot;)+Len(&quot;PROCESS_NAME_1/$/&quot;),InStr(mid(&quot;{Var Name=BF_CALENDER_ROW_DATA}&quot;,InStr(&quot;{Var Name=BF_CALENDER_ROW_DATA}&quot;,&quot;PROCESS_NAME_1/$/&quot;)+Len(&quot;PROCESS_NAME_1/$/&quot;),100),&quot;/$/&quot;)-1)}&quot;" Value="echo &quot;{VBS Eval=mid(&quot;{Var Name=BF_CALENDER_ROW_DATA}&quot;,InStr(&quot;{Var Name=BF_CALENDER_ROW_DATA}&quot;,&quot;PROCESS_NAME_1/$/&quot;)+Len(&quot;PROCESS_NAME_1/$/&quot;),InStr(mid(&quot;{Var Name=BF_CALENDER_ROW_DATA}&quot;,InStr(&quot;{Var Name=BF_CALENDER_ROW_DATA}&quot;,&quot;PROCESS_NAME_1/$/&quot;)+Len(&quot;PROCESS_NAME_1/$/&quot;),100),&quot;/$/&quot;)-1)}&quot;" />
+</InputValues>
+</ActConsoleCommand>
+<ActDBValidation Active="True" AppName="MyUnix" DBName="DB" DBValidationType="FreeSQL" Description="Run 1st SQL" Guid="6a1feeaa-e1b0-4260-b7b0-39da5cd5e4e6" LocateBy="NA" ParentGuid="00000000-0000-0000-0000-000000000000" Platform="NA" SQL="{VBS Eval=mid(&quot;{Var Name=BF_CALENDER_ROW_DATA}&quot;,InStr(&quot;{Var Name=BF_CALENDER_ROW_DATA}&quot;,&quot;PK/$/&quot;)+Len(&quot;PK/$/&quot;),InStr(mid(&quot;{Var Name=BF_CALENDER_ROW_DATA}&quot;,InStr(&quot;{Var Name=BF_CALENDER_ROW_DATA}&quot;,&quot;PK/$/&quot;)+Len(&quot;PK/$/&quot;),100),&quot;/$/&quot;)-1)}" StatusConverter="None" TakeScreenShot="True" WaitVE="0" WindowsToCapture="OnlyActiveWindow">
+<FlowControls>
+<FlowControl Active="True" BusinessFlowControlAction="GoToBusinessFlow" Condition="&quot;{ActionStatus}&quot; = &quot;Fail&quot;" FlowControlAction="GoToActivity" Guid="b8c6406f-90d6-4d91-98dd-d8f0c770a656" ParentGuid="00000000-0000-0000-0000-000000000000" Value="467a2b66-b32a-4704-941f-d44be462ac80#GUID_NAME#UpdateExecutionStatus_FAIL" />
+</FlowControls>
+
+<InputValues>
+<ActInputValue Guid="2672b482-44ee-419b-809d-4b5fbcea48a5" Param="SQL" ParentGuid="00000000-0000-0000-0000-000000000000" StoreToVariable="{VBS Eval=mid(&quot;{Var Name=BF_CALENDER_ROW_DATA}&quot;,InStr(&quot;{Var Name=BF_CALENDER_ROW_DATA}&quot;,&quot;PK/$/&quot;)+Len(&quot;PK/$/&quot;),InStr(mid(&quot;{Var Name=BF_CALENDER_ROW_DATA}&quot;,InStr(&quot;{Var Name=BF_CALENDER_ROW_DATA}&quot;,&quot;PK/$/&quot;)+Len(&quot;PK/$/&quot;),100),&quot;/$/&quot;)-1)}" Value="{VBS Eval=mid(&quot;{Var Name=BF_CALENDER_ROW_DATA}&quot;,InStr(&quot;{Var Name=BF_CALENDER_ROW_DATA}&quot;,&quot;PK/$/&quot;)+Len(&quot;PK/$/&quot;),InStr(mid(&quot;{Var Name=BF_CALENDER_ROW_DATA}&quot;,InStr(&quot;{Var Name=BF_CALENDER_ROW_DATA}&quot;,&quot;PK/$/&quot;)+Len(&quot;PK/$/&quot;),100),&quot;/$/&quot;)-1)}" />
+</InputValues>
+
+<ReturnValues>
+<ActReturnValue Active="True" Guid="0d85015a-5caf-46f2-9707-9f1234168762" mExpected="{Actual} &gt; 0" Param="USER_ID" ParentGuid="00000000-0000-0000-0000-000000000000" StoreTo="None" />
+</ReturnValues>
+</ActDBValidation>
+<ActConsoleCommand Active="True" ConsoleCommand="FreeCommand" Description="Run the 2nd Job" Guid="3c13e41d-7874-4c23-bc84-7ce9c7751df0" LocateBy="NA" ParentGuid="00000000-0000-0000-0000-000000000000" Platform="NA" StatusConverter="None" TakeScreenShot="True" WaitTime="3" WaitVE="0" WindowsToCapture="OnlyActiveWindow">
+<FlowControls>
+<FlowControl Active="True" BusinessFlowControlAction="GoToBusinessFlow" Condition="&quot;{ActionStatus}&quot; = &quot;Fail&quot;" FlowControlAction="GoToActivity" Guid="410814e5-f4b6-4061-b938-9f64228c317d" ParentGuid="00000000-0000-0000-0000-000000000000" Value="467a2b66-b32a-4704-941f-d44be462ac80#GUID_NAME#UpdateExecutionStatus_FAIL" />
+</FlowControls>
+
+<InputValues>
+<ActInputValue Guid="1d15cdd1-c322-43c0-81c1-a956f2cefb75" Param="Free Command" ParentGuid="00000000-0000-0000-0000-000000000000" StoreToVariable="echo &quot;{VBS Eval=mid(&quot;{Var Name=BF_CALENDER_ROW_DATA}&quot;,InStr(&quot;{Var Name=BF_CALENDER_ROW_DATA}&quot;,&quot;PROCESS_NAME_2/$/&quot;)+Len(&quot;PROCESS_NAME_2/$/&quot;),InStr(mid(&quot;{Var Name=BF_CALENDER_ROW_DATA}&quot;,InStr(&quot;{Var Name=BF_CALENDER_ROW_DATA}&quot;,&quot;PROCESS_NAME_2/$/&quot;)+Len(&quot;PROCESS_NAME_2/$/&quot;),100),&quot;/$/&quot;)-1)}&quot;" Value="echo &quot;{VBS Eval=mid(&quot;{Var Name=BF_CALENDER_ROW_DATA}&quot;,InStr(&quot;{Var Name=BF_CALENDER_ROW_DATA}&quot;,&quot;PROCESS_NAME_2/$/&quot;)+Len(&quot;PROCESS_NAME_2/$/&quot;),InStr(mid(&quot;{Var Name=BF_CALENDER_ROW_DATA}&quot;,InStr(&quot;{Var Name=BF_CALENDER_ROW_DATA}&quot;,&quot;PROCESS_NAME_2/$/&quot;)+Len(&quot;PROCESS_NAME_2/$/&quot;),100),&quot;/$/&quot;)-1)}&quot;" />
+</InputValues>
+</ActConsoleCommand>
+<ActDBValidation Active="True" AppName="MyUnix" DBName="DB" DBValidationType="FreeSQL" Description="Run 2nd SQL" Guid="4c951809-79d0-4dcb-9542-33e121aba52e" LocateBy="NA" ParentGuid="00000000-0000-0000-0000-000000000000" Platform="NA" SQL="{VBS Eval=mid(&quot;{Var Name=BF_CALENDER_ROW_DATA}&quot;,InStr(&quot;{Var Name=BF_CALENDER_ROW_DATA}&quot;,&quot;PK_1/$/&quot;)+Len(&quot;PK_1/$/&quot;),InStr(mid(&quot;{Var Name=BF_CALENDER_ROW_DATA}&quot;,InStr(&quot;{Var Name=BF_CALENDER_ROW_DATA}&quot;,&quot;PK_1/$/&quot;)+Len(&quot;PK_1/$/&quot;),100),&quot;/$/&quot;)-1)}" StatusConverter="None" TakeScreenShot="True" WaitVE="0" WindowsToCapture="OnlyActiveWindow">
+<FlowControls>
+<FlowControl Active="True" BusinessFlowControlAction="GoToBusinessFlow" Condition="&quot;{ActionStatus}&quot; = &quot;Fail&quot;" FlowControlAction="GoToActivity" Guid="e4111ceb-a359-4756-8724-d9107b885979" ParentGuid="00000000-0000-0000-0000-000000000000" Value="467a2b66-b32a-4704-941f-d44be462ac80#GUID_NAME#UpdateExecutionStatus_FAIL" />
+</FlowControls>
+
+<InputValues>
+<ActInputValue Guid="07491381-e45d-46e5-bfee-49c12aace0c6" Param="SQL" ParentGuid="00000000-0000-0000-0000-000000000000" StoreToVariable="{VBS Eval=mid(&quot;{Var Name=BF_CALENDER_ROW_DATA}&quot;,InStr(&quot;{Var Name=BF_CALENDER_ROW_DATA}&quot;,&quot;PK_1/$/&quot;)+Len(&quot;PK_1/$/&quot;),InStr(mid(&quot;{Var Name=BF_CALENDER_ROW_DATA}&quot;,InStr(&quot;{Var Name=BF_CALENDER_ROW_DATA}&quot;,&quot;PK_1/$/&quot;)+Len(&quot;PK_1/$/&quot;),100),&quot;/$/&quot;)-1)}" Value="{VBS Eval=mid(&quot;{Var Name=BF_CALENDER_ROW_DATA}&quot;,InStr(&quot;{Var Name=BF_CALENDER_ROW_DATA}&quot;,&quot;PK_1/$/&quot;)+Len(&quot;PK_1/$/&quot;),InStr(mid(&quot;{Var Name=BF_CALENDER_ROW_DATA}&quot;,InStr(&quot;{Var Name=BF_CALENDER_ROW_DATA}&quot;,&quot;PK_1/$/&quot;)+Len(&quot;PK_1/$/&quot;),100),&quot;/$/&quot;)-1)}" />
+</InputValues>
+</ActDBValidation>
+<ActConsoleCommand Active="True" ConsoleCommand="FreeCommand" Description="Run the 3rd Job" Guid="bbf1bd60-537e-488d-aa55-6ae3cacaea94" LocateBy="NA" ParentGuid="00000000-0000-0000-0000-000000000000" Platform="NA" StatusConverter="None" TakeScreenShot="True" WaitTime="3" WaitVE="0" WindowsToCapture="OnlyActiveWindow">
+<FlowControls>
+<FlowControl Active="True" BusinessFlowControlAction="GoToBusinessFlow" Condition="&quot;{ActionStatus}&quot; = &quot;Fail&quot;" FlowControlAction="GoToActivity" Guid="4593b7ef-30fe-43a1-b557-a26f2e6836f2" ParentGuid="00000000-0000-0000-0000-000000000000" Value="467a2b66-b32a-4704-941f-d44be462ac80#GUID_NAME#UpdateExecutionStatus_FAIL" />
+</FlowControls>
+
+<InputValues>
+<ActInputValue Guid="1d15cdd1-c322-43c0-81c1-a956f2cefb75" Param="Free Command" ParentGuid="00000000-0000-0000-0000-000000000000" StoreToVariable="echo &quot;{VBS Eval=mid(&quot;{Var Name=BF_CALENDER_ROW_DATA}&quot;,InStr(&quot;{Var Name=BF_CALENDER_ROW_DATA}&quot;,&quot;PROCESS_NAME_3/$/&quot;)+Len(&quot;PROCESS_NAME_3/$/&quot;),InStr(mid(&quot;{Var Name=BF_CALENDER_ROW_DATA}&quot;,InStr(&quot;{Var Name=BF_CALENDER_ROW_DATA}&quot;,&quot;PROCESS_NAME_3/$/&quot;)+Len(&quot;PROCESS_NAME_3/$/&quot;),100),&quot;/$/&quot;)-1)}&quot;" Value="echo &quot;{VBS Eval=mid(&quot;{Var Name=BF_CALENDER_ROW_DATA}&quot;,InStr(&quot;{Var Name=BF_CALENDER_ROW_DATA}&quot;,&quot;PROCESS_NAME_3/$/&quot;)+Len(&quot;PROCESS_NAME_3/$/&quot;),InStr(mid(&quot;{Var Name=BF_CALENDER_ROW_DATA}&quot;,InStr(&quot;{Var Name=BF_CALENDER_ROW_DATA}&quot;,&quot;PROCESS_NAME_3/$/&quot;)+Len(&quot;PROCESS_NAME_3/$/&quot;),100),&quot;/$/&quot;)-1)}&quot;" />
+</InputValues>
+</ActConsoleCommand>
+<ActDBValidation Active="True" AppName="MyUnix" DBName="DB" DBValidationType="FreeSQL" Description="Run 3rd SQL" Guid="0576bc29-cb6b-49b9-b448-c86e69ddca6f" LocateBy="NA" ParentGuid="00000000-0000-0000-0000-000000000000" Platform="NA" SQL="{VBS Eval=mid(&quot;{Var Name=BF_CALENDER_ROW_DATA}&quot;,InStr(&quot;{Var Name=BF_CALENDER_ROW_DATA}&quot;,&quot;PK_2/$/&quot;)+Len(&quot;PK_2/$/&quot;),InStr(mid(&quot;{Var Name=BF_CALENDER_ROW_DATA}&quot;,InStr(&quot;{Var Name=BF_CALENDER_ROW_DATA}&quot;,&quot;PK_2/$/&quot;)+Len(&quot;PK_2/$/&quot;),100),&quot;/$/&quot;)-1)}" StatusConverter="None" TakeScreenShot="True" WaitVE="0" WindowsToCapture="OnlyActiveWindow">
+<FlowControls>
+<FlowControl Active="True" BusinessFlowControlAction="GoToBusinessFlow" Condition="&quot;{ActionStatus}&quot; = &quot;Fail&quot;" FlowControlAction="GoToActivity" Guid="be13e58a-05de-4a10-84fd-9f445fe1f04d" ParentGuid="00000000-0000-0000-0000-000000000000" Value="467a2b66-b32a-4704-941f-d44be462ac80#GUID_NAME#UpdateExecutionStatus_FAIL" />
+<FlowControl Active="True" BusinessFlowControlAction="GoToBusinessFlow" Condition="&quot;{ActionStatus}&quot; = &quot;Pass&quot;" FlowControlAction="GoToActivity" Guid="5fc2428b-38ad-431d-b264-824412c27764" ParentGuid="00000000-0000-0000-0000-000000000000" Value="b8ac78ee-837f-4ae6-ba7b-8f17f938e9b0#GUID_NAME#UpdateExecutionStatus_PASS" />
+</FlowControls>
+
+<InputValues>
+<ActInputValue Guid="b5409517-b431-45ea-8c4c-91d652461807" Param="SQL" ParentGuid="00000000-0000-0000-0000-000000000000" StoreToVariable="{VBS Eval=mid(&quot;{Var Name=BF_CALENDER_ROW_DATA}&quot;,InStr(&quot;{Var Name=BF_CALENDER_ROW_DATA}&quot;,&quot;PK_2/$/&quot;)+Len(&quot;PK_2/$/&quot;),InStr(mid(&quot;{Var Name=BF_CALENDER_ROW_DATA}&quot;,InStr(&quot;{Var Name=BF_CALENDER_ROW_DATA}&quot;,&quot;PK_2/$/&quot;)+Len(&quot;PK_2/$/&quot;),100),&quot;/$/&quot;)-1)}" Value="{VBS Eval=mid(&quot;{Var Name=BF_CALENDER_ROW_DATA}&quot;,InStr(&quot;{Var Name=BF_CALENDER_ROW_DATA}&quot;,&quot;PK_2/$/&quot;)+Len(&quot;PK_2/$/&quot;),InStr(mid(&quot;{Var Name=BF_CALENDER_ROW_DATA}&quot;,InStr(&quot;{Var Name=BF_CALENDER_ROW_DATA}&quot;,&quot;PK_2/$/&quot;)+Len(&quot;PK_2/$/&quot;),100),&quot;/$/&quot;)-1)}" />
+</InputValues>
+
+<ReturnValues>
+<ActReturnValue Active="True" Guid="0d85015a-5caf-46f2-9707-9f1234168762" mExpected="Len({Actual})&gt;0" Param="FIRST_NAME" ParentGuid="00000000-0000-0000-0000-000000000000" StoreTo="None" />
+</ReturnValues>
+</ActDBValidation>
+</Acts>
+
+<Variables>
+<VariableString Guid="ae367dd2-b69e-4425-b57b-aef93c0d23b8" InitialStringValue="S-REGRESSION_PMT 445705_EDITS_FIDS_S&amp;E SECT_1.52_NSORD.0388/$/Value is Blank/$/CREATED_IN_RELEASE/$/Value is Blank/$/COMMENT/$/Madhuri_Phase_2/$/HEADER/$/Value is Blank/$/ACTION/$/Act_S-REGRESSION_PMT 445705_EDITS_FIDS_S&amp;E SECT_1.52_NSORD.0388/$/ORDER_TYPE/$/N/$/STATE_CODE/$/Value is Blank/$/NEW_ORDER_NUM/$/N663784/$/EXPECTED_EDIT/$/NOEDIT/$/SKIP_EDIT/$/Value is Blank/$/ST/$/O/$/EXPECTED_STRING/$/READY FOR DISTRIBUTION/$/SKIP_ACTIVITY/$/Value is Blank/$/U5RRX/$/I    U5RRX /LRS OPDA/$/FL_FID/$/Value is Blank/$/ACTION_I_LH_FID/$/ICLT 41.SFGS.219.033.6825/$/FL_FID_/PIC/$//PIC NO/$/FID_/LPIC/$//LPIC NONE/$/SM_DATA/$/SM   CE 01-25-2017 0830A/$/CS_DATA/$/WSQ" MappedOutputType="None" Name="BF_CALENDER_ROW_DATA" ParentGuid="00000000-0000-0000-0000-000000000000" Value="S-REGRESSION_PMT 445705_EDITS_FIDS_S&amp;E SECT_1.52_NSORD.0388/$/Value is Blank/$/CREATED_IN_RELEASE/$/Value is Blank/$/COMMENT/$/Madhuri_Phase_2/$/HEADER/$/Value is Blank/$/ACTION/$/Act_S-REGRESSION_PMT 445705_EDITS_FIDS_S&amp;E SECT_1.52_NSORD.0388/$/ORDER_TYPE/$/N/$/STATE_CODE/$/Value is Blank/$/NEW_ORDER_NUM/$/N663784/$/EXPECTED_EDIT/$/NOEDIT/$/SKIP_EDIT/$/Value is Blank/$/ST/$/O/$/EXPECTED_STRING/$/READY FOR DISTRIBUTION/$/SKIP_ACTIVITY/$/Value is Blank/$/U5RRX/$/I    U5RRX /LRS OPDA/$/FL_FID/$/Value is Blank/$/ACTION_I_LH_FID/$/ICLT 41.SFGS.219.033.6825/$/FL_FID_/PIC/$//PIC NO/$/FID_/LPIC/$//LPIC NONE/$/SM_DATA/$/SM   CE 01-25-2017 0830A/$/CS_DATA/$/WSQ" />
+</Variables>
+</Activity></GingerRepositoryItem>

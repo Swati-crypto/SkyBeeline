@@ -1,0 +1,26 @@
+﻿{
+  "submitAccessOrder" : {
+    "wholesaler" : "fastweb",
+    "accessMode" : "ACTIVE",
+    "uniqueCode" : "A_80913",
+    "orderDate" : "20200824224136",
+    "notificationId" : "8F8BDCCD03404DC58DB8B2A442C517FA",
+    "subscriberId" : "1-EQ-900-4001",
+    "activationDate" : "2019-07-30",
+    "appointmentId" : "APT_80913",
+    "promotionCluster" : "PC_80913",
+    "mainLineTelephoneNumber" : "9999999999",
+    "popId" : "NPoP162959",
+    "profileId" : "200/20 Mbps",
+    "sendOnFieldPerson" : "Y",
+    "notes" : "Access_note",
+    "activationType" : "New line",
+    "Vlan" : [ {
+      "vlanProfileId" : "0",
+      "vlanDeliveryKitId" : "NNI162959",
+      "vlanUserId" : "101",
+      "vlanServiceId" : "16",
+      "vlanCustomerId" : "9"
+    } ]
+  }
+}

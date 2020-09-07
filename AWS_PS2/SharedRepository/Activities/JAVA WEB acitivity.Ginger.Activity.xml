@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<GingerRepositoryItem><Header ItemGuid="16c5ac45-03e4-4315-843a-38a81df7c6a7" ItemType="Activity" CreatedBy="shrpatil" Created="201811161215" GingerVersion="3.0.0.0" Version="2" LastUpdateBy="shrpatil" LastUpdate="201811161215" />
+<Activity ActionRunOption="StopActionsRunOnFailure" Active="True" ActivityName="JAVA WEB acitivity" AutomationStatus="Development" ErrorHandlerMappingType="AllAvailableHandlers" Guid="16c5ac45-03e4-4315-843a-38a81df7c6a7" ParentGuid="00000000-0000-0000-0000-000000000000" PercentAutomated="100%" TargetApplication="MyWebIE">
+<Acts>
+<ActSwitchWindow Active="True" Description="Switch Window - frame3" Guid="0647ec25-9fa8-43ab-860c-2306cc96e0b2" LocateBy="ByTitle" LocateValue="frame3" MaxNumberOfRetries="2" ParentGuid="00000000-0000-0000-0000-000000000000" Platform="NA" RetryMechanismInterval="5" StatusConverter="None" WaitTime="-1" WaitVE="0" WindowsToCapture="OnlyActiveWindow">
+<InputValues>
+<ActInputValue Guid="a0c4154f-30b2-4c3a-b9c5-175610092049" Param="WaitTime" ParentGuid="00000000-0000-0000-0000-000000000000" StoreToVariable="-1" Value="-1" />
+</InputValues>
+</ActSwitchWindow>
+<ActUIElement Active="True" Description="Get Control Property for TabbedBrowserPane[0]" ElementAction="Select" ElementLocateBy="ByXPath" ElementLocateValue="/RelationsBrowser/panel2/javax.swing.JRootPane[0]/null.layeredPane/null.contentPane/RelationsBrowser/com.cramer.core.browser.TabbedBrowserPane[0]" ElementType="Tab" Guid="58abc36d-374b-4823-82cf-07f9d3a2ad21" HandleActionType="Unknown" HandleElementType="Unknown" LocateBy="NA" MaxNumberOfRetries="2" ParentGuid="00000000-0000-0000-0000-000000000000" Platform="Java" RetryMechanismInterval="5" StatusConverter="None" TargetElementType="Unknown" TargetLocateBy="NA" WaitVE="0" WindowsToCapture="OnlyActiveWindow">
+<InputValues>
+<ActInputValue Guid="fc96a6db-dadd-42fb-9d54-0d797eed23bf" Param="ValueToSelect" ParentGuid="00000000-0000-0000-0000-000000000000" StoreToVariable="Number" Value="Number" />
+<ActInputValue Guid="af61b6d3-ae07-4525-b5a8-ea8b527c167a" Param="ElementLocateValue" ParentGuid="00000000-0000-0000-0000-000000000000" StoreToVariable="/RelationsBrowser/panel2/javax.swing.JRootPane[0]/null.layeredPane/null.contentPane/RelationsBrowser/com.cramer.core.browser.TabbedBrowserPane[0]" Value="/RelationsBrowser/panel2/javax.swing.JRootPane[0]/null.layeredPane/null.contentPane/RelationsBrowser/com.cramer.core.browser.TabbedBrowserPane[0]" />
+<ActInputValue Guid="1eaf3a4c-0890-4603-9f16-41a1a7c34ba4" Param="Value" ParentGuid="00000000-0000-0000-0000-000000000000" />
+<ActInputValue Guid="57b7d873-4203-43c4-8bd4-9ab6d7dba43d" Param="ControlActionValue" ParentGuid="00000000-0000-0000-0000-000000000000" />
+<ActInputValue Guid="052d4516-82e5-46b5-bacd-f6b977aef288" Param="ElementType" ParentGuid="00000000-0000-0000-0000-000000000000" />
+<ActInputValue Guid="2d8b767c-ec55-41ae-92b1-d92d1ba4a263" Param="ControlAction" ParentGuid="00000000-0000-0000-0000-000000000000" />
+<ActInputValue Guid="46dfc267-026f-43ae-8263-ed88d62386a9" Param="ElementAction" ParentGuid="00000000-0000-0000-0000-000000000000" />
+<ActInputValue Guid="eaf65d27-2f7a-456a-bdf9-9e6096f16d80" Param="WhereColSelector" ParentGuid="00000000-0000-0000-0000-000000000000" />
+<ActInputValue Guid="6e91f33e-75f7-4cfe-83f9-6142a4994b8b" Param="WhereColumnTitle" ParentGuid="00000000-0000-0000-0000-000000000000" />
+<ActInputValue Guid="42b6df45-4187-460d-9373-6ffcdd7c9e42" Param="WhereColumnValue" ParentGuid="00000000-0000-0000-0000-000000000000" />
+<ActInputValue Guid="f3534665-6201-442e-9409-dd33d7e6d12e" Param="WhereOperator" ParentGuid="00000000-0000-0000-0000-000000000000" />
+<ActInputValue Guid="5283b112-9ac0-4f13-a81a-1c3f83feb3a2" Param="WhereProperty" ParentGuid="00000000-0000-0000-0000-000000000000" />
+<ActInputValue Guid="f58ad551-4b7f-43cd-9ae1-8f274dc25b2a" Param="WaitforIdle" ParentGuid="00000000-0000-0000-0000-000000000000" StoreToVariable="None" Value="None" />
+</InputValues>
+</ActUIElement>
+<ActUIElement Active="True" Description="Get Control Property for TabbedBrowserPane[0]_Copy" ElementAction="Select" ElementLocateBy="ByXPath" ElementLocateValue="/RelationsBrowser/panel2/javax.swing.JRootPane[0]/null.layeredPane/null.contentPane/RelationsBrowser/com.cramer.core.browser.TabbedBrowserPane[0]" ElementType="Tab" Guid="a7a45371-7547-41d9-a83b-92d125f478b2" HandleActionType="Unknown" HandleElementType="Unknown" LocateBy="NA" MaxNumberOfRetries="2" ParentGuid="00000000-0000-0000-0000-000000000000" Platform="Java" RetryMechanismInterval="5" StatusConverter="None" TargetElementType="Unknown" TargetLocateBy="NA" WaitVE="0" WindowsToCapture="OnlyActiveWindow">
+<InputValues>
+<ActInputValue Guid="2d5569b2-21d3-4859-8fc4-9d851be15687" Param="ValueToSelect" ParentGuid="00000000-0000-0000-0000-000000000000" StoreToVariable="Links" Value="Links" />
+<ActInputValue Guid="0bdb52e3-7303-46ee-9b03-45c1b3b57df2" Param="ElementLocateValue" ParentGuid="00000000-0000-0000-0000-000000000000" StoreToVariable="/RelationsBrowser/panel2/javax.swing.JRootPane[0]/null.layeredPane/null.contentPane/RelationsBrowser/com.cramer.core.browser.TabbedBrowserPane[0]" Value="/RelationsBrowser/panel2/javax.swing.JRootPane[0]/null.layeredPane/null.contentPane/RelationsBrowser/com.cramer.core.browser.TabbedBrowserPane[0]" />
+<ActInputValue Guid="b669febf-f205-4111-845c-e014baffd305" Param="Value" ParentGuid="00000000-0000-0000-0000-000000000000" />
+<ActInputValue Guid="534637c7-a0ec-4f97-ad09-79f5adaac67a" Param="ControlActionValue" ParentGuid="00000000-0000-0000-0000-000000000000" />
+<ActInputValue Guid="0126f651-1bf2-4996-97fd-8cad783775c7" Param="ElementType" ParentGuid="00000000-0000-0000-0000-000000000000" />
+<ActInputValue Guid="e2d23a7c-7cb3-4cbd-9b59-d75cea230aae" Param="ControlAction" ParentGuid="00000000-0000-0000-0000-000000000000" />
+<ActInputValue Guid="d062efd0-9779-4414-92ba-7361ea70c66e" Param="ElementAction" ParentGuid="00000000-0000-0000-0000-000000000000" />
+<ActInputValue Guid="0d405395-c730-400d-8371-1ed30f8aa125" Param="WhereColSelector" ParentGuid="00000000-0000-0000-0000-000000000000" />
+<ActInputValue Guid="c224871c-6584-4c23-8a94-3622af2af344" Param="WhereColumnTitle" ParentGuid="00000000-0000-0000-0000-000000000000" />
+<ActInputValue Guid="730c3f2c-368e-4a59-8d10-b4ce54232929" Param="WhereColumnValue" ParentGuid="00000000-0000-0000-0000-000000000000" />
+<ActInputValue Guid="cafec903-d65d-4c03-a1d8-dbb066869dc9" Param="WhereOperator" ParentGuid="00000000-0000-0000-0000-000000000000" />
+<ActInputValue Guid="1aa8bc2d-7bb9-48f3-a3c5-b79684234c7c" Param="WhereProperty" ParentGuid="00000000-0000-0000-0000-000000000000" />
+<ActInputValue Guid="d4e6d237-257b-4760-ace2-8cfa2b00c98a" Param="WaitforIdle" ParentGuid="00000000-0000-0000-0000-000000000000" StoreToVariable="None" Value="None" />
+</InputValues>
+</ActUIElement>
+</Acts>
+</Activity></GingerRepositoryItem>

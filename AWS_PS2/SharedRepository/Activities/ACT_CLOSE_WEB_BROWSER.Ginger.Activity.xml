@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<GingerRepositoryItem><Header ItemGuid="21cd3262-6df4-40b9-a6ae-5ad7fe00967a" ItemType="Activity" CreatedBy="shrpatil" Created="201811151216" GingerVersion="3.0.0.0" Version="9" LastUpdateBy="SHRPATIL" LastUpdate="201903051402" />
+<Activity ActionRunOption="StopActionsRunOnFailure" Active="True" ActivityName="ACT_CLOSE_WEB_BROWSER" AutomationStatus="Development" ErrorHandlerMappingType="AllAvailableHandlers" Guid="21cd3262-6df4-40b9-a6ae-5ad7fe00967a" ParentGuid="00000000-0000-0000-0000-000000000000" PercentAutomated="100%" TargetApplication="MyWebApp">
+<Acts>
+<ActGenElement Active="True" Description="Close Browser" GenElementAction="CloseBrowser" Guid="b143f7a2-1294-462f-b596-972779315d6a" LocateBy="NA" MaxNumberOfRetries="2" ParentGuid="00000000-0000-0000-0000-000000000000" Platform="NA" RetryMechanismInterval="5" StatusConverter="None" WaitVE="1" WindowsToCapture="OnlyActiveWindow">
+<FlowControls>
+<FlowControl Active="True" BusinessFlowControlAction="GoToBusinessFlow" Condition="&quot;{ActionStatus}&quot; = &quot;Passed&quot;" FlowControlAction="GoToActivityByName" Guid="9c141108-222a-4258-9cce-11ed1f489f8c" ParentGuid="00000000-0000-0000-0000-000000000000" Value="UpdateExecutionStatus_PASS" />
+<FlowControl Active="True" BusinessFlowControlAction="GoToBusinessFlow" Condition="&quot;{ActionStatus}&quot; = &quot;Failed&quot;" FlowControlAction="GoToActivityByName" Guid="e5634aa6-6c3c-4cb4-93e1-87bcaef1a748" ParentGuid="00000000-0000-0000-0000-000000000000" Value="UpdateExecutionStatus_FAIL" />
+</FlowControls>
+
+<InputValues>
+<ActInputValue Guid="8659cc18-546d-4ce1-8c2d-5a475d751f0e" Param="Value" ParentGuid="00000000-0000-0000-0000-000000000000" />
+<ActInputValue Guid="b7e16af4-2c84-46a7-a812-75d114f84d39" Param="Xoffset" ParentGuid="00000000-0000-0000-0000-000000000000" />
+<ActInputValue Guid="45666a8a-0f2e-4d93-b0f3-53d03f111e48" Param="Yoffset" ParentGuid="00000000-0000-0000-0000-000000000000" />
+</InputValues>
+</ActGenElement>
+</Acts>
+</Activity></GingerRepositoryItem>

@@ -1,0 +1,60 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<GingerRepositoryItem><Header ItemGuid="312367de-e226-410f-ba4c-fd4732bcef67" ItemType="Activity" CreatedBy="shrpatil" Created="201811151216" GingerVersion="3.0.0.0" Version="1" LastUpdateBy="shrpatil" LastUpdate="201811151216" />
+<Activity ActionRunOption="ContinueActionsRunOnFailure" Active="True" ActivityName="Act_Search" AutomationStatus="Automated" ErrorHandlerMappingType="AllAvailableHandlers" Guid="312367de-e226-410f-ba4c-fd4732bcef67" ParentGuid="00000000-0000-0000-0000-000000000000" PercentAutomated="100%" TargetApplication="MyWeb">
+<Acts>
+<ActGotoURL Active="True" Description="Goto URL Action" Guid="07e86f09-d416-43ea-9ac9-932d737adda0" LocateBy="NA" ParentGuid="00000000-0000-0000-0000-000000000000" Platform="NA" StatusConverter="None" WaitVE="0" WindowsToCapture="OnlyActiveWindow">
+<InputValues>
+<ActInputValue Guid="fa1bab31-87fd-4bbb-b8e1-46ac9d78f78c" Param="Value" ParentGuid="00000000-0000-0000-0000-000000000000" StoreToVariable="{VBS Eval=mid(&quot;{Var Name=BF_CALENDER_ROW_DATA}&quot;,InStr(&quot;{Var Name=BF_CALENDER_ROW_DATA}&quot;,&quot;APP_URL/$/&quot;)+Len(&quot;APP_URL/$/&quot;),InStr(mid(&quot;{Var Name=BF_CALENDER_ROW_DATA}&quot;,InStr(&quot;{Var Name=BF_CALENDER_ROW_DATA}&quot;,&quot;APP_URL/$/&quot;)+Len(&quot;APP_URL/$/&quot;),100),&quot;/$/&quot;)-1)}" Value="{VBS Eval=mid(&quot;{Var Name=BF_CALENDER_ROW_DATA}&quot;,InStr(&quot;{Var Name=BF_CALENDER_ROW_DATA}&quot;,&quot;APP_URL/$/&quot;)+Len(&quot;APP_URL/$/&quot;),InStr(mid(&quot;{Var Name=BF_CALENDER_ROW_DATA}&quot;,InStr(&quot;{Var Name=BF_CALENDER_ROW_DATA}&quot;,&quot;APP_URL/$/&quot;)+Len(&quot;APP_URL/$/&quot;),100),&quot;/$/&quot;)-1)}" />
+</InputValues>
+</ActGotoURL>
+<ActGenElement Active="True" Description="Validate Title of Page" EnableRetryMechanism="True" GenElementAction="GetWindowTitle" Guid="1c75c0d8-ba4e-49a3-bfce-593f17fab03b" LocateBy="NA" MaxNumberOfRetries="2" ParentGuid="00000000-0000-0000-0000-000000000000" Platform="NA" RetryMechanismInterval="2" StatusConverter="None" WaitVE="2" WindowsToCapture="OnlyActiveWindow">
+<FlowControls>
+<FlowControl Active="True" BusinessFlowControlAction="GoToBusinessFlow" Condition="&quot;{ActionStatus}&quot; = &quot;Failed&quot;" FlowControlAction="GoToActivityByName" Guid="8fda3642-4959-4f04-a423-6750f0c0e718" ParentGuid="00000000-0000-0000-0000-000000000000" Value="UpdateExecutionStatus_FAIL" />
+</FlowControls>
+
+<InputValues>
+<ActInputValue Guid="534cbe9d-0f11-4de7-8a19-93612233caec" Param="Value" ParentGuid="00000000-0000-0000-0000-000000000000" />
+<ActInputValue Guid="7603a2fc-a27b-41d4-b42e-53e900727d18" Param="Xoffset" ParentGuid="00000000-0000-0000-0000-000000000000" />
+<ActInputValue Guid="17e3aaa7-5428-4058-a3f1-5aa34e63503d" Param="Yoffset" ParentGuid="00000000-0000-0000-0000-000000000000" />
+</InputValues>
+
+<ReturnValues>
+<ActReturnValue Active="True" Guid="f50bf575-d0d6-4b73-b165-7a892bd696a1" mExpected="{VBS Eval=mid(&quot;{Var Name=BF_CALENDER_ROW_DATA}&quot;,InStr(&quot;{Var Name=BF_CALENDER_ROW_DATA}&quot;,&quot;VERIFY_HOME_TITLE/$/&quot;)+Len(&quot;VERIFY_HOME_TITLE/$/&quot;),InStr(mid(&quot;{Var Name=BF_CALENDER_ROW_DATA}&quot;,InStr(&quot;{Var Name=BF_CALENDER_ROW_DATA}&quot;,&quot;VERIFY_HOME_TITLE/$/&quot;)+Len(&quot;VERIFY_HOME_TITLE/$/&quot;),100),&quot;/$/&quot;)-1)}" Param="Actual" ParentGuid="00000000-0000-0000-0000-000000000000" StoreTo="None" />
+</ReturnValues>
+</ActGenElement>
+<ActGenElement Active="True" Description="Enter value in Google Search " GenElementAction="SendKeys" Guid="8760f3cf-f010-4e81-a7a5-a5e1756e12b6" LocateBy="ByName" LocateValue="{DS Name=WEB_GOOGLE DST=HOME ACT=MASD MASD=N IDEN=Cust ICOLVAL=LOCATOR_VALUE IROW=Where COND=  LOCATOR_BY = 'NAME' AND OBJECT_NAME = 'TEXT_SEARCH'}" MaxNumberOfRetries="2" ParentGuid="83dd0c7f-154e-461b-b789-566848f541ae" Platform="NA" RetryMechanismInterval="5" StatusConverter="None" WaitVE="0" WindowsToCapture="OnlyActiveWindow">
+<InputValues>
+<ActInputValue Guid="76dc7f26-ced0-45eb-b8b7-e3d79bda0e90" Param="Value" ParentGuid="00000000-0000-0000-0000-000000000000" StoreToVariable="Amdocs" Value="Amdocs" />
+<ActInputValue Guid="27d8b94d-071f-40e3-b76d-13d0d894d5d2" Param="Xoffset" ParentGuid="00000000-0000-0000-0000-000000000000" />
+<ActInputValue Guid="d2015dc0-c069-4a80-ba24-451cbcf4d59b" Param="Yoffset" ParentGuid="00000000-0000-0000-0000-000000000000" />
+</InputValues>
+</ActGenElement>
+<ActGenElement Active="True" Description="Click Google Search" GenElementAction="Click" Guid="465ea7cd-b59d-4833-ace2-2f7947ce1a48" LocateBy="ByName" LocateValue="{DS Name=WEB_GOOGLE DST=HOME ACT=MASD MASD=N IDEN=Cust ICOLVAL=LOCATOR_VALUE IROW=Where COND=  LOCATOR_BY = 'NAME' AND OBJECT_NAME = 'BUTTON_GOOGLE_SEARCH'}" MaxNumberOfRetries="2" ParentGuid="592825b7-23f9-487a-abfd-f22a751a96e9" Platform="NA" RetryMechanismInterval="5" StatusConverter="None" WaitVE="1" WindowsToCapture="OnlyActiveWindow">
+<InputValues>
+<ActInputValue Guid="aa506f39-5983-48e9-96a7-5c44b868eec2" Param="Value" ParentGuid="00000000-0000-0000-0000-000000000000" />
+<ActInputValue Guid="1bbb9e9e-249f-45aa-871f-d6a7a2674e0b" Param="Xoffset" ParentGuid="00000000-0000-0000-0000-000000000000" />
+<ActInputValue Guid="8b82d243-f372-4742-b81c-c8820e45b662" Param="Yoffset" ParentGuid="00000000-0000-0000-0000-000000000000" />
+</InputValues>
+</ActGenElement>
+<ActGenElement Active="True" Description="Get Result details" GenElementAction="GetValue" Guid="661e9969-b62a-49d5-a0b4-a6422b3eca8e" LocateBy="ByID" LocateValue="{DS Name=WEB_GOOGLE DST=HOME ACT=MASD MASD=N IDEN=Cust ICOLVAL=LOCATOR_VALUE IROW=Where COND=  LOCATOR_BY = 'ID' AND OBJECT_NAME = 'LABEL_RESULT_STATS'}" MaxNumberOfRetries="2" ParentGuid="cb0f9ff3-b6e8-4f52-bd68-24cad842ee1a" Platform="NA" RetryMechanismInterval="5" StatusConverter="None" WaitVE="1" WindowsToCapture="OnlyActiveWindow">
+<FlowControls>
+<FlowControl Active="True" BusinessFlowControlAction="GoToBusinessFlow" Condition="&quot;{ActionStatus}&quot; = &quot;Passed&quot;" FlowControlAction="GoToActivityByName" Guid="c0c73378-ab77-4e22-940d-4128eeb4aacf" ParentGuid="00000000-0000-0000-0000-000000000000" Value="UpdateExecutionStatus_PASS" />
+</FlowControls>
+
+<InputValues>
+<ActInputValue Guid="76aea369-3851-4a84-a34c-f2073c4e4bbf" Param="Value" ParentGuid="00000000-0000-0000-0000-000000000000" />
+<ActInputValue Guid="4640758b-8d49-4251-8bd7-b969e35ab267" Param="Xoffset" ParentGuid="00000000-0000-0000-0000-000000000000" />
+<ActInputValue Guid="08adae48-68da-4a75-984c-5ca9cf5a0cc0" Param="Yoffset" ParentGuid="00000000-0000-0000-0000-000000000000" />
+</InputValues>
+
+<ReturnValues>
+<ActReturnValue Active="True" Guid="4d4c67af-eec7-4d97-8697-21bf35fb1143" Param="Actual" ParentGuid="00000000-0000-0000-0000-000000000000" StoreTo="Variable" StoreToValue="ACT_RESULT_DETAILS" />
+</ReturnValues>
+</ActGenElement>
+</Acts>
+
+<Variables>
+<VariableString Guid="58901a48-8367-4a23-b037-a7de72f99318" InitialStringValue="About 18,80,000 results (0.48 seconds) " MappedOutputType="None" Name="ACT_RESULT_DETAILS" ParentGuid="00000000-0000-0000-0000-000000000000" Value="About 18,80,000 results (0.48 seconds) " />
+<VariableString Guid="ae367dd2-b69e-4425-b57b-aef93c0d23b8" InitialStringValue="S-REGRESSION_PMT 445705_EDITS_FIDS_S&amp;E SECT_1.52_NSORD.0388/$/Value is Blank/$/CREATED_IN_RELEASE/$/Value is Blank/$/COMMENT/$/Madhuri_Phase_2/$/HEADER/$/Value is Blank/$/ACTION/$/Act_S-REGRESSION_PMT 445705_EDITS_FIDS_S&amp;E SECT_1.52_NSORD.0388/$/ORDER_TYPE/$/N/$/STATE_CODE/$/Value is Blank/$/NEW_ORDER_NUM/$/N663784/$/EXPECTED_EDIT/$/NOEDIT/$/SKIP_EDIT/$/Value is Blank/$/ST/$/O/$/EXPECTED_STRING/$/READY FOR DISTRIBUTION/$/SKIP_ACTIVITY/$/Value is Blank/$/U5RRX/$/I    U5RRX /LRS OPDA/$/FL_FID/$/Value is Blank/$/ACTION_I_LH_FID/$/ICLT 41.SFGS.219.033.6825/$/FL_FID_/PIC/$//PIC NO/$/FID_/LPIC/$//LPIC NONE/$/SM_DATA/$/SM   CE 01-25-2017 0830A/$/CS_DATA/$/WSQ" MappedOutputType="None" Name="BF_CALENDER_ROW_DATA" ParentGuid="00000000-0000-0000-0000-000000000000" Value="S-REGRESSION_PMT 445705_EDITS_FIDS_S&amp;E SECT_1.52_NSORD.0388/$/Value is Blank/$/CREATED_IN_RELEASE/$/Value is Blank/$/COMMENT/$/Madhuri_Phase_2/$/HEADER/$/Value is Blank/$/ACTION/$/Act_S-REGRESSION_PMT 445705_EDITS_FIDS_S&amp;E SECT_1.52_NSORD.0388/$/ORDER_TYPE/$/N/$/STATE_CODE/$/Value is Blank/$/NEW_ORDER_NUM/$/N663784/$/EXPECTED_EDIT/$/NOEDIT/$/SKIP_EDIT/$/Value is Blank/$/ST/$/O/$/EXPECTED_STRING/$/READY FOR DISTRIBUTION/$/SKIP_ACTIVITY/$/Value is Blank/$/U5RRX/$/I    U5RRX /LRS OPDA/$/FL_FID/$/Value is Blank/$/ACTION_I_LH_FID/$/ICLT 41.SFGS.219.033.6825/$/FL_FID_/PIC/$//PIC NO/$/FID_/LPIC/$//LPIC NONE/$/SM_DATA/$/SM   CE 01-25-2017 0830A/$/CS_DATA/$/WSQ" />
+</Variables>
+</Activity></GingerRepositoryItem>

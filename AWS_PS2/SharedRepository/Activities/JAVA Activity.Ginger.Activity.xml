@@ -1,0 +1,59 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<GingerRepositoryItem><Header ItemGuid="3f916961-c01e-4f1b-96e0-127ff2d753c6" ItemType="Activity" CreatedBy="shrpatil" Created="201811161214" GingerVersion="3.0.0.0" Version="2" LastUpdateBy="shrpatil" LastUpdate="201811161214" />
+<Activity ActionRunOption="StopActionsRunOnFailure" Active="True" ActivityName="JAVA Activity" AutomationStatus="Development" ErrorHandlerMappingType="AllAvailableHandlers" Guid="3f916961-c01e-4f1b-96e0-127ff2d753c6" ParentGuid="00000000-0000-0000-0000-000000000000" PercentAutomated="78%" TargetApplication="MyJavaApp">
+<Acts>
+<ActSwitchWindow Active="True" Description="Switch Window - frame0" Guid="0617e0e0-327a-4403-b6cc-324cd61df8fa" LocateBy="ByTitle" LocateValue="frame0" MaxNumberOfRetries="2" ParentGuid="00000000-0000-0000-0000-000000000000" Platform="NA" RetryMechanismInterval="5" StatusConverter="None" WaitTime="-1" WaitVE="0" WindowsToCapture="OnlyActiveWindow">
+<InputValues>
+<ActInputValue Guid="09f03cc5-b8cd-459e-bb34-4a1c1d83e85b" Param="WaitTime" ParentGuid="00000000-0000-0000-0000-000000000000" StoreToVariable="-1" Value="-1" />
+</InputValues>
+</ActSwitchWindow>
+<ActSwitchWindow Description="Switch Window - frame1" Guid="f8b36af8-9485-47d7-93e7-fde2d61c5eb7" LocateBy="ByTitle" LocateValue="frame1" MaxNumberOfRetries="2" ParentGuid="00000000-0000-0000-0000-000000000000" Platform="NA" RetryMechanismInterval="5" StatusConverter="None" WaitTime="-1" WaitVE="0" WindowsToCapture="OnlyActiveWindow">
+<InputValues>
+<ActInputValue Guid="88fcd39d-2ab8-44de-a862-674540cad60a" Param="WaitTime" ParentGuid="00000000-0000-0000-0000-000000000000" StoreToVariable="-1" Value="-1" />
+</InputValues>
+</ActSwitchWindow>
+<ActUIElement Description="Get Control Property for CramerMenu[2]" ElementAction="Click" ElementLocateBy="ByXPath" ElementLocateValue="/MenuToolbar/panel1/javax.swing.JRootPane[0]/null.layeredPane/null.contentPane/MenuToolbar/com.cramer.core.menu.MainMenuBar[0]/com.cramer.core.menu.CramerMenu[2]" ElementType="MenuItem" Guid="2d358d65-a2c9-4cdf-86cd-9df51e550875" HandleActionType="Unknown" HandleElementType="Unknown" LocateBy="NA" MaxNumberOfRetries="2" ParentGuid="00000000-0000-0000-0000-000000000000" Platform="Java" RetryMechanismInterval="5" StatusConverter="None" TargetElementType="Unknown" TargetLocateBy="NA" WaitVE="0" WindowsToCapture="OnlyActiveWindow">
+<InputValues>
+<ActInputValue Guid="5b24d227-7b79-4c87-bdb7-7a2f005fd6e3" Param="ValueToSelect" ParentGuid="00000000-0000-0000-0000-000000000000" />
+<ActInputValue Guid="24daddea-3a02-4040-bec7-da11640272fa" Param="ElementLocateValue" ParentGuid="00000000-0000-0000-0000-000000000000" StoreToVariable="/MenuToolbar/panel1/javax.swing.JRootPane[0]/null.layeredPane/null.contentPane/MenuToolbar/com.cramer.core.menu.MainMenuBar[0]/com.cramer.core.menu.CramerMenu[2]" Value="/MenuToolbar/panel1/javax.swing.JRootPane[0]/null.layeredPane/null.contentPane/MenuToolbar/com.cramer.core.menu.MainMenuBar[0]/com.cramer.core.menu.CramerMenu[2]" />
+<ActInputValue Guid="66739a92-be8e-4b54-a2ae-b5469843041e" Param="Value" ParentGuid="00000000-0000-0000-0000-000000000000" />
+<ActInputValue Guid="ca3ac185-6e49-492e-89f8-28ea5a376224" Param="ControlActionValue" ParentGuid="00000000-0000-0000-0000-000000000000" />
+<ActInputValue Guid="a860bbf5-c912-480c-b20b-72f9d869d67b" Param="ElementType" ParentGuid="00000000-0000-0000-0000-000000000000" />
+<ActInputValue Guid="0a516e97-e225-49f3-98b6-03e08f14e1d0" Param="ControlAction" ParentGuid="00000000-0000-0000-0000-000000000000" />
+<ActInputValue Guid="060b712d-55f6-4e2c-8735-5c0312582b49" Param="ElementAction" ParentGuid="00000000-0000-0000-0000-000000000000" />
+<ActInputValue Guid="e2896fdb-302b-4187-a4fc-1292cdab231a" Param="WhereColSelector" ParentGuid="00000000-0000-0000-0000-000000000000" />
+<ActInputValue Guid="3371c822-3daf-4695-a1b8-60bbec1d6a89" Param="WhereColumnTitle" ParentGuid="00000000-0000-0000-0000-000000000000" />
+<ActInputValue Guid="72156b99-bd7f-4e16-9807-e63c8c789738" Param="WhereColumnValue" ParentGuid="00000000-0000-0000-0000-000000000000" />
+<ActInputValue Guid="f6bf1113-3c4d-4470-823a-1dd2b5201374" Param="WhereOperator" ParentGuid="00000000-0000-0000-0000-000000000000" />
+<ActInputValue Guid="8d99b234-5c5c-4d83-bdcc-336e8cf346d2" Param="WhereProperty" ParentGuid="00000000-0000-0000-0000-000000000000" />
+<ActInputValue Guid="384bbe8e-b5b0-45ed-aadf-4ed1b1fe39ca" Param="WaitforIdle" ParentGuid="00000000-0000-0000-0000-000000000000" StoreToVariable="Medium" Value="Medium" />
+</InputValues>
+</ActUIElement>
+<ActJavaElement Active="True" ControlAction="Click" Description="Java Element Action" Guid="4161bac5-dd88-4b63-a757-69e5c9bcdbe5" LocateBy="ByXPath" LocateValue="/MenuToolbar/panel1/javax.swing.JRootPane[0]/null.layeredPane/null.contentPane/MenuToolbar/com.cramer.core.menu.MainMenuBar[0]/com.cramer.core.menu.CramerMenu[2]" MaxNumberOfRetries="2" ParentGuid="00000000-0000-0000-0000-000000000000" Platform="NA" RetryMechanismInterval="5" StatusConverter="None" WaitforIdle="Medium" WaitVE="0" WindowsToCapture="OnlyActiveWindow">
+<InputValues>
+<ActInputValue Guid="cbc86b20-40da-478a-ad89-f6c5c976c64b" Param="Value" ParentGuid="00000000-0000-0000-0000-000000000000" />
+</InputValues>
+</ActJavaElement>
+<ActSwitchWindow Active="True" Description="Switch Window - NoTitleDialog[Index:1]" Guid="32b5b0ec-659a-4e81-aff9-924ef171315f" LocateBy="ByTitle" LocateValue="NoTitleDialog[Index:1]" MaxNumberOfRetries="2" ParentGuid="00000000-0000-0000-0000-000000000000" Platform="NA" RetryMechanismInterval="5" StatusConverter="None" WaitTime="-1" WaitVE="0" WindowsToCapture="OnlyActiveWindow">
+<InputValues>
+<ActInputValue Guid="47a208f0-3a83-4df4-aca5-d137f14d0b1e" Param="WaitTime" ParentGuid="00000000-0000-0000-0000-000000000000" />
+</InputValues>
+</ActSwitchWindow>
+<ActJavaElement Active="True" ControlAction="Select" Description="Select Tab JTabbedPane[0]" Guid="39a5c0d2-a840-435f-8a69-01748b3e4f2f" LocateBy="ByXPath" LocateValue="/javax.swing.JRootPane[0]/null.layeredPane/null.contentPane/javax.swing.JPanel[0]/javax.swing.JTabbedPane[0]" MaxNumberOfRetries="2" ParentGuid="00000000-0000-0000-0000-000000000000" Platform="NA" RetryMechanismInterval="5" StatusConverter="None" WaitforIdle="None" WaitVE="0" WindowsToCapture="OnlyActiveWindow">
+<InputValues>
+<ActInputValue Guid="f2b5c799-3770-471e-8633-131d0233bb7e" Param="Value" ParentGuid="00000000-0000-0000-0000-000000000000" StoreToVariable="Attribute Groups" Value="Attribute Groups" />
+</InputValues>
+</ActJavaElement>
+<ActJavaElement Active="True" ControlAction="SetValue" Description="Set Selected Value JList[0]" Guid="07d5cb0f-1d63-449b-a064-b319bc3dad4c" LocateBy="ByXPath" LocateValue="/javax.swing.JRootPane[0]/null.layeredPane/null.contentPane/javax.swing.JPanel[0]/javax.swing.JTabbedPane[0]/com.cramer.core.usm.ManagedServiceSettingsPanel[0]/javax.swing.JPanel[0]/com.cramer.core.usm.ManagedServiceSettingsPage[0]/javax.swing.JPanel[0]/javax.swing.JPanel[1]/javax.swing.Box[0]/javax.swing.Box[0]/javax.swing.JScrollPane[0]/javax.swing.JViewport[0]/javax.swing.JList[0]" MaxNumberOfRetries="2" ParentGuid="00000000-0000-0000-0000-000000000000" Platform="NA" RetryMechanismInterval="5" StatusConverter="None" WaitforIdle="None" WaitVE="0" WindowsToCapture="OnlyActiveWindow">
+<InputValues>
+<ActInputValue Guid="4a56330d-bb29-4921-ab1d-727e60add84d" Param="Value" ParentGuid="00000000-0000-0000-0000-000000000000" StoreToVariable="Access_Profile" Value="Access_Profile" />
+</InputValues>
+</ActJavaElement>
+<ActWindow Active="True" Description="Window Action" Guid="a240b30b-88e7-4498-9b8e-3fac3fc3d282" LocateBy="ByTitle" LocateValue="NoTitleDialog[Index:1]" MaxNumberOfRetries="2" ParentGuid="00000000-0000-0000-0000-000000000000" Platform="NA" RetryMechanismInterval="5" StatusConverter="None" WaitVE="0" WindowActionType="Close" WindowsToCapture="OnlyActiveWindow" />
+<ActSwitchWindow Active="True" Description="Switch Window - frame0_Copy" Guid="85491bf7-ad35-4a75-bfcf-04427542bcf4" LocateBy="ByTitle" LocateValue="frame0" MaxNumberOfRetries="2" ParentGuid="00000000-0000-0000-0000-000000000000" Platform="NA" RetryMechanismInterval="5" StatusConverter="None" WaitTime="-1" WaitVE="0" WindowsToCapture="OnlyActiveWindow">
+<InputValues>
+<ActInputValue Guid="17a84ee1-b0f6-4c83-bddb-667e8939401f" Param="WaitTime" ParentGuid="00000000-0000-0000-0000-000000000000" StoreToVariable="-1" Value="-1" />
+</InputValues>
+</ActSwitchWindow>
+</Acts>
+</Activity></GingerRepositoryItem>

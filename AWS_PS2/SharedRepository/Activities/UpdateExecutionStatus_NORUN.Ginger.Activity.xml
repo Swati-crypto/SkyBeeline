@@ -1,0 +1,67 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<GingerRepositoryItem><Header ItemGuid="0b699b52-c0ea-4d0b-b74c-001d87195acd" ItemType="Activity" CreatedBy="shrpatil" Created="201811151216" GingerVersion="3.0.0.0" Version="1" LastUpdateBy="shrpatil" LastUpdate="201811151216" />
+<Activity ActionRunOption="StopActionsRunOnFailure" Active="True" ActivityName="UpdateExecutionStatus_NORUN" AutomationStatus="Development" ErrorHandlerMappingType="AllAvailableHandlers" Guid="0b699b52-c0ea-4d0b-b74c-001d87195acd" ParentGuid="00000000-0000-0000-0000-000000000000" PercentAutomated="83%" TargetApplication="MyWebServicesApp">
+<Acts>
+<ActSetVariableValue Active="True" Description="SET Varibale value to 0" Guid="4f3d543a-c5f3-465c-b684-af7f68cff4a3" LocateBy="NA" ParentGuid="00000000-0000-0000-0000-000000000000" Platform="NA" SetVariableValueOption="SetValue" StatusConverter="None" TakeScreenShot="True" VariableName="BF_CALENDER_ROW_DATA" WaitVE="1" WindowsToCapture="OnlyActiveWindow">
+<InputValues>
+<ActInputValue Guid="8f4b871b-0bfd-4635-93f3-a2b72db59f5e" Param="Value" ParentGuid="00000000-0000-0000-0000-000000000000" StoreToVariable="0" Value="0" />
+</InputValues>
+</ActSetVariableValue>
+<ActScript Active="True" Description="READ EXCEL ROW DATA" Guid="1ea478d0-0668-4843-ad19-296ff0e66018" LocateBy="NA" ParentGuid="00000000-0000-0000-0000-000000000000" Platform="NA" ScriptCommand="Script" ScriptInterpreterType="VBS" ScriptName="Read_By_Concatinate.vbs" ScriptPath="C:\Sky_Italy\Solutions\Sky_Italy\\Documents\Scripts\" StatusConverter="None" TakeScreenShot="True" WaitVE="2" WindowsToCapture="OnlyActiveWindow">
+<FlowControls>
+<FlowControl Active="True" BusinessFlowControlAction="GoToBusinessFlow" Condition="&quot;{ActionStatus}&quot; = &quot;Failed&quot;" FlowControlAction="StopRun" Guid="372638e1-7fea-4ee1-b935-81f187cac540" ParentGuid="00000000-0000-0000-0000-000000000000" />
+</FlowControls>
+
+<InputValues>
+<ActInputValue Guid="bd3c7d43-aa51-4232-9af6-6fb95873be3b" Param="Value" ParentGuid="00000000-0000-0000-0000-000000000000" />
+<ActInputValue Guid="2051b1bb-b86c-4c92-a2eb-459b8855413d" Param="excelFilePath" ParentGuid="00000000-0000-0000-0000-000000000000" StoreToVariable="{Var Name=BF_CALENDER_EXCEL_PATH}" Value="{Var Name=BF_CALENDER_EXCEL_PATH}" />
+<ActInputValue Guid="df3ad1cc-d844-4607-b126-6940fd8beb4e" Param="excelSheetName" ParentGuid="00000000-0000-0000-0000-000000000000" StoreToVariable="{Var Name=BF_CALENDER_SHEET_NAME_MAIN}" Value="{Var Name=BF_CALENDER_SHEET_NAME_MAIN}" />
+</InputValues>
+
+<ReturnValues>
+<ActReturnValue Active="True" Guid="32dab1f2-e651-434a-af8a-ebf37e24d926" Param="Outputvalue " ParentGuid="00000000-0000-0000-0000-000000000000" StoreTo="Variable" StoreToValue="BF_CALENDER_ROW_DATA" />
+</ReturnValues>
+</ActScript>
+<ActSetVariableValue Active="True" Description="Set Variable to TEMP1" Guid="7d1b5904-76f3-4352-ab0d-53cfcd8dc2dc" LocateBy="NA" ParentGuid="00000000-0000-0000-0000-000000000000" Platform="NA" SetVariableValueOption="SetValue" StatusConverter="None" TakeScreenShot="True" VariableName="BF_TEMP1" WaitVE="1" WindowsToCapture="OnlyActiveWindow">
+<InputValues>
+<ActInputValue Guid="9b61958f-cfa3-4bce-ac5b-a221d71b5569" Param="Value" ParentGuid="00000000-0000-0000-0000-000000000000" StoreToVariable="{VBS Eval=mid(&quot;{Var Name=BF_CALENDER_ROW_DATA}&quot;,InStr(&quot;{Var Name=BF_CALENDER_ROW_DATA}&quot;,&quot;GROUP_NAME/$/&quot;)+Len(&quot;GROUP_NAME/$/&quot;),InStr(mid(&quot;{Var Name=BF_CALENDER_ROW_DATA}&quot;,InStr(&quot;{Var Name=BF_CALENDER_ROW_DATA}&quot;,&quot;GROUP_NAME/$/&quot;)+Len(&quot;GROUP_NAME/$/&quot;),100),&quot;/$/&quot;)-1)}&#xD;&#xA;&#xD;&#xA;" Value="{VBS Eval=mid(&quot;{Var Name=BF_CALENDER_ROW_DATA}&quot;,InStr(&quot;{Var Name=BF_CALENDER_ROW_DATA}&quot;,&quot;GROUP_NAME/$/&quot;)+Len(&quot;GROUP_NAME/$/&quot;),InStr(mid(&quot;{Var Name=BF_CALENDER_ROW_DATA}&quot;,InStr(&quot;{Var Name=BF_CALENDER_ROW_DATA}&quot;,&quot;GROUP_NAME/$/&quot;)+Len(&quot;GROUP_NAME/$/&quot;),100),&quot;/$/&quot;)-1)}&#xD;&#xA;&#xD;&#xA;" />
+</InputValues>
+</ActSetVariableValue>
+<ActDummy Active="True" Description="Validate Group Name" Guid="d9601443-80b3-498c-8bd0-bbafd63ed8f3" LocateBy="NA" ParentGuid="00000000-0000-0000-0000-000000000000" Platform="NA" StatusConverter="None" TakeScreenShot="True" WaitVE="1" WindowsToCapture="OnlyActiveWindow">
+<FlowControls>
+<FlowControl Active="True" BusinessFlowControlAction="GoToBusinessFlow" Condition="&quot;{Var Name=BF_TEMP}&quot;=&quot;{Var Name=BF_TEMP1}&quot;" FlowControlAction="GoToAction" Guid="b50ac8e5-9066-43f8-b6a9-15b826a40914" ParentGuid="00000000-0000-0000-0000-000000000000" Value="93967b84-a123-42aa-b61b-c42fbecdc254#GUID_NAME#Write status to N" />
+<FlowControl Active="True" BusinessFlowControlAction="GoToBusinessFlow" Condition="1=1" FlowControlAction="GoToActivityByName" Guid="34fe0d5e-16de-454b-8ea0-c29ac976dfd1" ParentGuid="00000000-0000-0000-0000-000000000000" Value="Initiate_Execution" />
+</FlowControls>
+
+<InputValues>
+<ActInputValue Guid="eadc5b75-3e2b-4228-abdf-8ff4499ba2bc" Param="Value" ParentGuid="00000000-0000-0000-0000-000000000000" />
+</InputValues>
+</ActDummy>
+<ActScript Description="Write status to N" Guid="93967b84-a123-42aa-b61b-c42fbecdc254" LocateBy="NA" ParentGuid="00000000-0000-0000-0000-000000000000" Platform="NA" ScriptCommand="Script" ScriptInterpreterType="VBS" ScriptName="Write_Data.vbs" ScriptPath="C:\Sky_Italy\Solutions\Sky_Italy\\Documents\Scripts\" StatusConverter="None" TakeScreenShot="True" WaitVE="1" WindowsToCapture="OnlyActiveWindow">
+<InputValues>
+<ActInputValue Guid="f426f64d-4d91-4eb7-86bb-43d3e4ec39e1" Param="excelFilePath" ParentGuid="00000000-0000-0000-0000-000000000000" StoreToVariable="&quot;{Var Name=BF_CALENDER_EXCEL_PATH}&quot;" Value="&quot;{Var Name=BF_CALENDER_EXCEL_PATH}&quot;" />
+<ActInputValue Guid="bc98c0c5-4d0c-4c09-8497-83caa67c7469" Param="excelSheetName" ParentGuid="00000000-0000-0000-0000-000000000000" StoreToVariable="&quot;{Var Name=BF_CALENDER_SHEET_NAME_MAIN}&quot;" Value="&quot;{Var Name=BF_CALENDER_SHEET_NAME_MAIN}&quot;" />
+<ActInputValue Guid="26bb991e-c158-482d-ac1e-b60acce78087" Param="PARAM_NAME" ParentGuid="00000000-0000-0000-0000-000000000000" StoreToVariable="SKIP" Value="SKIP" />
+<ActInputValue Guid="849ccce6-76de-405c-85ab-faa5b41fe5d5" Param="PARAM_VALUE" ParentGuid="00000000-0000-0000-0000-000000000000" StoreToVariable="N" Value="N" />
+<ActInputValue Guid="b63c0e86-2f59-4d41-a3d6-aea624acf4b9" Param="GROUP_NAME" ParentGuid="00000000-0000-0000-0000-000000000000" StoreToVariable="&quot;{VBS Eval=mid(&quot;{Var Name=BF_CALENDER_ROW_DATA}&quot;,InStr(&quot;{Var Name=BF_CALENDER_ROW_DATA}&quot;,&quot;/$/GROUP_NAME/$/&quot;)+Len(&quot;/$/GROUP_NAME/$/&quot;),InStr(mid(&quot;{Var Name=BF_CALENDER_ROW_DATA}&quot;,InStr(&quot;{Var Name=BF_CALENDER_ROW_DATA}&quot;,&quot;/$/GROUP_NAME/$/&quot;)+Len(&quot;/$/GROUP_NAME/$/&quot;),1000),&quot;/$/&quot;)-1)}&quot;" Value="&quot;{VBS Eval=mid(&quot;{Var Name=BF_CALENDER_ROW_DATA}&quot;,InStr(&quot;{Var Name=BF_CALENDER_ROW_DATA}&quot;,&quot;/$/GROUP_NAME/$/&quot;)+Len(&quot;/$/GROUP_NAME/$/&quot;),InStr(mid(&quot;{Var Name=BF_CALENDER_ROW_DATA}&quot;,InStr(&quot;{Var Name=BF_CALENDER_ROW_DATA}&quot;,&quot;/$/GROUP_NAME/$/&quot;)+Len(&quot;/$/GROUP_NAME/$/&quot;),1000),&quot;/$/&quot;)-1)}&quot;" />
+</InputValues>
+</ActScript>
+<ActScript Active="True" Description="Write status to N_Copy" Guid="073ff290-0588-44e9-82cd-c663f4b5d795" LocateBy="NA" ParentGuid="00000000-0000-0000-0000-000000000000" Platform="NA" ScriptCommand="Script" ScriptInterpreterType="VBS" ScriptName="Flow_Control_Write_Data.vbs" ScriptPath="C:\Sky_Italy\Solutions\Sky_Italy\\Documents\Scripts\" StatusConverter="None" TakeScreenShot="True" WaitVE="1" WindowsToCapture="OnlyActiveWindow">
+<InputValues>
+<ActInputValue Guid="b14df38c-edca-4006-bb02-888f20610e54" Param="excelFilePath" ParentGuid="00000000-0000-0000-0000-000000000000" StoreToVariable="&quot;{Var Name=BF_CALENDER_EXCEL_PATH}&quot;" Value="&quot;{Var Name=BF_CALENDER_EXCEL_PATH}&quot;" />
+<ActInputValue Guid="7340526b-6cec-4d61-b8c5-cccaa6fa1ef3" Param="excelSheetName" ParentGuid="00000000-0000-0000-0000-000000000000" StoreToVariable="&quot;{Var Name=BF_CALENDER_SHEET_NAME_MAIN}&quot;" Value="&quot;{Var Name=BF_CALENDER_SHEET_NAME_MAIN}&quot;" />
+<ActInputValue Guid="fdbb966b-e1aa-4fb3-954f-91307f185851" Param="PARAM_NAME" ParentGuid="00000000-0000-0000-0000-000000000000" StoreToVariable="SKIP" Value="SKIP" />
+<ActInputValue Guid="184e628b-2a2c-4060-b625-973db05e42ca" Param="PARAM_VALUE" ParentGuid="00000000-0000-0000-0000-000000000000" StoreToVariable="N" Value="N" />
+<ActInputValue Guid="6012dc76-2107-4ce0-9506-8d10f2992a48" Param="GROUP_NAME" ParentGuid="00000000-0000-0000-0000-000000000000" StoreToVariable="&quot;{VBS Eval=mid(&quot;{Var Name=BF_CALENDER_ROW_DATA}&quot;,InStr(&quot;{Var Name=BF_CALENDER_ROW_DATA}&quot;,&quot;/$/GROUP_NAME/$/&quot;)+Len(&quot;/$/GROUP_NAME/$/&quot;),InStr(mid(&quot;{Var Name=BF_CALENDER_ROW_DATA}&quot;,InStr(&quot;{Var Name=BF_CALENDER_ROW_DATA}&quot;,&quot;/$/GROUP_NAME/$/&quot;)+Len(&quot;/$/GROUP_NAME/$/&quot;),1000),&quot;/$/&quot;)-1)}&quot;" Value="&quot;{VBS Eval=mid(&quot;{Var Name=BF_CALENDER_ROW_DATA}&quot;,InStr(&quot;{Var Name=BF_CALENDER_ROW_DATA}&quot;,&quot;/$/GROUP_NAME/$/&quot;)+Len(&quot;/$/GROUP_NAME/$/&quot;),InStr(mid(&quot;{Var Name=BF_CALENDER_ROW_DATA}&quot;,InStr(&quot;{Var Name=BF_CALENDER_ROW_DATA}&quot;,&quot;/$/GROUP_NAME/$/&quot;)+Len(&quot;/$/GROUP_NAME/$/&quot;),1000),&quot;/$/&quot;)-1)}&quot;" />
+</InputValues>
+</ActScript>
+</Acts>
+
+<Variables>
+<VariableString Guid="1dc9d799-25c2-47f9-a5eb-d4e16e2ab608" MappedOutputType="None" Name="BF_CALENDER_EXCEL_PATH" ParentGuid="00000000-0000-0000-0000-000000000000" ParentName="NSORD_Driver_NEW" ParentType="Business Flow" />
+<VariableString Guid="94206686-999c-4fd5-acba-6f34e3a1a9a4" InitialStringValue="MAIN" MappedOutputType="None" Name="BF_CALENDER_SHEET_NAME_MAIN" ParentGuid="00000000-0000-0000-0000-000000000000" ParentName="NSORD_Driver_NEW" ParentType="Business Flow" Value="MAIN" />
+<VariableString Guid="ce64406a-5b83-442c-b2d9-c5485aa4edb2" InitialStringValue="S-REGRESSION_PMT 445705_EDITS_FIDS_S&amp;E SECT_1.52_NSORD.0388/$/Value is Blank/$/CREATED_IN_RELEASE/$/Value is Blank/$/COMMENT/$/Madhuri_Phase_2/$/HEADER/$/Value is Blank/$/ACTION/$/Act_S-REGRESSION_PMT 445705_EDITS_FIDS_S&amp;E SECT_1.52_NSORD.0388/$/ORDER_TYPE/$/N/$/STATE_CODE/$/Value is Blank/$/NEW_ORDER_NUM/$/N663784/$/EXPECTED_EDIT/$/NOEDIT/$/SKIP_EDIT/$/Value is Blank/$/ST/$/O/$/EXPECTED_STRING/$/READY FOR DISTRIBUTION/$/SKIP_ACTIVITY/$/Value is Blank/$/U5RRX/$/I    U5RRX /LRS OPDA/$/FL_FID/$/Value is Blank/$/ACTION_I_LH_FID/$/ICLT 41.SFGS.219.033.6825/$/FL_FID_/PIC/$//PIC NO/$/FID_/LPIC/$//LPIC NONE/$/SM_DATA/$/SM   CE 01-25-2017 0830A/$/CS_DATA/$/WSQ" MappedOutputType="None" Name="BF_CALENDER_ROW_DATA" ParentGuid="00000000-0000-0000-0000-000000000000" Value="S-REGRESSION_PMT 445705_EDITS_FIDS_S&amp;E SECT_1.52_NSORD.0388/$/Value is Blank/$/CREATED_IN_RELEASE/$/Value is Blank/$/COMMENT/$/Madhuri_Phase_2/$/HEADER/$/Value is Blank/$/ACTION/$/Act_S-REGRESSION_PMT 445705_EDITS_FIDS_S&amp;E SECT_1.52_NSORD.0388/$/ORDER_TYPE/$/N/$/STATE_CODE/$/Value is Blank/$/NEW_ORDER_NUM/$/N663784/$/EXPECTED_EDIT/$/NOEDIT/$/SKIP_EDIT/$/Value is Blank/$/ST/$/O/$/EXPECTED_STRING/$/READY FOR DISTRIBUTION/$/SKIP_ACTIVITY/$/Value is Blank/$/U5RRX/$/I    U5RRX /LRS OPDA/$/FL_FID/$/Value is Blank/$/ACTION_I_LH_FID/$/ICLT 41.SFGS.219.033.6825/$/FL_FID_/PIC/$//PIC NO/$/FID_/LPIC/$//LPIC NONE/$/SM_DATA/$/SM   CE 01-25-2017 0830A/$/CS_DATA/$/WSQ" />
+<VariableString Guid="0674fa7f-ed0a-4b6b-8802-aba5bbe7789f" InitialStringValue="ACTION,Act_Search,SEARCH_STRING,Amdocs" MappedOutputType="None" Name="BF_TEMP" ParentGuid="00000000-0000-0000-0000-000000000000" Value="ACTION,Act_Search,SEARCH_STRING,Amdocs" />
+<VariableString Guid="a2ac6c49-b3e2-48ac-9c3b-8a4565c0c883" InitialStringValue="C&#xD;&#xA;&#xD;&#xA;" MappedOutputType="None" Name="BF_TEMP1" ParentGuid="00000000-0000-0000-0000-000000000000" Value="C&#xD;&#xA;&#xD;&#xA;" />
+</Variables>
+</Activity></GingerRepositoryItem>

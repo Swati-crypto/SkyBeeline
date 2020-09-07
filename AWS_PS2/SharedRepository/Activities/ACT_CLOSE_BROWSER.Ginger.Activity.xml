@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<GingerRepositoryItem><Header ItemGuid="01045c9f-ac3f-4315-ac1b-094e0f83df54" ItemType="Activity" CreatedBy="shrpatil" Created="201811151216" GingerVersion="3.0.0.0" Version="1" LastUpdateBy="shrpatil" LastUpdate="201811151216" />
+<Activity ActionRunOption="StopActionsRunOnFailure" Active="True" ActivityName="ACT_CLOSE_BROWSER" AutomationStatus="Development" ErrorHandlerMappingType="AllAvailableHandlers" Guid="01045c9f-ac3f-4315-ac1b-094e0f83df54" ParentGuid="00000000-0000-0000-0000-000000000000" PercentAutomated="100%" TargetApplication="MyWebApp">
+<Acts>
+<ActGenElement Active="True" Description="Generic Element" GenElementAction="CloseBrowser" Guid="3edc075b-391a-4f13-b7be-3de7e39dec1b" LocateBy="NA" ParentGuid="00000000-0000-0000-0000-000000000000" Platform="NA" StatusConverter="None" WaitVE="0" WindowsToCapture="OnlyActiveWindow">
+<FlowControls>
+<FlowControl Active="True" BusinessFlowControlAction="GoToBusinessFlow" Condition="&quot;{ActionStatus}&quot; = &quot;Pass&quot;" FlowControlAction="GoToActivity" Guid="2aa299c7-54a1-4c59-9c10-6e7998861c7b" ParentGuid="00000000-0000-0000-0000-000000000000" Value="b8ac78ee-837f-4ae6-ba7b-8f17f938e9b0#GUID_NAME#UpdateExecutionStatus_PASS" />
+<FlowControl Active="True" BusinessFlowControlAction="GoToBusinessFlow" Condition="&quot;{ActionStatus}&quot; = &quot;Fail&quot;" FlowControlAction="GoToActivity" Guid="1d6eb37b-77b0-4866-94db-abdbcc42cda4" ParentGuid="00000000-0000-0000-0000-000000000000" Value="467a2b66-b32a-4704-941f-d44be462ac80#GUID_NAME#UpdateExecutionStatus_FAIL" />
+</FlowControls>
+
+<InputValues>
+<ActInputValue Guid="7aa8ada0-bde8-42c1-9435-c4b81c53ea53" Param="Value" ParentGuid="00000000-0000-0000-0000-000000000000" />
+</InputValues>
+</ActGenElement>
+<ActScript Active="True" Description="Write into KEEP REFER sheet" Guid="5035b36d-eefe-4bd7-b2f2-6ad4a6215ea4" LocateBy="NA" ParentGuid="00000000-0000-0000-0000-000000000000" Platform="NA" ScriptCommand="Script" ScriptInterpreterType="VBS" ScriptName="Write_Data.vbs" ScriptPath="C:\SVN\GingerSolutions\Ginger-Framework-Solution\\Documents\Scripts\" StatusConverter="None" WaitVE="0" WindowsToCapture="OnlyActiveWindow">
+<InputValues>
+<ActInputValue Guid="b3b80f08-376e-4577-9df8-ee2ad0437f46" Param="Value" ParentGuid="00000000-0000-0000-0000-000000000000" />
+<ActInputValue Guid="16ac0673-6de0-4645-b215-2a35d027db3d" Param="excelFilePath" ParentGuid="00000000-0000-0000-0000-000000000000" StoreToVariable="{Var Name=CALENDER_EXCEL_PATH}" Value="{Var Name=CALENDER_EXCEL_PATH}" />
+<ActInputValue Guid="cbe8364c-e580-4f9a-9ad0-d4edfe1a2e50" Param="excelSheetName" ParentGuid="00000000-0000-0000-0000-000000000000" StoreToVariable="{Var Name=CALENDER_SHEET_KEEP_REFER}" Value="{Var Name=CALENDER_SHEET_KEEP_REFER}" />
+<ActInputValue Guid="7c1ed471-10d9-4b0f-bf35-74c9dc2edb51" Param="PARAM_NAME" ParentGuid="00000000-0000-0000-0000-000000000000" StoreToVariable="ACCOUNT_ID" Value="ACCOUNT_ID" />
+<ActInputValue Guid="8e7c96aa-e7de-4de3-8d4b-2cf766a13bf0" Param="PARAM_VALUE" ParentGuid="00000000-0000-0000-0000-000000000000" StoreToVariable="123456789" Value="123456789" />
+</InputValues>
+</ActScript>
+</Acts>
+
+<Variables>
+<VariableString Description="Variable String" Guid="1ad5782a-b346-41f4-b031-3567cb23d08c" InitialStringValue="‪C:\SVN\GingerSolutions\Ginger-Framework-Solution\Documents\V1707\DATA_FILES_PER_CALENDAR\DEVELOPMENT\ST\SUBODHSI\CALENDER\" MappedOutputType="None" Name="CALENDER_EXCEL_PATH" ParentGuid="f83cb156-f0f6-4255-ae15-fa63033f2e37" ParentName="NSORD_Driver_NEW" ParentType="Business Flow" Value="C:\SVN\GingerSolutions\Ginger-Framework-Solution\Documents\V1707\DATA_FILES_PER_CALENDAR\DEVELOPMENT\ST\SUBODHSI\CALENDER\\CALENDER.xlsx" />
+<VariableString Description="Variable String" Guid="802ce0fb-7b15-448c-a4c5-2cc5d83d01a3" InitialStringValue="KEEP_REFER" MappedOutputType="None" Name="CALENDER_SHEET_KEEP_REFER" ParentGuid="00000000-0000-0000-0000-000000000000" Value="KEEP_REFER" />
+</Variables>
+</Activity></GingerRepositoryItem>

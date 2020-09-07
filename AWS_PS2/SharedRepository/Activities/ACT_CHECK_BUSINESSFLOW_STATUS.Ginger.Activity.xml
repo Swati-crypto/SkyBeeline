@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<GingerRepositoryItem><Header ItemGuid="b7044ce6-f237-45e1-8cef-a5af75211175" ItemType="Activity" CreatedBy="shrpatil" Created="201811151216" GingerVersion="3.0.0.0" Version="13" LastUpdateBy="harshima" LastUpdate="201909131155" />
+<Activity ActionRunOption="StopActionsRunOnFailure" Active="True" ActivityName="ACT_CHECK_BUSINESSFLOW_STATUS" AutomationStatus="Development" ErrorHandlerMappingType="AllAvailableHandlers" Guid="b7044ce6-f237-45e1-8cef-a5af75211175" ParentGuid="00000000-0000-0000-0000-000000000000" PercentAutomated="100%" TargetApplication="MyWebApp">
+<Acts>
+<ActDummy Active="True" Description="check for db flag" Guid="2490eaf9-8498-472b-89f6-97000b7fdb66" LocateBy="NA" MaxNumberOfRetries="2" ParentGuid="00000000-0000-0000-0000-000000000000" Platform="NA" RetryMechanismInterval="5" StatusConverter="None" WindowsToCapture="OnlyActiveWindow">
+<FlowControls>
+<FlowControl Active="True" BusinessFlowControlAction="GoToBusinessFlow" Condition="&quot;{Var Name=GBL_DB_FLAG}&quot;=&quot;Y&quot;" FlowControlAction="GoToAction" Guid="0cbdb6bd-9fe6-495c-a9a8-e56cf10d3384" ParentGuid="00000000-0000-0000-0000-000000000000" />
+</FlowControls>
+
+<InputValues>
+<ActInputValue Guid="00acae6d-5aa2-4a1a-9452-3c25e040fff8" Param="Value" ParentGuid="00000000-0000-0000-0000-000000000000" />
+</InputValues>
+</ActDummy>
+</Acts>
+
+<Variables>
+<VariableString Guid="4dcda522-7dc5-403c-823f-4d14ab474543" LinkedVariableName="GBL_DB_FLAG" MappedOutputType="None" Name="ACT_DB_FLAG" ParentGuid="00000000-0000-0000-0000-000000000000" />
+<VariableString Guid="61e5eade-5b4c-4576-9b2f-7ec66b383383" InitialStringValue="N" MappedOutputType="None" Name="GBL_DB_FLAG" ParentGuid="00000000-0000-0000-0000-000000000000" Value="N" />
+</Variables>
+</Activity></GingerRepositoryItem>

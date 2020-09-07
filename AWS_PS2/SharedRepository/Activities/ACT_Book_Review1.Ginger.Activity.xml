@@ -1,0 +1,63 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<GingerRepositoryItem><Header ItemGuid="09913b21-5a6f-400e-a9c5-db414dadf4db" ItemType="Activity" CreatedBy="shrpatil" Created="201811151216" GingerVersion="3.5.0.0" Version="64" LastUpdateBy="dishaj" LastUpdate="202009061104" />
+<Activity ActionRunOption="StopActionsRunOnFailure" Active="True" ActivityName="ACT_Book_Review1" AutomationStatus="Automated" ErrorHandlerMappingType="AllAvailableHandlers" Guid="09913b21-5a6f-400e-a9c5-db414dadf4db" ParentGuid="00000000-0000-0000-0000-000000000000" PercentAutomated="100%" TargetApplication="MyWebApp">
+<Acts>
+<ActGenElement Active="True" Description="Rate Book" GenElementAction="SimpleClick" Guid="9fb76dce-a68c-497b-b371-7520148ebc3d" MaxNumberOfRetries="2" ParentGuid="00000000-0000-0000-0000-000000000000" Platform="NA" RetryMechanismInterval="5" StatusConverter="None" WaitVE="1" WindowsToCapture="OnlyActiveWindow">
+<FlowControls>
+<FlowControl Active="True" BusinessFlowControlAction="GoToBusinessFlow" Condition="&quot;{ActionStatus}&quot; = &quot;Failed&quot;" FlowControlAction="GoToActivityByName" Guid="eb51b137-29a2-4ded-bf18-b7fe351717d9" Operator="Legacy" ParentGuid="00000000-0000-0000-0000-000000000000" Value="UpdateExecutionStatus_FAIL" />
+</FlowControls>
+
+<InputValues>
+<ActInputValue Guid="fe1bace3-9897-4503-a890-e2d77f337158" Param="LocateBy" ParentGuid="00000000-0000-0000-0000-000000000000" Value="ByXPath" />
+<ActInputValue Guid="cebb2694-15bc-45fa-9006-4582d111b022" Param="LocateValue" ParentGuid="00000000-0000-0000-0000-000000000000" Value="//select[@name='rating']" />
+<ActInputValue Guid="0f13d45b-44ec-4e61-84b0-b1b13bd98516" Param="Value" ParentGuid="00000000-0000-0000-0000-000000000000" />
+<ActInputValue Guid="aaef9c47-0f04-4abe-8c45-933aef08f8bc" Param="Xoffset" ParentGuid="00000000-0000-0000-0000-000000000000" />
+<ActInputValue Guid="c6599eb1-3fe4-4b11-a7cf-31d38d3fcb67" Param="Yoffset" ParentGuid="00000000-0000-0000-0000-000000000000" />
+</InputValues>
+</ActGenElement>
+<ActGenElement Active="True" Description="Book Rating" GenElementAction="SimpleClick" Guid="962f8891-2b4a-4f3e-bbbe-b1d87ef24aeb" MaxNumberOfRetries="2" ParentGuid="00000000-0000-0000-0000-000000000000" Platform="NA" RetryMechanismInterval="5" StatusConverter="None" WaitVE="1" WindowsToCapture="OnlyActiveWindow">
+<FlowControls>
+<FlowControl Active="True" BusinessFlowControlAction="GoToBusinessFlow" Condition="&quot;{ActionStatus}&quot; = &quot;Failed&quot;" FlowControlAction="GoToActivityByName" Guid="eb51b137-29a2-4ded-bf18-b7fe351717d9" Operator="Legacy" ParentGuid="00000000-0000-0000-0000-000000000000" Value="UpdateExecutionStatus_FAIL" />
+</FlowControls>
+
+<InputValues>
+<ActInputValue Guid="fe1bace3-9897-4503-a890-e2d77f337158" Param="LocateBy" ParentGuid="00000000-0000-0000-0000-000000000000" Value="ByXPath" />
+<ActInputValue Guid="cebb2694-15bc-45fa-9006-4582d111b022" Param="LocateValue" ParentGuid="00000000-0000-0000-0000-000000000000" Value="//option[contains(text(),'3 - Interesting')]" />
+<ActInputValue Guid="0f13d45b-44ec-4e61-84b0-b1b13bd98516" Param="Value" ParentGuid="00000000-0000-0000-0000-000000000000" />
+<ActInputValue Guid="aaef9c47-0f04-4abe-8c45-933aef08f8bc" Param="Xoffset" ParentGuid="00000000-0000-0000-0000-000000000000" />
+<ActInputValue Guid="c6599eb1-3fe4-4b11-a7cf-31d38d3fcb67" Param="Yoffset" ParentGuid="00000000-0000-0000-0000-000000000000" />
+</InputValues>
+</ActGenElement>
+<ActGenElement Active="True" Description="Enter Review" GenElementAction="KeyType" Guid="63c374ec-f6b9-4079-a0a9-7d5d8a604089" MaxNumberOfRetries="2" ParentGuid="00000000-0000-0000-0000-000000000000" Platform="NA" RetryMechanismInterval="5" StatusConverter="None" WaitVE="1" WindowsToCapture="OnlyActiveWindow">
+<FlowControls>
+<FlowControl Active="True" BusinessFlowControlAction="GoToBusinessFlow" Condition="&quot;{ActionStatus}&quot; = &quot;Failed&quot;" FlowControlAction="GoToActivityByName" Guid="b3083ffa-e474-4d63-9b8f-754f23a08fd3" Operator="Legacy" ParentGuid="00000000-0000-0000-0000-000000000000" Value="UpdateExecutionStatus_FAIL" />
+</FlowControls>
+
+<InputValues>
+<ActInputValue Guid="9c7ca433-f83d-46c5-ae01-3f45dd0f8cc4" Param="LocateBy" ParentGuid="00000000-0000-0000-0000-000000000000" Value="ByXPath" />
+<ActInputValue Guid="11ae3a5f-5ddc-4182-aa88-5b2319fb5a78" Param="LocateValue" ParentGuid="00000000-0000-0000-0000-000000000000" Value="//input[@id='review']" />
+<ActInputValue Guid="a2284bc8-cb90-43ca-82e4-0e2ec9405325" Param="Value" ParentGuid="00000000-0000-0000-0000-000000000000" Value="Good" />
+<ActInputValue Guid="71a6d1e4-9235-4a72-b3ca-8f5677989634" Param="Xoffset" ParentGuid="00000000-0000-0000-0000-000000000000" />
+<ActInputValue Guid="a6736146-0023-4977-afda-7a57538390ee" Param="Yoffset" ParentGuid="00000000-0000-0000-0000-000000000000" />
+</InputValues>
+</ActGenElement>
+<ActGenElement Active="True" Description="Click on Submit" GenElementAction="SimpleClick" Guid="37ed9ff2-dddf-4fa3-98f7-7a3bdb41fb96" MaxNumberOfRetries="2" ParentGuid="00000000-0000-0000-0000-000000000000" Platform="NA" RetryMechanismInterval="5" StatusConverter="None" TakeScreenShot="True" WaitVE="0" WindowsToCapture="OnlyActiveWindow">
+<FlowControls>
+<FlowControl Active="True" BusinessFlowControlAction="GoToBusinessFlow" Condition="&quot;{ActionStatus}&quot; = &quot;Failed&quot;" FlowControlAction="GoToActivityByName" Guid="74af658f-accc-4e98-adac-507bd0cc7d7f" Operator="Legacy" ParentGuid="00000000-0000-0000-0000-000000000000" Value="UpdateExecutionStatus_FAIL" />
+<FlowControl Active="True" BusinessFlowControlAction="GoToBusinessFlow" Condition="&quot;{ActionStatus}&quot; = &quot;Passed&quot;" FlowControlAction="GoToActivityByName" Guid="cb18a59c-5592-432f-a839-e1f12f4fec86" Operator="Legacy" ParentGuid="00000000-0000-0000-0000-000000000000" Value="UpdateExecutionStatus_PASS" />
+</FlowControls>
+
+<InputValues>
+<ActInputValue Guid="23dd14b6-2939-480c-b553-3d3855a58a75" Param="LocateBy" ParentGuid="00000000-0000-0000-0000-000000000000" Value="ByXPath" />
+<ActInputValue Guid="849ddb0c-b6e3-4534-b096-d38ae55be974" Param="LocateValue" ParentGuid="00000000-0000-0000-0000-000000000000" Value="//button[@class='btn btn-primary']" />
+<ActInputValue Guid="aed04261-d67c-442c-8df2-bbee0e655aff" Param="Value" ParentGuid="00000000-0000-0000-0000-000000000000" />
+<ActInputValue Guid="701e7733-feaa-4a8b-93d0-5b2bfbc24e98" Param="Xoffset" ParentGuid="00000000-0000-0000-0000-000000000000" />
+<ActInputValue Guid="c524cc8b-380d-4bb3-b39f-913012026ded" Param="Yoffset" ParentGuid="00000000-0000-0000-0000-000000000000" />
+</InputValues>
+</ActGenElement>
+</Acts>
+
+<Variables>
+<VariableRandomString Guid="4c032dd7-e79b-41f7-98db-6721948604e1" IsDigit="True" MappedOutputType="None" Max="5" Min="5" Name="ACT_Unique_Number" ParentGuid="00000000-0000-0000-0000-000000000000" />
+</Variables>
+</Activity></GingerRepositoryItem>

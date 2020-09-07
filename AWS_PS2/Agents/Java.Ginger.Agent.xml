@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<GingerRepositoryItem><Header ItemGuid="c2a0c414-1b6f-4ee4-956b-225437b62bf0" ItemType="Agent" CreatedBy="shrpatil" Created="201811010944" GingerVersion="3.0.0.0" Version="3" LastUpdateBy="shrpatil" LastUpdate="201811150754" />
+<Agent Active="True" DriverType="JavaDriver" Guid="c2a0c414-1b6f-4ee4-956b-225437b62bf0" Name="Java" ParentGuid="00000000-0000-0000-0000-000000000000">
+<DriverConfiguration>
+<DriverConfigParam Description="Location of Agent - leave default or set the IP address of the remote machine" Guid="2dd161b3-2608-42cd-b0d1-942cc20adfed" Parameter="JavaAgentHost" ParentGuid="00000000-0000-0000-0000-000000000000" Value="127.0.0.1" />
+<DriverConfigParam Description="JavaAgent Host Port - default is 8888" Guid="a59b3bb0-538c-4817-862b-aebb410b7429" Parameter="JavaAgentPort" ParentGuid="00000000-0000-0000-0000-000000000000" Value="8888" />
+<DriverConfigParam Description="Communication Timeout - default is 120 seconds" Guid="3b506255-0fd6-4e72-84e6-1770e4b3a515" Parameter="CommunicationTimout" ParentGuid="00000000-0000-0000-0000-000000000000" Value="120" />
+<DriverConfigParam Description="Command Timeout - default is 120 seconds" Guid="ff9c0ec1-b230-46f9-b4a7-d9a89586cf86" Parameter="CommandTimeout" ParentGuid="00000000-0000-0000-0000-000000000000" Value="120" />
+<DriverConfigParam Description="Implicit wait is to tell driver to sync for a certain amount of time when trying to find an element, if they are not immediately available" Guid="ea00e2fe-7408-48f0-86d8-dde6fe3a433d" Parameter="ImplicitWait" ParentGuid="00000000-0000-0000-0000-000000000000" Value="30" />
+<DriverConfigParam Description="The amount of maximum time (in seconds) to wait for the driver to load/connect" Guid="abbb9272-ec35-46bf-8ab9-910a42270136" Parameter="DriverLoadWaitingTime" ParentGuid="00000000-0000-0000-0000-000000000000" Value="30" />
+</DriverConfiguration>
+</Agent></GingerRepositoryItem>

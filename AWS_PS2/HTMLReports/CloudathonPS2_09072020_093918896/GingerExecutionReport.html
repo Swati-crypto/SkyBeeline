@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta charset="utf-8" />
+    <title>Ginger Execution Report</title>
+
+    <meta name="description" content="Static &amp; Dynamic Tables" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+    <style>@font-face {font-family:Source Sans Pro;src: url('assets/fonts/SourceSansPro-Regular.ttf');}</style><link rel='stylesheet' href='assets/css/bootstrap.css' /><link rel = 'stylesheet' href ='assets/css/styles.css' /> <link rel='stylesheet' href='assets/css/font-awesome.css' />
+    <style type="text/css">
+        
+    </style>
+    <script type='text/jsx'>function CreateChart(inputDatax, id, ChartTitle, Total) {
+    const inputData = [];
+    var j = 0;
+    for (var i = 0; i < inputDatax.length; i++) {
+        if (inputDatax[i].value != 0) {
+            inputData[j] = inputDatax[i];
+            j = j + 1;
+        }
+    }
+    const { PieChart, Pie, Legend, Cell, XAxis, YAxis, CartesianGrid, Tooltip } = Recharts;
+    const CustomLabel = React.createClass({
+        propTypes: {
+            type: PropTypes.string,
+            payload: PropTypes.array,
+            label: PropTypes.string,
+        },
+        render() {
+            const RADIAN = Math.PI / 180;
+            const { cx, cy, midAngle, innerRadius, outerRadius, startAngle, endAngle,
+                fill, payload, percent, value, active, label, name, color } = this.props;
+
+            const sin = Math.sin(-RADIAN * midAngle);
+            const cos = Math.cos(-RADIAN * midAngle);
+            const sx = cx + (outerRadius + 5) * cos;
+            const sy = cy + (outerRadius + 5) * sin;
+            const mx = cx + (outerRadius + 20) * cos;
+            const my = cy + (outerRadius + 20) * sin;
+            const ex = mx + (cos >= 0 ? 1 : -1) * 20;
+            const ey = my;
+            const textAnchor = cos >= 0 ? 'start' : 'end';
+
+            return (
+                <g>
+                    <path d={`M${sx},${sy}L${mx},${my}L${ex},${ey}`} stroke={fill} fill="none" />
+                    <circle cx={ex} cy={ey} r={2} fill={fill} stroke="none" />
+                    <text x={ex + (cos >= 0 ? 1 : -1) * 12} y={ey} textAnchor={textAnchor} size="12" fontSize="12" fill={fill}>
+                        {`${name}(${value})`}
+                    </text>
+                </g>
+            );
+        }
+
+
+    });
+
+    function Getcolor(props) {
+        if (props.name == "Passed")
+            return '#54A81B';
+        else if (props.name == "Failed")
+            return '#E31123';
+        else if (props.name == "Stopped")
+            return '#ED5588';
+        else if (props.name == "Other")
+            return '#1B3651';
+        else if (props.name == "NA")
+            return '#e3dfdb';
+    }
+
+    const DonutChart = React.createClass({
+        render() {
+            const { value, name } = this.props;
+            return (
+                <PieChart width={400} height={250}>
+                    <text x={185} y={40} textAnchor="middle" dominantBaseline="middle" fill="#1B3651" fontSize="16" fontWeight="Bold">{ChartTitle}</text>
+                    <circle cx={185} cy={155} r={30} fill="#e3dfdb" stroke="none" />
+                    <text x={185} y={155} textAnchor="middle" dominantBaseline="middle" fill="#1B3651" fontWeight="Bold">{Total}</text>
+                    <Pie data={inputData} nameKey="name" dataKey="value" cx={180} cy={150} innerRadius={45} outerRadius={55} fill="#82ca9d"
+                        label={<CustomLabel />}>
+                        {
+                            inputData.map((entry, index) => <Cell fill={Getcolor(inputData[index])} />)
+                        }
+                    </Pie>
+                </PieChart>
+            );
+        }
+    })
+
+    ReactDOM.render(
+        <DonutChart />,
+        document.getElementById(id)
+
+    );
+}</script>
+    <script src='assets/js/jquery.js'></script><script src='assets/js/bootstrap.js'></script><script src='assets/js/babel.js'></script><script src='assets/js/react-with-addons.min.js'></script><script src='assets/js/react-dom.min.js'></script><script src='assets/js/prop-types.min.js'></script><script src='assets/js/Recharts.min.js'></script>
+    <script src='assets/js/jquery.js'></script><script src='assets/js/bootstrap.js'></script><script src='assets/js/babel.js'></script><script src='assets/js/react-with-addons.min.js'></script><script src='assets/js/react-dom.min.js'></script><script src='assets/js/prop-types.min.js'></script><script src='assets/js/Recharts.min.js'></script>
+    <script type="text/javascript">
+        
+    </script>
+</head>
+<body class="no-skin">
+    <div style="background-color:#EBEFF2">
+        <div style="height:50px;background-color:#AAD0EE">
+        </div>
+        <div id="navbar" class="navbar navbar-default">
+            <div class="navbar-container" id="navbar-container">
+                <div class="navbar-header pull-left" style="margin-top:10px" >
+                    <img alt='Embedded Image' src='assets/img/@BeatLogo.png' height='50' style='padding-left:85px'/>
+                </div>
+                <div style="float:left;display:block;width:47%">
+                    <img alt='Embedded Image' width='274px' height='74px' src='assets/img/@Ginger_old.png' style='float:right;padding-left:70px'/>
+                </div>
+                <div class="navbar-buttons navbar-header pull-right" style="margin-right:80px;">
+                    <img alt='Embedded Image' width='203' height='75' src='assets/img/CustomerLogo.png' />
+                </div>
+            </div>
+        </div>
+        <div class="main-container" id="main-container">
+            <div class="main-content">
+                <div class="main-content-inner">
+                    <div class="breadcrumbs" id="breadcrumbs">
+
+                    </div>
+                    <div class="page-content">
+                        <div class="page-header">
+                            <h1 class="clss1" id="breadcum">
+                                <a href=".\GingerExecutionReport.html">SUMMARY VIEW</a>
+                            </h1>
+                            <h1 id="clsh1">
+                                Ginger Execution Report
+                            </h1>
+                            <span class="clsb1" id="b1"> Summary View </span>
+                        </div>                        
+                    </div>                    
+                    <div class="page-content" style="margin-top:0 auto">
+                        <div class="row">
+                            <div class="col-xs-12">                          
+                                <div class="row">
+                                    <div class="col-xs-12">
+                                        <div class="panel-heading">
+                                            <a class="accordion-toggle" data-toggle="collapse" href="#collapseRunset">
+                                                <i class="ace-icon fa fa-angle-down bigger202" data-icon-hide="ace-icon fa fa-angle-down" data-icon-show="ace-icon fa fa-angle-right"></i>
+                                                <h4 class="orangetxt"> Execution General Details </h4>
+                                            </a>
+                                        </div>
+                                        <div class="collapse in tableScroll" id="collapseRunset">
+                                            <div>
+                                                <table class="table table-striped table-bordered table-hover">
+                                                    <thead>
+                                                        <tr>
+                                                            <td>RunSet Name</td><td>RunSet Description</td><td>Used Environment/s</td><td>Execution Start Time</td><td>Execution End Time</td><td>Execution Duration</td><td>RunSet Execution Pass Rate</td><td>RunSet Execution Rate</td>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        <tr>
+                                                            <td>CloudathonPS2</td><td> N/A </td><td></td><td>9/7/2020 9:39:18 AM</td><td>9/7/2020 9:39:18 AM</td><td>00:00:00</td><td>0&#37;</td><td>0&#37;</td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                            <!--GeneralDetails_Start-->
+                                            <div>
+                                                <table class="table table-striped table-bordered table-hover">
+                                                    <thead>
+                                                        <tr>
+                                                            <td>Executed on Ginger Version</td><td>Executed on Machine</td><td>Executed by User</td>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        <tr>
+                                                            <td>3.5</td><td>EC2AMAZ-PAB32SS</td><td>Administrator</td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                            <!--GeneralDetails_End-->
+                                        </div>
+                                    </div>
+                                </div>                                
+                            </div>
+                        </div>
+                    </div>
+
+                    <!--ExecutionStatisticsDetails_Start-->
+                    <div class="page-content">
+                        <div class="row">
+                            <div class="col-xs-12">
+                                <div class="row">
+                                    <div class="col-xs-12">
+                                        <!--TEMP!!!-->
+                                        <div class="panel-heading">
+                                            <a class="accordion-toggle" data-toggle="collapse" href="#collapseExecutionStatistics">
+                                                <i class="ace-icon fa fa-angle-down bigger202" data-icon-hide="ace-icon fa fa-angle-down" data-icon-show="ace-icon fa fa-angle-right"></i>
+                                                <h4 class="orangetxt"> Execution Statistics </h4>
+                                            </a>
+                                        </div>
+                                        <div class="collapse in" id="collapseExecutionStatistics">
+                                            <div class="row">                                                
+                                                <div class="percentSpace" style="position:relative;left:3%;width:100%">
+                                                    <div class="col-xs-12">
+                                                        <div style='height: 250px; float:left;'>
+                                                            <div id="GingerContainer" style="height: 100%; width: 100%;">
+                                                                <script type="text/jsx"
+                                                                        data-presets="es2017,react,stage-0"
+                                                                        data-plugins="transform-decorators-legacy">
+                                                                    const GingerRunnerStat = [{name: 'Passed', value: 0},
+                                                                    {name: 'Failed', value: 0},
+                                                                    {name: 'Stopped', value: 0},
+                                                                    {name: 'Other', value: 0},
+                                                                    ]
+                                                                    var TotalGingerRunner = 0;
+                                                                    for (var i = 0; i< GingerRunnerStat.length; i++)
+                                                                    {
+                                                                    TotalGingerRunner += GingerRunnerStat[i].value;
+                                                                    }
+                                                                    CreateChart(GingerRunnerStat, 'GingerContainer', 'Ginger Runner', TotalGingerRunner );
+                                                                </script>
+                                                            </div>                                                            
+                                                        </div>
+                                                        <div style='height: 250px; float:left;'>
+                                                            <div id="BusinessFlowContainer" style="height: 100%; width: 100%;">
+                                                                <script type="text/jsx"
+                                                                        data-presets="es2017,react,stage-0"
+                                                                        data-plugins="transform-decorators-legacy">
+                                                                    var BusinessflowStat = [{name: 'Passed', value: 0},
+                                                                    {name: 'Failed', value: 0},
+                                                                    {name: 'Stopped', value: 0},
+                                                                    {name: 'Other', value: 0},
+                                                                    ]
+                                                                    var TotalBusinessflow = 0;
+                                                                    for (var i = 0; i< BusinessflowStat.length; i++)
+                                                                    {
+                                                                    TotalBusinessflow += BusinessflowStat[i].value;
+                                                                    }
+                                                                    CreateChart(BusinessflowStat, 'BusinessFlowContainer', 'Business Flows', TotalBusinessflow );
+                                                                </script>
+                                                            </div>                                                            
+                                                        </div>
+                                                        <div style='height: 250px; float:left;'>
+                                                            <div id="ActivitiesContainer" style="height: 100%; width: 100%;">
+                                                                <script type="text/jsx"
+                                                                        data-presets="es2017,react,stage-0"
+                                                                        data-plugins="transform-decorators-legacy">
+                                                                    var ActivitiesStat = [{name: 'Passed', value: 0},
+                                                                    {name: 'Failed', value: 0},
+                                                                    {name: 'Stopped', value: 0},
+                                                                    {name: 'Other', value: 0},
+                                                                    ]
+                                                                    var TotalActivities = 0;
+                                                                    for (var i = 0; i< ActivitiesStat.length; i++)
+                                                                    {
+                                                                     TotalActivities += ActivitiesStat[i].value;
+                                                                    }
+                                                                    CreateChart(ActivitiesStat, 'ActivitiesContainer', 'Activities', TotalActivities );
+                                                                </script>
+                                                            </div>                                                            
+                                                        </div>
+                                                        <div style='height: 250px; float:left;'>                                                           
+                                                            <div id="ActionContainer" style="height: 100%; width: 100%;">
+                                                                <script type="text/jsx"
+                                                                        data-presets="es2017,react,stage-0"
+                                                                        data-plugins="transform-decorators-legacy">
+                                                                    var ActionsStat = [{name: 'Passed', value: 0},
+                                                                    {name: 'Failed', value: 0},
+                                                                    {name: 'Stopped', value: 0},
+                                                                    {name: 'Other', value: 0},
+                                                                    ]
+                                                                    var TotalActions = 0;
+                                                                    for (var i = 0; i< ActionsStat.length; i++)
+                                                                    {
+                                                                      TotalActions += ActionsStat[i].value;
+                                                                    }
+                                                                    CreateChart(ActionsStat, 'ActionContainer', 'Actions', TotalActions );
+                                                                </script>
+                                                            </div>                                                                                                    
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>                                                                                        
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--ExecutionStatisticsDetails_End-->
+                  
+                    <!--ExecutionBusinessFlowsDetails_Start-->
+                    <div class="page-content" style="margin-top:0 auto">
+                        <div class="row">
+                            <div class="col-xs-12">
+                                <div class="row">
+                                    <div class="col-xs-12">
+                                        <div class="panel-heading">
+                                            <a class="accordion-toggle" data-toggle="collapse" href="#collapseExecutionBusinessFlowsDetails">
+                                                <i class="ace-icon fa fa-angle-down bigger202" data-icon-hide="ace-icon fa fa-angle-down" data-icon-show="ace-icon fa fa-angle-right"></i>
+                                                <h4 class="orangetxt">Executed Business Flows Details</h4>
+                                            </a>
+                                        </div>
+                                        <div class="collapse in" id="collapseExecutionBusinessFlowsDetails">
+                                            <div class="tableScroll">
+                                                <table class="table table-striped table-bordered table-hover">
+                                                    <thead>
+                                                        <tr>
+                                                            
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        <tr>
+                                                            
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--ExecutionBusinessFlowsDetails_End-->
+
+                    <!--FailuresDetails_Start--><!--FailuresDetails_End-->
+
+                    <div class="alert alert-info" style="margin-top:10px">Created By Ginger Version : 3.5 | Used Report Template : 'HTML Report Template' | Report Creation Time : 9/7/2020 11:43:21 AM</div>                    
+                </div>
+            </div>
+            <div class="footer">
+                <div class="footer-inner">                    
+                    <div class="footer-content">
+
+                    </div>
+                </div>
+            </div>
+            <a href="#" id="btn-scroll-up" class="btn-scroll-up btn btn-sm btn-inverse">
+                <i class="ace-icon fa fa-angle-double-up icon-only bigger-110"></i>
+            </a>
+        </div>
+        <!-- basic scripts -->                
+        <!-- The Modal -->
+        <div id="myModal" class="modal">
+            <span class="close">&times;</span>
+            <img class="modal-content" id="current_image_in_modal">
+            <div id="caption">sdafasd asdfasdf</div>
+        </div>
+
+        <script>
+    // Get the modal
+    var modal = document.getElementById('myModal');
+
+    function show_modal(image_id) {
+        var img = document.getElementById(image_id);
+        var modalImg = document.getElementById("current_image_in_modal");
+        var captionText = document.getElementById("caption");
+
+        modal.style.display = "block";
+        modalImg.src = img.src;
+        captionText.innerHTML = img.alt;
+    }
+
+    // Get the <span> element that closes the modal
+    var span = document.getElementsByClassName("close")[0];
+
+    // When the user clicks on <span> (x), close the modal
+    span.onclick = function () {
+        modal.style.display = "none";
+    }
+        </script>
+
+    </div>
+</body>
+</html>

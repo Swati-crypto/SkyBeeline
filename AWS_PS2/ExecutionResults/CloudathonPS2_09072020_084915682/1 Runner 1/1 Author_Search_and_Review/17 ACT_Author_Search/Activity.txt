@@ -1,0 +1,1 @@
+{"Seq":17,"GUID":"f2e75194-08f0-4045-bcbb-60073f6aa7d0","ActivityName":"ACT_Author_Search","StartTimeStamp":"2020-09-07T08:50:48.8938689Z","EndTimeStamp":"2020-09-07T08:50:54.2534265Z","Elapsed":5235,"RunStatus":"Passed","VariablesBeforeExec":["ACT_Unique_Number_:_86129_:_"],"VariablesAfterExec":["ACT_Unique_Number_:_86129_:_"]}

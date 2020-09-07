@@ -1,0 +1,1 @@
+{"Seq":9,"GUID":"9dc2a9e8-da4f-4c86-ac13-9ba43c24ede5","ActivityName":"ACT_Customer_Registration","StartTimeStamp":"2020-09-07T11:45:28.9093953Z","EndTimeStamp":"2020-09-07T11:45:48.8357689Z","Elapsed":19813,"RunStatus":"Passed","VariablesBeforeExec":["ACT_Unique_Number_:_56668_:_"],"VariablesAfterExec":["ACT_Unique_Number_:_56668_:_"]}

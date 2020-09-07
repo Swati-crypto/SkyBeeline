@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<GingerRepositoryItem><Header ItemGuid="739ce1d3-b7aa-45a1-9ff8-732ced11138b" ItemType="Agent" CreatedBy="SHRPATIL" Created="201809171555" GingerVersion="3.0.0.0" Version="2" LastUpdateBy="SHRPATIL" LastUpdate="201809171555" />
+<Agent Active="True" DriverType="UnixShell" Guid="739ce1d3-b7aa-45a1-9ff8-732ced11138b" Name="ilcesky004" ParentGuid="00000000-0000-0000-0000-000000000000" Port="0" Remote="False">
+<DriverConfiguration>
+<DriverConfigParam Description="Host Name or IP" Guid="12e09de1-3aa6-46ad-9a83-8722ddc00cd2" Parameter="Host" ParentGuid="00000000-0000-0000-0000-000000000000" Value="ilcesky004" />
+<DriverConfigParam Description="User Name to use for connection" Guid="081e13df-bef7-4a3f-bbe6-6f61c160b0f9" Parameter="UserName" ParentGuid="00000000-0000-0000-0000-000000000000" Value="igwwrk1" />
+<DriverConfigParam Description="Password to use for connection" Guid="ad6fd014-021d-4338-a776-f9daf29b5bd5" Parameter="Password" ParentGuid="00000000-0000-0000-0000-000000000000" Value="Unix11!" />
+<DriverConfigParam Description="Path to private key file to use for connection" Guid="d163d69a-59ab-4b0e-8e01-84a1b9f5c76e" Parameter="PrivateKey" ParentGuid="00000000-0000-0000-0000-000000000000" Value="C:\Keys\rsakey.txt" />
+<DriverConfigParam Description="Passphrase to private key" Guid="ebe346f1-6b85-4ee1-a55e-8c14091ee8ad" Parameter="PrivateKeyPassPhrase" ParentGuid="00000000-0000-0000-0000-000000000000" />
+<DriverConfigParam Description="Port" Guid="ef844b4b-01c7-4459-991e-93ed9ac9a86e" Parameter="Port" ParentGuid="00000000-0000-0000-0000-000000000000" Value="22" />
+<DriverConfigParam Description="Implicit Wait for Console Action Completion" Guid="bd3bf18c-8798-49cd-afac-7cc375b995c5" Parameter="ImplicitWait" ParentGuid="00000000-0000-0000-0000-000000000000" Value="2" />
+<DriverConfigParam Description="The amount of maximum time (in seconds) to wait for the driver to load/connect" Guid="76197298-e25a-4bbc-8b85-d5dae07a5384" Parameter="DriverLoadWaitingTime" ParentGuid="00000000-0000-0000-0000-000000000000" Value="30" />
+</DriverConfiguration>
+</Agent></GingerRepositoryItem>

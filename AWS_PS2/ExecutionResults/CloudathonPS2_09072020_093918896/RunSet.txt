@@ -1,0 +1,1 @@
+{"Name":"CloudathonPS2","StartTimeStamp":"2020-09-07T09:39:18.8972457Z","EndTimeStamp":"2020-09-07T09:39:18.9032463Z","GUID":"20d062dd-90da-4ca9-bac1-1211c897ff8a","GingerVersion":"3.5","MachineName":"EC2AMAZ-PAB32SS","ExecutedbyUser":"Administrator","Elapsed":0.0060006}

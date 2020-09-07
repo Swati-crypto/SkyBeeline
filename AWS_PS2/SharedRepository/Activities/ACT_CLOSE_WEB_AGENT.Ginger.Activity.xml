@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<GingerRepositoryItem><Header ItemGuid="4fb0f430-bd73-41c7-ad20-7238af07f7e4" ItemType="Activity" CreatedBy="shrpatil" Created="201811151216" GingerVersion="3.0.0.0" Version="6" LastUpdateBy="SHRPATIL" LastUpdate="201903051439" />
+<Activity ActionRunOption="StopActionsRunOnFailure" Active="True" ActivityName="ACT_CLOSE_WEB_AGENT" AutomationStatus="Development" ErrorHandlerMappingType="AllAvailableHandlers" Guid="4fb0f430-bd73-41c7-ad20-7238af07f7e4" ParentGuid="00000000-0000-0000-0000-000000000000" PercentAutomated="100%" TargetApplication="MyWebApp">
+<Acts>
+<ActAgentManipulation Active="True" Description="Close Web Agent" Guid="22df346b-2d3e-4a88-8d33-c6d488e9837a" LocateBy="NA" MaxNumberOfRetries="2" ParentGuid="00000000-0000-0000-0000-000000000000" Platform="NA" RetryMechanismInterval="5" StatusConverter="None" WaitVE="1" WindowsToCapture="OnlyActiveWindow">
+<FlowControls>
+<FlowControl Active="True" BusinessFlowControlAction="GoToBusinessFlow" Condition="&quot;{ActionStatus}&quot; = &quot;Passed&quot;" FlowControlAction="GoToActivityByName" Guid="b66b3fd2-40b7-4d70-9221-e18fb0b7497d" ParentGuid="00000000-0000-0000-0000-000000000000" Value="UpdateExecutionStatus_PASS" />
+<FlowControl Active="True" BusinessFlowControlAction="GoToBusinessFlow" Condition="&quot;{ActionStatus}&quot; = &quot;Failed&quot;" FlowControlAction="GoToActivityByName" Guid="3f34e17e-c5e5-4011-b3a3-b0a59f38e6af" ParentGuid="00000000-0000-0000-0000-000000000000" Value="UpdateExecutionStatus_FAIL" />
+</FlowControls>
+
+<InputValues>
+<ActInputValue Guid="44848b28-f2fd-4f2e-a7ce-74b709018d16" Param="AgentManipulationActionType" ParentGuid="00000000-0000-0000-0000-000000000000" StoreToVariable="CloseAgent" Value="CloseAgent" />
+</InputValues>
+</ActAgentManipulation>
+</Acts>
+</Activity></GingerRepositoryItem>

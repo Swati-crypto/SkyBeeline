@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<GingerRepositoryItem><Header ItemGuid="34f5860b-7e08-4c3a-b56c-ff5040cc94d9" ItemType="Activity" CreatedBy="SHRPATIL" Created="201902191306" GingerVersion="3.0.0.0" Version="134" LastUpdateBy="SHRPATIL" LastUpdate="201902191309" />
+<Activity ActionRunOption="StopActionsRunOnFailure" Active="True" ActivityName="Initiate_Execution_BF" AutomationStatus="Development" ErrorHandlerMappingType="AllAvailableHandlers" Guid="34f5860b-7e08-4c3a-b56c-ff5040cc94d9" Mandatory="True" ParentGuid="00000000-0000-0000-0000-000000000000" PercentAutomated="100%" TargetApplication="MyWebServicesApp">
+<Acts>
+<ActScript Active="True" Description="READ ACTION-FIND UNCHECKED ROWS (CALENDER)" Guid="162c5d80-be3c-4f59-a073-b70640adf193" LocateBy="NA" MaxNumberOfRetries="2" ParentGuid="00000000-0000-0000-0000-000000000000" Platform="NA" RetryMechanismInterval="5" ScriptCommand="Script" ScriptInterpreterType="VBS" ScriptName="Initiate_Execution.vbs" ScriptPath="C:\SkyItalia\Solutions\Sky_Italy\Documents\Scripts\" StatusConverter="None" TakeScreenShot="True" WaitVE="1" WindowsToCapture="OnlyActiveWindow">
+<FlowControls>
+<FlowControl Active="True" BusinessFlowControlAction="GoToBusinessFlow" Condition="{Var Name=BF_TEMP}=none" FlowControlAction="StopBusinessFlow" Guid="d1ec3dbe-24df-4b0a-bff5-7e882d00a897" ParentGuid="00000000-0000-0000-0000-000000000000" />
+</FlowControls>
+
+<InputValues>
+<ActInputValue Guid="b413b9b4-478c-4eff-8b40-a079400fb974" Param="excelFilePath" ParentGuid="00000000-0000-0000-0000-000000000000" StoreToVariable="{Var Name=BF_CALENDER_EXCEL_PATH}" Value="{Var Name=BF_CALENDER_EXCEL_PATH}" />
+<ActInputValue Guid="c989b91d-1692-4ad1-b44f-a1760a1864f5" Param="excelSheetName" ParentGuid="00000000-0000-0000-0000-000000000000" StoreToVariable="{Var Name=BF_CALENDER_SHEET_NAME_MAIN}" Value="{Var Name=BF_CALENDER_SHEET_NAME_MAIN}" />
+</InputValues>
+
+<ReturnValues>
+<ActReturnValue Active="True" Guid="4b77b48b-08a9-4a2b-9a5d-9121e064ea8b" mExpected="Len({Actual})&gt;0" Param="Outputvalue " ParentGuid="00000000-0000-0000-0000-000000000000" StoreTo="Variable" StoreToValue="BF_TEMP" />
+</ReturnValues>
+</ActScript>
+<ActScript Active="True" Description="READ EXCEL ROW DATA" Guid="e7d04833-a01b-48fc-a728-6db7781f87cc" LocateBy="NA" MaxNumberOfRetries="2" ParentGuid="00000000-0000-0000-0000-000000000000" Platform="NA" RetryMechanismInterval="5" ScriptCommand="Script" ScriptInterpreterType="VBS" ScriptName="Read_By_Concatinate.vbs" ScriptPath="C:\SkyItalia\Solutions\Sky_Italy\Documents\Scripts\" StatusConverter="None" TakeScreenShot="True" WaitVE="1" WindowsToCapture="OnlyActiveWindow">
+<FlowControls>
+<FlowControl Active="True" BusinessFlowControlAction="GoToBusinessFlow" Condition="&quot;{ActionStatus}&quot; = &quot;Passed&quot;" FlowControlAction="GoToActivityByName" Guid="2ca9e7c8-6528-4c70-83ff-fdcdce76381c" ParentGuid="00000000-0000-0000-0000-000000000000" Value="Call Activity" />
+<FlowControl Active="True" BusinessFlowControlAction="GoToBusinessFlow" Condition="&quot;{ActionStatus}&quot; = &quot;Failed&quot;" FlowControlAction="GoToActivityByName" Guid="2a08d179-4eaa-49bd-b004-36dbfdf4e423" ParentGuid="00000000-0000-0000-0000-000000000000" Value="UpdateExecutionStatus_FAIL" />
+</FlowControls>
+
+<InputValues>
+<ActInputValue Guid="ddfc1245-134a-4674-bc13-43f7ee31af42" Param="excelFilePath" ParentGuid="00000000-0000-0000-0000-000000000000" StoreToVariable="&quot;{Var Name=BF_CALENDER_EXCEL_PATH}&quot;" Value="&quot;{Var Name=BF_CALENDER_EXCEL_PATH}&quot;" />
+<ActInputValue Guid="9c7b224a-1c5d-40b6-9d31-eb2bac6fc751" Param="excelSheetName" ParentGuid="00000000-0000-0000-0000-000000000000" StoreToVariable="{Var Name=BF_CALENDER_SHEET_NAME_MAIN}" Value="{Var Name=BF_CALENDER_SHEET_NAME_MAIN}" />
+</InputValues>
+
+<ReturnValues>
+<ActReturnValue Active="True" Guid="e7e6f069-b575-48b4-aa1c-b8e8707d9c29" mExpected="Len({Actual})&gt;0" Param="Outputvalue " ParentGuid="00000000-0000-0000-0000-000000000000" StoreTo="Variable" StoreToValue="BF_CALENDER_ROW_DATA" />
+</ReturnValues>
+</ActScript>
+</Acts>
+
+<Variables>
+<VariableString Guid="c0414cbc-f999-4a97-8618-1d50ebdfb94e" InitialStringValue="C:\Sky_Italy\Solutions\Sky_Italy\Documents\1802\DATA_FILES_PER_CALENDAR\DEVELOPMENT\PT\SHRPATIL\SKY_PT_PI2_CALENDER\SKY_PT_PI2_CALENDER.xlsx" MappedOutputType="None" Name="BF_CALENDER_EXCEL_PATH" ParentGuid="00000000-0000-0000-0000-000000000000" ParentName="NSORD_Driver_NEW" ParentType="Business Flow" Value="C:\Sky_Italy\Solutions\Sky_Italy\Documents\1802\DATA_FILES_PER_CALENDAR\DEVELOPMENT\PT\SHRPATIL\SKY_PT_PI2_CALENDER\SKY_PT_PI2_CALENDER.xlsx" />
+<VariableString Guid="494c1a01-8077-4ec7-b63c-792073f6fe7d" InitialStringValue="S-REGRESSION_PMT 445705_EDITS_FIDS_S&amp;E SECT_1.52_NSORD.0388/$/Value is Blank/$/CREATED_IN_RELEASE/$/Value is Blank/$/COMMENT/$/Madhuri_Phase_2/$/HEADER/$/Value is Blank/$/ACTION/$/Act_S-REGRESSION_PMT 445705_EDITS_FIDS_S&amp;E SECT_1.52_NSORD.0388/$/ORDER_TYPE/$/N/$/STATE_CODE/$/Value is Blank/$/NEW_ORDER_NUM/$/N663784/$/EXPECTED_EDIT/$/NOEDIT/$/SKIP_EDIT/$/Value is Blank/$/ST/$/O/$/EXPECTED_STRING/$/READY FOR DISTRIBUTION/$/SKIP_ACTIVITY/$/Value is Blank/$/U5RRX/$/I    U5RRX /LRS OPDA/$/FL_FID/$/Value is Blank/$/ACTION_I_LH_FID/$/ICLT 41.SFGS.219.033.6825/$/FL_FID_/PIC/$//PIC NO/$/FID_/LPIC/$//LPIC NONE/$/SM_DATA/$/SM   CE 01-25-2017 0830A/$/CS_DATA/$/WSQ" MappedOutputType="None" Name="BF_CALENDER_ROW_DATA" ParentGuid="00000000-0000-0000-0000-000000000000" Value="S-REGRESSION_PMT 445705_EDITS_FIDS_S&amp;E SECT_1.52_NSORD.0388/$/Value is Blank/$/CREATED_IN_RELEASE/$/Value is Blank/$/COMMENT/$/Madhuri_Phase_2/$/HEADER/$/Value is Blank/$/ACTION/$/Act_S-REGRESSION_PMT 445705_EDITS_FIDS_S&amp;E SECT_1.52_NSORD.0388/$/ORDER_TYPE/$/N/$/STATE_CODE/$/Value is Blank/$/NEW_ORDER_NUM/$/N663784/$/EXPECTED_EDIT/$/NOEDIT/$/SKIP_EDIT/$/Value is Blank/$/ST/$/O/$/EXPECTED_STRING/$/READY FOR DISTRIBUTION/$/SKIP_ACTIVITY/$/Value is Blank/$/U5RRX/$/I    U5RRX /LRS OPDA/$/FL_FID/$/Value is Blank/$/ACTION_I_LH_FID/$/ICLT 41.SFGS.219.033.6825/$/FL_FID_/PIC/$//PIC NO/$/FID_/LPIC/$//LPIC NONE/$/SM_DATA/$/SM   CE 01-25-2017 0830A/$/CS_DATA/$/WSQ" />
+<VariableString Guid="9c067fe2-8f33-4bae-9013-8d0e4c3108ab" InitialStringValue="ACTION,Act_Search,SEARCH_STRING,Amdocs" MappedOutputType="None" Name="BF_TEMP" ParentGuid="00000000-0000-0000-0000-000000000000" Value="ACTION,Act_Search,SEARCH_STRING,Amdocs" />
+<VariableString Guid="5fa63ac2-1f4f-4397-a8a9-20da7e5fd829" InitialStringValue="C&#xD;&#xA;&#xD;&#xA;" MappedOutputType="None" Name="BF_TEMP1" ParentGuid="00000000-0000-0000-0000-000000000000" Value="C&#xD;&#xA;&#xD;&#xA;" />
+<VariableString Description="&gt;&gt; Update this variable &lt;&lt;" Guid="e7f88a1f-e17c-4c9c-b607-675b1d5f5599" InitialStringValue="DEVELOPMENT" MappedOutputType="None" Name="BF_EXECUTION_MODE" ParentGuid="00000000-0000-0000-0000-000000000000" Value="DEVELOPMENT" />
+<VariableString Description="&gt;&gt; Update this variable &lt;&lt;" Guid="16d959bf-dda9-4ef3-b790-6adfd973ed52" InitialStringValue="SKY_CALENDER_PT_PI3a.ods" MappedOutputType="None" Name="BF_EXCEL_FILE_NAME" ParentGuid="00000000-0000-0000-0000-000000000000" Value="SKY_CALENDER_PT_PI3a.ods" />
+<VariableString Description="&gt;&gt; Update this variable &lt;&lt;" Guid="45b00973-e0c4-4fb7-9ff4-7dd61679f6ce" InitialStringValue="1802" MappedOutputType="None" Name="BF_RELEASE" ParentGuid="00000000-0000-0000-0000-000000000000" Value="1802" />
+<VariableString Guid="87807cf9-bbdc-4ca4-b3ac-39dab243cc92" InitialStringValue="Broadband_and_Voice" MappedOutputType="None" Name="BF_BUSINESS_FLOW_NAME" ParentGuid="00000000-0000-0000-0000-000000000000" Value="Broadband_and_Voice" />
+<VariableString Guid="f77cd993-92ea-45a9-841b-66035ed80ccc" InitialStringValue="MAIN" MappedOutputType="None" Name="BF_CALENDER_SHEET_NAME_MAIN" ParentGuid="00000000-0000-0000-0000-000000000000" ParentName="NSORD_Driver_NEW" ParentType="Business Flow" Value="MAIN" />
+</Variables>
+</Activity></GingerRepositoryItem>

@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<GingerRepositoryItem><Header ItemGuid="ac696576-1109-4bc0-8e17-2ea7bf85aff2" ItemType="BusinessFlow" CreatedBy="Administrator" Created="202009062015" GingerVersion="3.5.0.0" Version="1" LastUpdateBy="Administrator" LastUpdate="202009062015" />
+<BusinessFlow Guid="ac696576-1109-4bc0-8e17-2ea7bf85aff2" Name="Flow 1" ParentGuid="00000000-0000-0000-0000-000000000000" Source="Ginger" Status="Unknown">
+<Activities>
+<Activity ActionRunOption="StopActionsRunOnFailure" Active="True" ActivitiesGroupID="Group" ActivityName="Activity 1" AutomationStatus="Development" ErrorHandlerMappingType="AllAvailableHandlers" Guid="2d403747-0862-4f7a-89c4-e905ebce05be" ParentGuid="00000000-0000-0000-0000-000000000000" PercentAutomated="0%" TargetApplication="MyWebApp" />
+</Activities>
+
+<ActivitiesGroups>
+<ActivitiesGroup Guid="64e24c4f-b52f-4e20-b471-d9a5ab81d62f" Name="Group" ParentGuid="00000000-0000-0000-0000-000000000000">
+<ActivitiesIdentifiers>
+<ActivityIdentifiers ActivityAutomationStatus="Development" ActivityGuid="2d403747-0862-4f7a-89c4-e905ebce05be" ActivityName="Activity 1" Guid="3bb0259a-1391-4e01-8e5f-17d515cf52fe" ParentGuid="00000000-0000-0000-0000-000000000000" />
+</ActivitiesIdentifiers>
+</ActivitiesGroup>
+</ActivitiesGroups>
+
+<TargetApplications>
+<TargetApplication AppName="MyWebApp" Guid="770a0e3a-8ce3-4104-b43d-73a09c233901" ParentGuid="00000000-0000-0000-0000-000000000000" />
+</TargetApplications>
+</BusinessFlow></GingerRepositoryItem>

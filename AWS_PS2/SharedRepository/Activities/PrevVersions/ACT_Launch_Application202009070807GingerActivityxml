@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<GingerRepositoryItem><Header ItemGuid="272b1964-d26c-4f1e-a60e-4c799ba338b4" ItemType="Activity" CreatedBy="shrpatil" Created="201811151216" GingerVersion="3.5.0.0" Version="47" LastUpdateBy="Administrator" LastUpdate="202009070807" />
+<Activity ActionRunOption="StopActionsRunOnFailure" Active="True" ActivityName="ACT_Launch_Application" AutomationStatus="Automated" ErrorHandlerMappingType="AllAvailableHandlers" Guid="272b1964-d26c-4f1e-a60e-4c799ba338b4" ParentGuid="00000000-0000-0000-0000-000000000000" PercentAutomated="100%" TargetApplication="MyWebApp">
+<Acts>
+<ActGotoURL Active="True" Description="GO TO URL" Guid="84098820-f205-4548-b4b0-0cb0f02d861f" MaxNumberOfRetries="2" ParentGuid="00000000-0000-0000-0000-000000000000" Platform="NA" RetryMechanismInterval="5" StatusConverter="None" TakeScreenShot="True" WaitVE="0" WindowsToCapture="OnlyActiveWindow">
+<FlowControls>
+<FlowControl Active="True" BusinessFlowControlAction="GoToBusinessFlow" Condition="&quot;{ActionStatus}&quot; = &quot;Failed&quot;" FlowControlAction="GoToActivityByName" Guid="f1336eb1-f7fb-49da-86d0-99546f157038" Operator="Legacy" ParentGuid="00000000-0000-0000-0000-000000000000" Value="UpdateExecutionStatus_FAIL" />
+<FlowControl Active="True" BusinessFlowControlAction="GoToBusinessFlow" Condition="&quot;{ActionStatus}&quot; = &quot;Passed&quot;" FlowControlAction="GoToActivityByName" Guid="5c4f4279-a7bd-45b8-88a2-b246f60824f5" Operator="Legacy" ParentGuid="00000000-0000-0000-0000-000000000000" Value="Initiate_Execution_BF" />
+</FlowControls>
+
+<InputValues>
+<ActInputValue Guid="83781d6f-e34d-41e3-a9bc-7af9c495d631" Param="Value" ParentGuid="00000000-0000-0000-0000-000000000000" Value="http://ec2-13-127-144-221.ap-south-1.compute.amazonaws.com/" />
+</InputValues>
+</ActGotoURL>
+</Acts>
+</Activity></GingerRepositoryItem>

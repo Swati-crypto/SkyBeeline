@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<GingerRepositoryItem><Header ItemGuid="bd44f66c-85c4-4f9b-8e25-3cb4761e97a8" ItemType="Activity" CreatedBy="dishaj" Created="202009061223" GingerVersion="3.5.0.0" Version="3" LastUpdateBy="dishaj" LastUpdate="202009061229" />
+<Activity ActionRunOption="StopActionsRunOnFailure" Active="True" ActivityName="Set_ExcelFileName" AutomationStatus="Automated" ErrorHandlerMappingType="AllAvailableHandlers" Guid="bd44f66c-85c4-4f9b-8e25-3cb4761e97a8" Mandatory="True" ParentGuid="00000000-0000-0000-0000-000000000000" PercentAutomated="100%" TargetApplication="MyWebServicesApp">
+<Acts>
+<ActSetVariableValue Active="True" Description="Set ExcelFileName" Guid="334f91f6-65ca-401b-b408-a097f964aa96" MaxNumberOfRetries="2" ParentGuid="00000000-0000-0000-0000-000000000000" Platform="NA" RetryMechanismInterval="5" SetVariableValueOption="SetValue" StatusConverter="None" VariableName="BF_EXCEL_FILE_NAME" WaitVE="0" WindowsToCapture="OnlyActiveWindow">
+<FlowControls>
+<FlowControl Active="True" BusinessFlowControlAction="GoToBusinessFlow" Condition="&quot;{ActionStatus}&quot; = &quot;Passed&quot;" FlowControlAction="GoToNextActivity" Guid="0e0a6ce1-251b-4384-a3fd-365c36f5fc0a" Operator="Legacy" ParentGuid="00000000-0000-0000-0000-000000000000" />
+</FlowControls>
+
+<InputValues>
+<ActInputValue Guid="3a5257fb-7aab-473d-92b1-1bb5e3e80a85" Param="Value" ParentGuid="00000000-0000-0000-0000-000000000000" Value="{Var Name=BF_EXCEL_FILE_NAME}" />
+</InputValues>
+</ActSetVariableValue>
+</Acts>
+
+<Variables>
+<VariableString Description="&gt;&gt; Update this variable &lt;&lt;" Guid="b338d0ae-672f-4e2c-a2af-612658010a04" InitialStringValue="DUPLICATE_BOOK_REVIEW.xlsx" MappedOutputType="None" Name="BF_EXCEL_FILE_NAME" ParentGuid="e16a6158-b14c-4d36-90ce-3c3e1641e6e5" ParentName="Duplicate Book Review\Group\Set_ExcelFileName" ParentType="Activity" />
+<VariableString Guid="d08c28d7-369b-4bd5-941d-5f5f1ddbbf4a" InitialStringValue="R1_PI1" MappedOutputType="None" Name="BF_DEV_RELEASE" ParentGuid="e16a6158-b14c-4d36-90ce-3c3e1641e6e5" ParentName="Duplicate Book Review\Group\Set_ExcelFileName" ParentType="Activity" />
+<VariableString Guid="1d4040bc-5a5e-46f8-8c9b-c06fee499ad8" MappedOutputType="None" Name="GBL_EXCEL_FILE_NAME_" ParentGuid="e16a6158-b14c-4d36-90ce-3c3e1641e6e5" ParentName="Duplicate Book Review\Group\Set_ExcelFileName" ParentType="Activity" />
+</Variables>
+</Activity></GingerRepositoryItem>

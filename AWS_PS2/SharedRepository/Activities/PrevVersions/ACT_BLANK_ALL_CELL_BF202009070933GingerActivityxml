@@ -1,0 +1,63 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<GingerRepositoryItem><Header ItemGuid="caf02d5a-4707-407b-af3f-2999dc6f6e62" ItemType="Activity" CreatedBy="Administrator" Created="202009070922" GingerVersion="3.5.0.0" Version="2" LastUpdateBy="Administrator" LastUpdate="202009070922" />
+<Activity ActionRunOption="StopActionsRunOnFailure" Active="True" ActivityName="ACT_BLANK_ALL_CELL_BF" AutomationStatus="Automated" ErrorHandlerMappingType="AllAvailableHandlers" Guid="caf02d5a-4707-407b-af3f-2999dc6f6e62" ParentGuid="00000000-0000-0000-0000-000000000000" PercentAutomated="100%" TargetApplication="MyWebApp">
+<Acts>
+<ActDummy Active="True" Description="Clear some of the variables" Guid="e214fe5a-9726-4708-9b5f-ff7557949831" MaxNumberOfRetries="2" ParentGuid="00000000-0000-0000-0000-000000000000" Platform="NA" RetryMechanismInterval="5" StatusConverter="None" WaitVE="0" WindowsToCapture="OnlyActiveWindow">
+<InputValues>
+<ActInputValue Guid="5fd9a505-904f-4e3c-89c0-b55fb242007a" Param="Value" ParentGuid="00000000-0000-0000-0000-000000000000" />
+</InputValues>
+
+<ReturnValues>
+<ActReturnValue Active="True" Guid="b2da64e0-1e81-4f5e-adab-d7c1c94aeefd" Operator="Legacy" Param="BF_CALENDER_EXCEL_PATH" ParentGuid="00000000-0000-0000-0000-000000000000" StoreTo="Variable" StoreToValue="BF_CALENDER_EXCEL_PATH" />
+<ActReturnValue Active="True" Guid="4a64d816-86c8-4659-bd7d-22fdf8aaf647" Operator="Legacy" Param="BF_CALENDER_ROW_DATA" ParentGuid="00000000-0000-0000-0000-000000000000" StoreTo="Variable" StoreToValue="BF_CALENDER_ROW_DATA" />
+<ActReturnValue Active="True" Guid="dc6b8d5e-b7bd-418b-9f7f-ae974d38792c" Operator="Legacy" Param="BF_TEMP" ParentGuid="00000000-0000-0000-0000-000000000000" StoreTo="Variable" StoreToValue="BF_TEMP" />
+<ActReturnValue Active="True" Guid="f58cbdb2-8a71-44e9-a3bd-ccae3671ce45" Operator="Legacy" Param="BF_TEMP1" ParentGuid="00000000-0000-0000-0000-000000000000" StoreTo="Variable" StoreToValue="BF_TEMP1" />
+</ReturnValues>
+</ActDummy>
+<ActScript Active="True" Description="Script - Create Folder Structure" Guid="32486fdf-07fb-4625-930b-bb6b07729555" MaxNumberOfRetries="2" ParentGuid="00000000-0000-0000-0000-000000000000" Platform="NA" RetryMechanismInterval="5" ScriptCommand="Script" ScriptInterpreterType="VBS" ScriptName="Excel_Servers_New.vbs" ScriptPath="C:\Test\Documents\Scripts\" StatusConverter="None" WaitVE="0" WindowsToCapture="OnlyActiveWindow">
+<FlowControls>
+<FlowControl Active="True" BusinessFlowControlAction="GoToBusinessFlow" Condition="&quot;{ActionStatus}&quot; = &quot;Failed&quot;" FlowControlAction="MessageBox" Guid="1a52b447-ecd4-4343-8cc0-2ed4fcd441bc" Operator="Legacy" ParentGuid="00000000-0000-0000-0000-000000000000" Value="Folder structure was not created. Please check." />
+<FlowControl Active="True" BusinessFlowControlAction="GoToBusinessFlow" Condition="&quot;{ActionStatus}&quot; = &quot;Failed&quot;" FlowControlAction="StopBusinessFlow" Guid="3e604f6d-ae7b-4f0a-bf7d-0b9f98279154" Operator="Legacy" ParentGuid="00000000-0000-0000-0000-000000000000" />
+<FlowControl Active="True" BusinessFlowControlAction="GoToBusinessFlow" Condition="&quot;{ActionStatus}&quot; = &quot;Passed&quot;" FlowControlAction="GoToAction" Guid="872c6b13-16b5-4b58-a4d8-2b7a9ca22b55" Operator="Legacy" ParentGuid="00000000-0000-0000-0000-000000000000" Value="52520bdf-c81f-4301-ace4-42e0c12e300a#GUID_NAME#Write_Value_to_Excel - Blank All Cell" />
+</FlowControls>
+
+<InputValues>
+<ActInputValue Guid="8207b230-9e0e-4a84-aaa4-f1fbfad728f3" Param=" EXECUTION_MODE" ParentGuid="00000000-0000-0000-0000-000000000000" Value="{Var Name=BF_EXECUTION_MODE}" />
+<ActInputValue Guid="96b9ceb6-3d68-419d-956b-cce5207a412d" Param=" EXCEL_FILE" ParentGuid="00000000-0000-0000-0000-000000000000" Value="{Var Name=BF_EXCEL_FILE_NAME}" />
+<ActInputValue Guid="22f30bbc-3f1d-4874-b4e2-4d8e22ca171c" Param=" RELEASE" ParentGuid="00000000-0000-0000-0000-000000000000" Value="{Var Name=BF_RELEASE}" />
+<ActInputValue Guid="e15ff699-6334-46d3-8fe7-b9680c8f257d" Param=" ENVIRONMENT" ParentGuid="00000000-0000-0000-0000-000000000000" Value="{EnvParam App=MyWebServicesApp Param=ENV_NAME}" />
+<ActInputValue Guid="e85c4133-9863-42d6-b997-a562847b2b90" Param=" BF_NAME" ParentGuid="00000000-0000-0000-0000-000000000000" Value="{Var Name=BF_BUSINESS_FLOW_NAME}" />
+</InputValues>
+
+<ReturnValues>
+<ActReturnValue Active="True" Guid="9bc191ce-de55-412a-a07a-07f6c67fff4a" mExpected="Success" Operator="Legacy" Param="Run Status " ParentGuid="00000000-0000-0000-0000-000000000000" StoreTo="None" />
+<ActReturnValue Active="True" Guid="52fa0473-4c52-4515-ad63-fee9349dff50" mExpected="Len({Actual})&gt;0" Operator="Legacy" Param="XLSfilePath " ParentGuid="00000000-0000-0000-0000-000000000000" StoreTo="Variable" StoreToValue="BF_CALENDER_EXCEL_PATH" />
+</ReturnValues>
+</ActScript>
+<ActScript Active="True" Description="Write_Value_to_Excel - Blank All Cell" Guid="52520bdf-c81f-4301-ace4-42e0c12e300a" MaxNumberOfRetries="2" ParentGuid="00000000-0000-0000-0000-000000000000" Platform="NA" RetryMechanismInterval="5" ScriptCommand="Script" ScriptInterpreterType="VBS" ScriptName="Delete_Row_New.vbs" ScriptPath="C:\AWS_Cloudathon\Documents\Scripts\" StatusConverter="IgnoreFail" WaitVE="0" WindowsToCapture="OnlyActiveWindow">
+<FlowControls>
+<FlowControl Active="True" BusinessFlowControlAction="GoToBusinessFlow" Condition="&quot;{ActionStatus}&quot; = &quot;Passed&quot;" FlowControlAction="GoToActivityByName" Guid="874c408a-2f04-4ba4-b731-1408839dcc68" Operator="Legacy" ParentGuid="00000000-0000-0000-0000-000000000000" Value="Initiate_Execution_BF" />
+</FlowControls>
+
+<InputValues>
+<ActInputValue Guid="afc3cc0b-2091-45e6-891b-f17029160397" Param="excelFilePath" ParentGuid="00000000-0000-0000-0000-000000000000" Value="{Var Name=BF_CALENDER_EXCEL_PATH}" />
+<ActInputValue Guid="b134900c-7cec-464d-85b4-902cc9365b92" Param="excelSheetName" ParentGuid="00000000-0000-0000-0000-000000000000" Value="{Var Name=BF_CALENDER_SHEET_NAME_MAIN}" />
+<ActInputValue Guid="67329691-070b-488c-9039-a1b2a818b20f" Param="PARAM_NAME" ParentGuid="00000000-0000-0000-0000-000000000000" Value="DELSKIP" />
+<ActInputValue Guid="25764bb9-0889-408e-956a-e265f93b5840" Param="PARAM_VALUE" ParentGuid="00000000-0000-0000-0000-000000000000" Value="D" />
+<ActInputValue Guid="b610c7d7-aafe-4b70-8bf8-ffebae9b2f5d" Param="BUSINESS_FLOW_NAME" ParentGuid="00000000-0000-0000-0000-000000000000" Value="{Var Name=BF_BUSINESS_FLOW_NAME}" />
+</InputValues>
+</ActScript>
+</Acts>
+
+<Variables>
+<VariableString Guid="3eb7da91-93cb-4fb4-b87d-57b027d4a8f9" InitialStringValue="C:\Sky_Italy\Solutions\Sky_Italy\Documents\1802\DATA_FILES_PER_CALENDAR\DEVELOPMENT\PT\SHRPATIL\SKY_PT_PI2_CALENDER\SKY_PT_PI2_CALENDER.xlsx" MappedOutputType="None" Name="BF_CALENDER_EXCEL_PATH" ParentGuid="1e451181-92de-461e-9852-f40f308459f5" ParentName="Duplicate Book Review\Group\ACT_BLANK_ALL_CELL_BF" ParentType="Activity" />
+<VariableString Guid="9c30d087-d00a-4b47-9a8c-9d15a5b98515" InitialStringValue="MAIN" MappedOutputType="None" Name="BF_CALENDER_SHEET_NAME_MAIN" ParentGuid="1e451181-92de-461e-9852-f40f308459f5" ParentName="Duplicate Book Review\Group\ACT_BLANK_ALL_CELL_BF" ParentType="Activity" />
+<VariableString Guid="73fb41f5-5a84-4c56-889a-95bf8b95a058" InitialStringValue="Broadband_and_Voice" MappedOutputType="None" Name="BF_BUSINESS_FLOW_NAME" ParentGuid="1e451181-92de-461e-9852-f40f308459f5" ParentName="Duplicate Book Review\Group\ACT_BLANK_ALL_CELL_BF" ParentType="Activity" />
+<VariableString Description="&gt;&gt; Update this variable &lt;&lt;" Guid="c62b033c-3d17-4b1b-a5f9-8438c828a5f3" InitialStringValue="DEVELOPMENT" MappedOutputType="None" Name="BF_EXECUTION_MODE" ParentGuid="1e451181-92de-461e-9852-f40f308459f5" ParentName="Duplicate Book Review\Group\ACT_BLANK_ALL_CELL_BF" ParentType="Activity" />
+<VariableString Description="&gt;&gt; Update this variable &lt;&lt;" Guid="e722fc16-55e5-499e-9055-e19e0f13e87f" InitialStringValue="DUPLICATE_BOOK_REVIEW.ods" MappedOutputType="None" Name="BF_EXCEL_FILE_NAME" ParentGuid="1e451181-92de-461e-9852-f40f308459f5" ParentName="Duplicate Book Review\Group\ACT_BLANK_ALL_CELL_BF" ParentType="Activity" />
+<VariableString Description="&gt;&gt; Update this variable &lt;&lt;" Guid="e1f50b40-9a27-4795-ae05-c162e35283fe" InitialStringValue="1802" MappedOutputType="None" Name="BF_RELEASE" ParentGuid="1e451181-92de-461e-9852-f40f308459f5" ParentName="Duplicate Book Review\Group\ACT_BLANK_ALL_CELL_BF" ParentType="Activity" />
+<VariableString Guid="689dffc0-000c-4085-9c71-20b9739bd278" InitialStringValue="S-REGRESSION_PMT 445705_EDITS_FIDS_S&amp;E SECT_1.52_NSORD.0388/$/Value is Blank/$/CREATED_IN_RELEASE/$/Value is Blank/$/COMMENT/$/Madhuri_Phase_2/$/HEADER/$/Value is Blank/$/ACTION/$/Act_S-REGRESSION_PMT 445705_EDITS_FIDS_S&amp;E SECT_1.52_NSORD.0388/$/ORDER_TYPE/$/N/$/STATE_CODE/$/Value is Blank/$/NEW_ORDER_NUM/$/N663784/$/EXPECTED_EDIT/$/NOEDIT/$/SKIP_EDIT/$/Value is Blank/$/ST/$/O/$/EXPECTED_STRING/$/READY FOR DISTRIBUTION/$/SKIP_ACTIVITY/$/Value is Blank/$/U5RRX/$/I    U5RRX /LRS OPDA/$/FL_FID/$/Value is Blank/$/ACTION_I_LH_FID/$/ICLT 41.SFGS.219.033.6825/$/FL_FID_/PIC/$//PIC NO/$/FID_/LPIC/$//LPIC NONE/$/SM_DATA/$/SM   CE 01-25-2017 0830A/$/CS_DATA/$/WSQ" MappedOutputType="None" Name="BF_CALENDER_ROW_DATA" ParentGuid="1e451181-92de-461e-9852-f40f308459f5" ParentName="Duplicate Book Review\Group\ACT_BLANK_ALL_CELL_BF" ParentType="Activity" />
+<VariableString Guid="10641de8-1fd8-43d1-b402-c4b33b34e882" InitialStringValue="ACTION,Act_Search,SEARCH_STRING,Amdocs" MappedOutputType="None" Name="BF_TEMP" ParentGuid="1e451181-92de-461e-9852-f40f308459f5" ParentName="Duplicate Book Review\Group\ACT_BLANK_ALL_CELL_BF" ParentType="Activity" />
+<VariableString Guid="4e3ac51b-546c-4011-bffe-25ccd987cf7c" InitialStringValue="C&#xD;&#xA;&#xD;&#xA;" MappedOutputType="None" Name="BF_TEMP1" ParentGuid="1e451181-92de-461e-9852-f40f308459f5" ParentName="Duplicate Book Review\Group\ACT_BLANK_ALL_CELL_BF" ParentType="Activity" />
+</Variables>
+</Activity></GingerRepositoryItem>

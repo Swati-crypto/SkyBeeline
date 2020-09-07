@@ -1,0 +1,59 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<GingerRepositoryItem><Header ItemGuid="bc9a946a-2fc9-4b14-a957-b8b01afdf33f" ItemType="Activity" CreatedBy="SHRPATIL" Created="201903191354" GingerVersion="3.0.0.0" Version="2" LastUpdateBy="SHRPATIL" LastUpdate="201903191354" />
+<Activity ActionRunOption="StopActionsRunOnFailure" Active="True" ActivityName="ACT_GENERATE_RANDOM_NUMBER" AutomationStatus="Development" ErrorHandlerMappingType="AllAvailableHandlers" Guid="bc9a946a-2fc9-4b14-a957-b8b01afdf33f" ParentGuid="00000000-0000-0000-0000-000000000000" PercentAutomated="100%" TargetApplication="MyWebServicesApp">
+<Acts>
+<ActDummy Active="True" Description="Clear Variables" Guid="5d263888-1483-48d7-b60a-d17cac7ab7f7" LocateBy="NA" MaxNumberOfRetries="2" ParentGuid="00000000-0000-0000-0000-000000000000" Platform="NA" RetryMechanismInterval="5" StatusConverter="None" WaitVE="0" WindowsToCapture="OnlyActiveWindow">
+<InputValues>
+<ActInputValue Guid="8cc9452c-b7c4-4d35-8ffc-3d0b25e970e3" Param="Value" ParentGuid="00000000-0000-0000-0000-000000000000" />
+</InputValues>
+
+<ReturnValues>
+<ActReturnValue Active="True" Guid="0a3e18ff-daf2-4989-bbbb-da4d190df763" Param="BF_RESPONSE_CODE" ParentGuid="00000000-0000-0000-0000-000000000000" StoreTo="Variable" StoreToValue="BF_RESPONSE_CODE" />
+<ActReturnValue Active="True" Guid="fc88f39b-9746-4b89-9889-5f0bdee34fce" Param="BF_RESPONSE_MESSAGE" ParentGuid="00000000-0000-0000-0000-000000000000" StoreTo="Variable" StoreToValue="BF_RESPONSE_MESSAGE" />
+<ActReturnValue Active="True" Guid="3a28be48-7f04-40e3-9e69-f8c164e315a5" Param="BF_VALIDATION_1" ParentGuid="00000000-0000-0000-0000-000000000000" StoreTo="Variable" StoreToValue="BF_VALIDATION_1" />
+<ActReturnValue Active="True" Guid="70c5949b-10ba-4832-80b5-013ba33ad5c6" Param="BF_VALIDATION_2" ParentGuid="00000000-0000-0000-0000-000000000000" StoreTo="Variable" StoreToValue="BF_VALIDATION_2" />
+</ReturnValues>
+</ActDummy>
+<ActSetVariableValue Active="True" Description="Set RANDOM_NUMBER" Guid="fda6e2a2-129d-4c4f-9949-1bb876fd317f" LocateBy="NA" MaxNumberOfRetries="2" ParentGuid="00000000-0000-0000-0000-000000000000" Platform="NA" RetryMechanismInterval="5" SetVariableValueOption="AutoGenerateValue" StatusConverter="None" VariableName="ACT_RANDOM_NUMBER" WaitVE="0" WindowsToCapture="OnlyActiveWindow">
+<InputValues>
+<ActInputValue Guid="dfe462bb-cd02-4ded-bd86-0839920d84a8" Param="Value" ParentGuid="00000000-0000-0000-0000-000000000000" />
+</InputValues>
+</ActSetVariableValue>
+<ActScript Active="True" Description="Write data in KEEP_REFER_RANDOM_NUMBER for ORDER ID" Guid="9be27ecd-e2d0-4a89-95d7-78e62b819ee9" LocateBy="NA" MaxNumberOfRetries="2" ParentGuid="00000000-0000-0000-0000-000000000000" Platform="NA" RetryMechanismInterval="5" ScriptCommand="Script" ScriptInterpreterType="VBS" ScriptName="Write_Data.vbs" ScriptPath="C:\SkyItalia\Solutions\Sky_Italy\Documents\Scripts\" StatusConverter="None" WaitVE="1" WindowsToCapture="OnlyActiveWindow">
+<FlowControls>
+<FlowControl Active="True" BusinessFlowControlAction="GoToBusinessFlow" Condition="&quot;{ActionStatus}&quot; = &quot;Failed&quot;" FlowControlAction="GoToActivityByName" Guid="3764afa9-b386-48e1-a1d9-b241488b7bc1" ParentGuid="00000000-0000-0000-0000-000000000000" Value="UpdateExecutionStatus_FAIL" />
+<FlowControl Active="True" BusinessFlowControlAction="GoToBusinessFlow" Condition="&quot;{ActionStatus}&quot; = &quot;Passed&quot;" FlowControlAction="GoToActivityByName" Guid="9cf133dc-cacd-418e-a1cf-f4552948b2b2" ParentGuid="00000000-0000-0000-0000-000000000000" Value="UpdateExecutionStatus_PASS" />
+</FlowControls>
+
+<InputValues>
+<ActInputValue Guid="3e23c4ae-0359-4804-9197-9c75eda38e4d" Param="excelFilePath" ParentGuid="00000000-0000-0000-0000-000000000000" StoreToVariable="{Var Name=BF_CALENDER_EXCEL_PATH}" Value="{Var Name=BF_CALENDER_EXCEL_PATH}" />
+<ActInputValue Guid="bc209793-4ffe-457e-ae7b-5fbbac763b12" Param="excelSheetName" ParentGuid="00000000-0000-0000-0000-000000000000" StoreToVariable="{Var Name=BF_CALENDER_SHEET_KEEP_REFER}" Value="{Var Name=BF_CALENDER_SHEET_KEEP_REFER}" />
+<ActInputValue Guid="f52e3c30-9301-4ec2-8e9b-263c22a59ad3" Param="PARAM_NAME" ParentGuid="00000000-0000-0000-0000-000000000000" StoreToVariable="orderID_VALUE_QA" Value="orderID_VALUE_QA" />
+<ActInputValue Guid="3ac6bebc-c3f8-4a63-9ba8-175ef4890dfe" Param="PARAM_VALUE" ParentGuid="00000000-0000-0000-0000-000000000000" StoreToVariable="{Var Name=ACT_RANDOM_NUMBER}" Value="{Var Name=ACT_RANDOM_NUMBER}" />
+<ActInputValue Guid="eabd84fc-4026-45bd-8c94-e0eef8695a2a" Param="GROUP_NAME" ParentGuid="00000000-0000-0000-0000-000000000000" StoreToVariable="1" Value="1" />
+</InputValues>
+</ActScript>
+</Acts>
+
+<Variables>
+<VariableRandomString Guid="66c9e92b-a4e2-4649-ad0a-4d993ff10042" IsDigit="True" MappedOutputType="None" Max="4" Min="4" Name="ACT_RANDOM_NUMBER" ParentGuid="00000000-0000-0000-0000-000000000000" Value="7541" />
+<VariableString Guid="604226c0-de66-44ff-92fe-711fd5fe3fb0" InitialStringValue="0" MappedOutputType="None" Name="ACT_CODE" ParentGuid="00000000-0000-0000-0000-000000000000" Value="0" />
+<VariableString Guid="b9d65f96-5437-4110-912d-3ebc6988f701" InitialStringValue="Success" MappedOutputType="None" Name="ACT_MESSAGE" ParentGuid="00000000-0000-0000-0000-000000000000" Value="Success" />
+<VariableString Guid="6d7d6665-cee5-4d1a-8be4-00ede2f970c4" InitialStringValue="AE1000K" MappedOutputType="None" Name="ACT_SLOT_ID" ParentGuid="00000000-0000-0000-0000-000000000000" Value="AE1000K" />
+<VariableString Guid="5a717ca3-6131-435c-9995-706e42510e74" InitialStringValue="04/06/2019" MappedOutputType="None" Name="ACT_APPOINTMENT_DATE" ParentGuid="00000000-0000-0000-0000-000000000000" Value="04/06/2019" />
+<VariableString Guid="1cc705ad-850a-4628-9c0f-a18728533f69" InitialStringValue="09:00" MappedOutputType="None" Name="ACT_START_TIME" ParentGuid="00000000-0000-0000-0000-000000000000" Value="09:00" />
+<VariableString Guid="0a56780c-762a-4d65-9fce-162c33a663b9" InitialStringValue="F10" MappedOutputType="None" Name="ACT_TYPE_ID" ParentGuid="00000000-0000-0000-0000-000000000000" Value="F10" />
+<VariableString Guid="c6f6b263-3c2f-4391-88e8-38a4de501a02" InitialStringValue="SKY_00000000001000" MappedOutputType="None" Name="ACT_ORDER_ID" ParentGuid="00000000-0000-0000-0000-000000000000" Value="SKY_00000000001000" />
+<VariableString Guid="9a1fb853-b956-445c-8a0b-e2cf388ff64a" InitialStringValue="9400" MappedOutputType="None" Name="BF_RESPONSE_CODE" ParentGuid="00000000-0000-0000-0000-000000000000" Value="9400" />
+<VariableString Guid="e646bdab-735c-4dac-ab47-0156f3595c48" InitialStringValue="Bad Request" MappedOutputType="None" Name="BF_RESPONSE_MESSAGE" ParentGuid="00000000-0000-0000-0000-000000000000" Value="Bad Request" />
+<VariableString Guid="419513fa-d9a6-4061-8c5b-5fdca7931fa3" InitialStringValue=" 2" MappedOutputType="None" Name="BF_VALIDATION_1" ParentGuid="00000000-0000-0000-0000-000000000000" Value=" 2" />
+<VariableString Guid="eeb9994d-3423-48b6-a9c7-6ec702c47e62" InitialStringValue="{&quot;status&quot; : {&quot;code&quot; : &quot;0&quot;,&quot;type&quot; : &quot;OK&quot;,&quot;message&quot; : &quot;Success&quot;},&quot;numberOfRecords&quot; : 2} " MappedOutputType="None" Name="BF_VALIDATION_2" ParentGuid="00000000-0000-0000-0000-000000000000" Value="{&quot;status&quot; : {&quot;code&quot; : &quot;0&quot;,&quot;type&quot; : &quot;OK&quot;,&quot;message&quot; : &quot;Success&quot;},&quot;numberOfRecords&quot; : 2} " />
+<VariableString Guid="6e9f2962-b378-4139-adc8-38b593e013ae" InitialStringValue="S-REGRESSION_PMT 445705_EDITS_FIDS_S&amp;E SECT_1.52_NSORD.0388/$/Value is Blank/$/CREATED_IN_RELEASE/$/Value is Blank/$/COMMENT/$/Madhuri_Phase_2/$/HEADER/$/Value is Blank/$/ACTION/$/Act_S-REGRESSION_PMT 445705_EDITS_FIDS_S&amp;E SECT_1.52_NSORD.0388/$/ORDER_TYPE/$/N/$/STATE_CODE/$/Value is Blank/$/NEW_ORDER_NUM/$/N663784/$/EXPECTED_EDIT/$/NOEDIT/$/SKIP_EDIT/$/Value is Blank/$/ST/$/O/$/EXPECTED_STRING/$/READY FOR DISTRIBUTION/$/SKIP_ACTIVITY/$/Value is Blank/$/U5RRX/$/I    U5RRX /LRS OPDA/$/FL_FID/$/Value is Blank/$/ACTION_I_LH_FID/$/ICLT 41.SFGS.219.033.6825/$/FL_FID_/PIC/$//PIC NO/$/FID_/LPIC/$//LPIC NONE/$/SM_DATA/$/SM   CE 01-25-2017 0830A/$/CS_DATA/$/WSQ" MappedOutputType="None" Name="BF_CALENDER_ROW_DATA" ParentGuid="00000000-0000-0000-0000-000000000000" Value="S-REGRESSION_PMT 445705_EDITS_FIDS_S&amp;E SECT_1.52_NSORD.0388/$/Value is Blank/$/CREATED_IN_RELEASE/$/Value is Blank/$/COMMENT/$/Madhuri_Phase_2/$/HEADER/$/Value is Blank/$/ACTION/$/Act_S-REGRESSION_PMT 445705_EDITS_FIDS_S&amp;E SECT_1.52_NSORD.0388/$/ORDER_TYPE/$/N/$/STATE_CODE/$/Value is Blank/$/NEW_ORDER_NUM/$/N663784/$/EXPECTED_EDIT/$/NOEDIT/$/SKIP_EDIT/$/Value is Blank/$/ST/$/O/$/EXPECTED_STRING/$/READY FOR DISTRIBUTION/$/SKIP_ACTIVITY/$/Value is Blank/$/U5RRX/$/I    U5RRX /LRS OPDA/$/FL_FID/$/Value is Blank/$/ACTION_I_LH_FID/$/ICLT 41.SFGS.219.033.6825/$/FL_FID_/PIC/$//PIC NO/$/FID_/LPIC/$//LPIC NONE/$/SM_DATA/$/SM   CE 01-25-2017 0830A/$/CS_DATA/$/WSQ" />
+<VariableString Guid="cf0a97cc-f152-4dc4-8cd8-331499559b65" MappedOutputType="None" Name="BF_CALENDER_EXCEL_PATH" ParentGuid="00000000-0000-0000-0000-000000000000" ParentName="NSORD_Driver_NEW" ParentType="Business Flow" />
+<VariableString Guid="7747eba0-6575-4612-8945-5ee7128bf569" InitialStringValue="KEEP_REFER" MappedOutputType="None" Name="BF_CALENDER_SHEET_KEEP_REFER" ParentGuid="00000000-0000-0000-0000-000000000000" Value="KEEP_REFER" />
+<VariableString Guid="4ecb78b6-cf49-4f5c-a517-f6f771125684" InitialStringValue="staircase" MappedOutputType="None" Name="ACT_STAIRCASE" ParentGuid="00000000-0000-0000-0000-000000000000" Value="staircase" />
+<VariableString Guid="07830796-03e0-4945-8e09-492bccdceeaa" InitialStringValue="11" MappedOutputType="None" Name="ACT_LENGTH" ParentGuid="00000000-0000-0000-0000-000000000000" Value="11" />
+<VariableString Guid="567fd47f-6d85-4bc1-b932-0de1fcb62b47" InitialStringValue="KO_Q01" MappedOutputType="None" Name="ACT_PROVIDER_ERROR_CODE" ParentGuid="00000000-0000-0000-0000-000000000000" Value="KO_Q01" />
+<VariableString Guid="88fda735-5c6d-4cc3-abf8-1cb644246f31" InitialStringValue="Theparametersentintherequestisnotcorrect" MappedOutputType="None" Name="ACT_PROVIDER_ERROR_MESSAGE" ParentGuid="00000000-0000-0000-0000-000000000000" Value="Theparametersentintherequestisnotcorrect" />
+</Variables>
+</Activity></GingerRepositoryItem>

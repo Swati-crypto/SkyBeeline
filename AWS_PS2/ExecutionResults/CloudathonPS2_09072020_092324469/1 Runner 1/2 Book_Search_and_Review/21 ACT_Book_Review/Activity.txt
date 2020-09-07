@@ -1,0 +1,1 @@
+{"Seq":21,"GUID":"6dd6e196-14fb-4c6b-bf52-92099cc45a28","ActivityName":"ACT_Book_Review","StartTimeStamp":"2020-09-07T09:27:41.9285664Z","EndTimeStamp":"2020-09-07T09:27:48.2071078Z","Elapsed":6165,"RunStatus":"Passed","VariablesBeforeExec":["ACT_Unique_Number_:_82723_:_"],"VariablesAfterExec":["ACT_Unique_Number_:_82723_:_"]}

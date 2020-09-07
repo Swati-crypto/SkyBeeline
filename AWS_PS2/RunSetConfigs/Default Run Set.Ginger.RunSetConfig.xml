@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<GingerRepositoryItem><Header ItemGuid="7e910446-1d2e-4a1d-aaa7-c7ed7cc87761" ItemType="RunSetConfig" CreatedBy="Administrator" Created="202009062041" GingerVersion="3.5.0.0" Version="4" LastUpdateBy="Administrator" LastUpdate="202009062045" />
+<RunSetConfig Guid="7e910446-1d2e-4a1d-aaa7-c7ed7cc87761" Name="Default Run Set" ParentGuid="00000000-0000-0000-0000-000000000000">
+<GingerRunners>
+<GingerRunner Guid="5156e327-91f8-4647-88ef-a9c2f9d210a6" Name="Runner 1" ParentGuid="00000000-0000-0000-0000-000000000000" RunOption="ContinueToRunall">
+<ApplicationAgents>
+<ApplicationAgent AgentID="a2d2ded7-2b97-4905-897b-84a6110185ea" AgentName="IE" AppID="13999d4b-2b95-41fd-aced-758c549e0f55" AppName="MyWebApp" Guid="583fcfbc-0cb5-478e-af11-bc9607e3311c" ParentGuid="00000000-0000-0000-0000-000000000000" />
+<ApplicationAgent AgentID="00000000-0000-0000-0000-000000000000" AppID="00000000-0000-0000-0000-000000000000" AppName="MyWebServicesApp" Guid="36571911-1511-4f07-936f-5a034f6f7ccd" ParentGuid="00000000-0000-0000-0000-000000000000" />
+<ApplicationAgent AgentID="00000000-0000-0000-0000-000000000000" AppID="00000000-0000-0000-0000-000000000000" AppName="MyUnix" Guid="e4fee492-cc6b-470f-b2ac-9190ec58feaf" ParentGuid="00000000-0000-0000-0000-000000000000" />
+<ApplicationAgent AgentID="00000000-0000-0000-0000-000000000000" AppID="00000000-0000-0000-0000-000000000000" AppName="MyWebIE" Guid="6f96990c-77ba-4ed1-acc6-cd6774e13632" ParentGuid="00000000-0000-0000-0000-000000000000" />
+</ApplicationAgents>
+
+<BusinessFlowsRunList>
+<BusinessFlowRun BusinessFlowGuid="d3cf2ef6-818c-4bd8-a01d-9783bdfea932" BusinessFlowInstanceGuid="ba021488-5934-446e-b7f9-21be59840db3" BusinessFlowIsActive="True" BusinessFlowName="Author_Search_and_Review" Guid="137e1f43-2736-4b1b-814d-40f51631ff3f" ParentGuid="00000000-0000-0000-0000-000000000000" />
+</BusinessFlowsRunList>
+</GingerRunner>
+</GingerRunners>
+</RunSetConfig></GingerRepositoryItem>

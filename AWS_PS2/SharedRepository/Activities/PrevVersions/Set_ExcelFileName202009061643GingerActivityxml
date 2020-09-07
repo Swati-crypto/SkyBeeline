@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<GingerRepositoryItem><Header ItemGuid="bd44f66c-85c4-4f9b-8e25-3cb4761e97a8" ItemType="Activity" CreatedBy="ROHANGAR" Created="202007281529" GingerVersion="3.0.0.0" Version="2" LastUpdateBy="ROHANGAR" LastUpdate="202007281529" />
+<Activity ActionRunOption="StopActionsRunOnFailure" Active="True" ActivityName="Set_ExcelFileName" AutomationStatus="Development" ErrorHandlerMappingType="AllAvailableHandlers" Guid="bd44f66c-85c4-4f9b-8e25-3cb4761e97a8" Mandatory="True" ParentGuid="00000000-0000-0000-0000-000000000000" PercentAutomated="100%" TargetApplication="MyWebServicesApp">
+<Acts>
+<ActSetVariableValue Active="True" Description="Get EXCEL FileName from GBL Variable" Guid="bc46a8d3-7525-4e09-b942-f2e3032dff9a" LocateBy="NA" MaxNumberOfRetries="2" ParentGuid="00000000-0000-0000-0000-000000000000" Platform="NA" RetryMechanismInterval="5" SetVariableValueOption="SetValue" StatusConverter="None" VariableName="BF_EXCEL_FILE_NAME" WaitVE="1" WindowsToCapture="OnlyActiveWindow">
+<InputValues>
+<ActInputValue Guid="1a8c1abb-97d7-4f1b-9f1c-a480c36a0df9" Param="Value" ParentGuid="00000000-0000-0000-0000-000000000000" StoreToVariable="{Var Name=GBL_EXCEL_FILE_NAME_{Var Name=BF_DEV_RELEASE}}" Value="{Var Name=GBL_EXCEL_FILE_NAME_{Var Name=BF_DEV_RELEASE}}" />
+</InputValues>
+</ActSetVariableValue>
+<ActSetVariableValue Active="True" Description="Set ExcelFileName" Guid="9782a068-e27c-4c8b-b474-a3a65cfcd511" LocateBy="NA" MaxNumberOfRetries="2" ParentGuid="00000000-0000-0000-0000-000000000000" Platform="NA" RetryMechanismInterval="5" SetVariableValueOption="SetValue" StatusConverter="None" VariableName="BF_EXCEL_FILE_NAME" WaitVE="0" WindowsToCapture="OnlyActiveWindow">
+<FlowControls>
+<FlowControl Active="True" BusinessFlowControlAction="GoToBusinessFlow" Condition="&quot;{ActionStatus}&quot; = &quot;Passed&quot;" FlowControlAction="GoToNextActivity" Guid="466eac43-01cb-426d-92b6-a41cb0b2d4fa" ParentGuid="00000000-0000-0000-0000-000000000000" />
+</FlowControls>
+
+<InputValues>
+<ActInputValue Guid="c2303f28-2279-4477-8e1b-550c4d062e2f" Param="Value" ParentGuid="00000000-0000-0000-0000-000000000000" StoreToVariable="{VBS Eval=Replace(Replace(&quot;{Var Name=BF_EXCEL_FILE_NAME}&quot;,&quot;.xlsx&quot;,&quot;.{EnvParam App=MyWebServicesApp Param=ENV_OFFICE}&quot;),&quot;.ods&quot;,&quot;.{EnvParam App=MyWebServicesApp Param=ENV_OFFICE}&quot;)}" Value="{VBS Eval=Replace(Replace(&quot;{Var Name=BF_EXCEL_FILE_NAME}&quot;,&quot;.xlsx&quot;,&quot;.{EnvParam App=MyWebServicesApp Param=ENV_OFFICE}&quot;),&quot;.ods&quot;,&quot;.{EnvParam App=MyWebServicesApp Param=ENV_OFFICE}&quot;)}" />
+</InputValues>
+</ActSetVariableValue>
+</Acts>
+
+<Variables>
+<VariableString Description="&gt;&gt; Update this variable &lt;&lt;" Guid="6c2b1104-eae0-4ac3-8318-594b4fd34b94" InitialStringValue="SKY_CALENDER_PT2_PI3a.xlsx" MappedOutputType="None" Name="BF_EXCEL_FILE_NAME" ParentGuid="00000000-0000-0000-0000-000000000000" Value="SKY_CALENDER_PT2_PI3a.xlsx" />
+<VariableString Guid="59ae8f51-9af2-4be6-a3f8-a0365faf3bad" InitialStringValue="R1_PI1" MappedOutputType="None" Name="BF_DEV_RELEASE" ParentGuid="00000000-0000-0000-0000-000000000000" Value="R1_PI1" />
+<VariableString Guid="9c48b672-df76-4506-a8d4-2322700f2101" MappedOutputType="None" Name="GBL_EXCEL_FILE_NAME_" ParentGuid="00000000-0000-0000-0000-000000000000" />
+</Variables>
+</Activity></GingerRepositoryItem>

@@ -1,0 +1,83 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<GingerRepositoryItem><Header ItemGuid="b8f99b97-424b-40ce-b5c5-7db6ca0603c3" ItemType="Activity" CreatedBy="shrpatil" Created="201811151216" GingerVersion="3.0.0.0" Version="37" LastUpdateBy="harshima" LastUpdate="202001060916" />
+<Activity ActionRunOption="StopActionsRunOnFailure" Active="True" ActivityName="ACT_JENKINS_LOGIN" AutomationStatus="Development" ErrorHandlerMappingType="AllAvailableHandlers" Guid="b8f99b97-424b-40ce-b5c5-7db6ca0603c3" ParentGuid="00000000-0000-0000-0000-000000000000" PercentAutomated="100%" TargetApplication="MyWebApp">
+<Acts>
+<ActBrowserElement Active="True" ControlAction="OpenURLNewTab" Description="Launch Jenkins URL " GotoURLRadioButton="Current" Guid="db38aa5b-017a-4454-9667-95bc5fa42f2d" ImplicitWait="60" LocateBy="NA" MaxNumberOfRetries="2" ParentGuid="00000000-0000-0000-0000-000000000000" Platform="Web" RetryMechanismInterval="5" StatusConverter="None" WaitVE="0" WindowsToCapture="OnlyActiveWindow">
+<InputValues>
+<ActInputValue Guid="4cc3967d-feaa-49f2-8d54-e7dee658c29f" Param="Value" ParentGuid="00000000-0000-0000-0000-000000000000" StoreToVariable="http://ilossky009.corp.amdocs.com:7070/" Value="http://ilossky009.corp.amdocs.com:7070/" />
+<ActInputValue Guid="459f2999-5029-4a67-934d-bbe9fe3fb796" Param="GotoURLType" ParentGuid="00000000-0000-0000-0000-000000000000" StoreToVariable="Current" Value="Current" />
+</InputValues>
+</ActBrowserElement>
+<ActGenElement Active="True" Description="Switch_to_default_frame" GenElementAction="SwitchToDefaultFrame" Guid="94fdb6cc-9b5b-4666-95dc-26fadce4dd90" LocateBy="NA" MaxNumberOfRetries="2" ParentGuid="00000000-0000-0000-0000-000000000000" Platform="NA" RetryMechanismInterval="5" StatusConverter="None" WaitVE="2" WindowsToCapture="OnlyActiveWindow">
+<FlowControls>
+<FlowControl Active="True" BusinessFlowControlAction="GoToBusinessFlow" Condition="&quot;{ActionStatus}&quot; = &quot;Failed&quot;" FlowControlAction="GoToActivityByName" Guid="0fb552ea-31b3-4914-8b90-2b21e163205f" ParentGuid="00000000-0000-0000-0000-000000000000" Value="UpdateExecutionStatus_FAIL" />
+</FlowControls>
+
+<InputValues>
+<ActInputValue Guid="354e177e-a61c-409a-84a2-851443db8bef" Param="Value" ParentGuid="00000000-0000-0000-0000-000000000000" />
+<ActInputValue Guid="cb8e4f50-a38c-4442-887f-6047be944b9a" Param="Xoffset" ParentGuid="00000000-0000-0000-0000-000000000000" />
+<ActInputValue Guid="9184c117-4866-48fb-b2fe-19e72bc6225e" Param="Yoffset" ParentGuid="00000000-0000-0000-0000-000000000000" />
+</InputValues>
+</ActGenElement>
+<ActGenElement Active="True" Description="Click on Login Button" GenElementAction="SimpleClick" Guid="c34fb2d0-44af-4d25-a548-13cad34e25d8" LocateBy="ByXPath" LocateValue="{DS Name=JENKINS_REPOSITORY DST=JENKINS_HOME ACT=MASD MASD=N MR=N IDEN=Cust ICOLVAL=LOCATOR_VALUE IROW=Where COND=  [LOCATOR_BY] = 'XPATH' AND [OBJECT_NAME] = 'BUTTON_LOGIN'}" MaxNumberOfRetries="2" ParentGuid="00000000-0000-0000-0000-000000000000" Platform="NA" RetryMechanismInterval="5" StatusConverter="None" TakeScreenShot="True" WaitVE="2" WindowsToCapture="OnlyActiveWindow">
+<FlowControls>
+<FlowControl Active="True" BusinessFlowControlAction="GoToBusinessFlow" Condition="&quot;{ActionStatus}&quot; = &quot;Failed&quot;" FlowControlAction="GoToActivityByName" Guid="360aee66-21b4-4729-bc49-9ebfc2f60819" ParentGuid="00000000-0000-0000-0000-000000000000" Value="UpdateExecutionStatus_FAIL" />
+</FlowControls>
+
+<InputValues>
+<ActInputValue Guid="815b02f6-25a8-4dbb-92a7-97cff4ad5feb" Param="Value" ParentGuid="00000000-0000-0000-0000-000000000000" StoreToVariable="log in" Value="log in" />
+<ActInputValue Guid="45f7a41d-1152-4386-9847-38556337a5d5" Param="Xoffset" ParentGuid="00000000-0000-0000-0000-000000000000" />
+<ActInputValue Guid="1eff473c-3ffc-47a7-9b30-e60ca6b57091" Param="Yoffset" ParentGuid="00000000-0000-0000-0000-000000000000" />
+</InputValues>
+</ActGenElement>
+<ActGenElement Active="True" Description="Enter Username" GenElementAction="KeyType" Guid="8c074e25-ed28-48f7-b192-27717dafa41f" LocateBy="ByXPath" LocateValue="{DS Name=JENKINS_REPOSITORY DST=JENKINS_HOME ACT=MASD MASD=N MR=N IDEN=Cust ICOLVAL=LOCATOR_VALUE IROW=Where COND=  [LOCATOR_BY] = 'XPATH' AND [OBJECT_NAME] = 'TEXT_USER_NAME'}" MaxNumberOfRetries="2" ParentGuid="00000000-0000-0000-0000-000000000000" Platform="NA" RetryMechanismInterval="5" StatusConverter="None" WaitVE="2" WindowsToCapture="OnlyActiveWindow">
+<FlowControls>
+<FlowControl Active="True" BusinessFlowControlAction="GoToBusinessFlow" Condition="&quot;{ActionStatus}&quot; = &quot;Failed&quot;" FlowControlAction="GoToActivityByName" Guid="7ed0f52e-6c07-4d67-bf34-342ea68190a0" ParentGuid="00000000-0000-0000-0000-000000000000" Value="UpdateExecutionStatus_FAIL" />
+</FlowControls>
+
+<InputValues>
+<ActInputValue Guid="21c23e80-7010-4ecc-adec-b9383f3a5efa" Param="Value" ParentGuid="00000000-0000-0000-0000-000000000000" StoreToVariable="{EnvParam App=Web Param=SOM_USERNAME}" Value="{EnvParam App=Web Param=SOM_USERNAME}" />
+<ActInputValue Guid="5f571f96-37ad-4b06-98ac-ce10160b680b" Param="Xoffset" ParentGuid="00000000-0000-0000-0000-000000000000" />
+<ActInputValue Guid="93af2779-8d34-4ccc-b7f8-569e041334e3" Param="Yoffset" ParentGuid="00000000-0000-0000-0000-000000000000" />
+</InputValues>
+</ActGenElement>
+<ActGenElement Active="True" Description="Enter Password" GenElementAction="KeyType" Guid="657709f2-fdd8-457a-bf2d-c591e550b1cc" LocateBy="ByXPath" LocateValue="{DS Name=JENKINS_REPOSITORY DST=JENKINS_HOME ACT=MASD MASD=N MR=N IDEN=Cust ICOLVAL=LOCATOR_VALUE IROW=Where COND=  [LOCATOR_BY] = 'XPATH' AND [OBJECT_NAME] = 'TEXT_PASSWORD'}" MaxNumberOfRetries="2" ParentGuid="00000000-0000-0000-0000-000000000000" Platform="NA" RetryMechanismInterval="5" StatusConverter="None" WaitVE="2" WindowsToCapture="OnlyActiveWindow">
+<FlowControls>
+<FlowControl Active="True" BusinessFlowControlAction="GoToBusinessFlow" Condition="&quot;{ActionStatus}&quot; = &quot;Failed&quot;" FlowControlAction="GoToActivityByName" Guid="3f14bb8a-9d60-4bc7-b2f6-6effd235bfdc" ParentGuid="00000000-0000-0000-0000-000000000000" Value="UpdateExecutionStatus_FAIL" />
+</FlowControls>
+
+<InputValues>
+<ActInputValue Guid="6075ff52-b8a3-4b57-acf4-58c807be62ba" Param="Value" ParentGuid="00000000-0000-0000-0000-000000000000" StoreToVariable="{EnvParam App=Web Param=SOM_PASSWORD}" Value="{EnvParam App=Web Param=SOM_PASSWORD}" />
+<ActInputValue Guid="6234961b-7dc7-42ce-980d-670d8f2154e1" Param="Xoffset" ParentGuid="00000000-0000-0000-0000-000000000000" />
+<ActInputValue Guid="17064948-52d8-4c26-a6f8-87e65cca3bcf" Param="Yoffset" ParentGuid="00000000-0000-0000-0000-000000000000" />
+</InputValues>
+</ActGenElement>
+<ActGenElement Active="True" Description="Click on Login Button" GenElementAction="SimpleClick" Guid="9fae0cc9-c498-4148-8403-4080985b4a1a" LocateBy="ByXPath" LocateValue="{DS Name=JENKINS_REPOSITORY DST=JENKINS_HOME ACT=MASD MASD=N MR=N IDEN=Cust ICOLVAL=LOCATOR_VALUE IROW=Where COND=  [LOCATOR_BY] = 'XPATH' AND [OBJECT_NAME] = 'BUTTON_HOMELOGIN'}" MaxNumberOfRetries="2" ParentGuid="00000000-0000-0000-0000-000000000000" Platform="NA" RetryMechanismInterval="5" StatusConverter="None" TakeScreenShot="True" WaitVE="5" WindowsToCapture="OnlyActiveWindow">
+<FlowControls>
+<FlowControl Active="True" BusinessFlowControlAction="GoToBusinessFlow" Condition="&quot;{ActionStatus}&quot; = &quot;Failed&quot;" FlowControlAction="GoToActivityByName" Guid="cd724322-a675-4e4b-a81d-6f1733730abd" ParentGuid="00000000-0000-0000-0000-000000000000" Value="UpdateExecutionStatus_FAIL" />
+</FlowControls>
+
+<InputValues>
+<ActInputValue Guid="111d4cb6-7d67-4ca3-a46a-20bfa6d8c56e" Param="Value" ParentGuid="00000000-0000-0000-0000-000000000000" />
+<ActInputValue Guid="f803ac68-c1b1-4189-a100-f16e704971c2" Param="Xoffset" ParentGuid="00000000-0000-0000-0000-000000000000" />
+<ActInputValue Guid="0d1fb9d0-2674-4b5b-99ce-decb3d6ac6f0" Param="Yoffset" ParentGuid="00000000-0000-0000-0000-000000000000" />
+</InputValues>
+</ActGenElement>
+<ActGenElement Active="True" Description="Verifiy Login page" GenElementAction="Visible" Guid="6788b0c7-e89f-4573-aa8b-db7b8a314d44" LocateBy="ByXPath" LocateValue="{DS Name=JENKINS_REPOSITORY DST=JENKINS_HOME ACT=MASD MASD=N MR=N IDEN=Cust ICOLVAL=LOCATOR_VALUE IROW=Where COND=  [LOCATOR_BY] = 'XPATH' AND [OBJECT_NAME] = 'LINK_NEWITEM'}" MaxNumberOfRetries="2" ParentGuid="00000000-0000-0000-0000-000000000000" Platform="NA" RetryMechanismInterval="5" StatusConverter="None" TakeScreenShot="True" WaitVE="5" WindowsToCapture="OnlyActiveWindow">
+<FlowControls>
+<FlowControl Active="True" BusinessFlowControlAction="GoToBusinessFlow" Condition="&quot;{ActionStatus}&quot; = &quot;Failed&quot;" FlowControlAction="GoToActivity" Guid="706616a5-1d9d-43e9-90d2-10cc25b81542" ParentGuid="00000000-0000-0000-0000-000000000000" Value="8a7dc9da-b97e-4788-82f4-5cccf4bccde9#GUID_NAME#UpdateExecutionStatus_FAIL" />
+<FlowControl Active="True" BusinessFlowControlAction="GoToBusinessFlow" Condition="&quot;{ActionStatus}&quot; = &quot;Passed&quot;" FlowControlAction="GoToActivity" Guid="b9f379f2-6ea8-41b1-abc7-8ec4fa251f94" ParentGuid="00000000-0000-0000-0000-000000000000" Value="a38c0538-edec-4107-918d-b95533d241c0#GUID_NAME#UpdateExecutionStatus_PASS" />
+</FlowControls>
+
+<InputValues>
+<ActInputValue Guid="fccc25c7-43e9-4d5c-b8c3-ce77a5625f12" Param="Value" ParentGuid="00000000-0000-0000-0000-000000000000" />
+<ActInputValue Guid="78c76a8b-79f4-44fc-9945-01af964cfbe7" Param="Xoffset" ParentGuid="00000000-0000-0000-0000-000000000000" />
+<ActInputValue Guid="1ccba98f-6f7a-48d2-a470-43d0ddcb69b2" Param="Yoffset" ParentGuid="00000000-0000-0000-0000-000000000000" />
+</InputValues>
+
+<ReturnValues>
+<ActReturnValue Active="True" Guid="7d061c39-7151-40ee-8828-f3768ea51150" mExpected="True" Param="Actual" ParentGuid="00000000-0000-0000-0000-000000000000" StoreTo="None" />
+</ReturnValues>
+</ActGenElement>
+</Acts>
+</Activity></GingerRepositoryItem>

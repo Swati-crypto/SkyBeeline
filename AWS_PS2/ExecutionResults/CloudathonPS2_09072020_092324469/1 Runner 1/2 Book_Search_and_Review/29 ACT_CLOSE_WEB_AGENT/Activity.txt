@@ -1,0 +1,1 @@
+{"Seq":29,"GUID":"2d6b0c7c-0e67-4e3b-b439-4139aaded3ca","ActivityName":"ACT_CLOSE_WEB_AGENT","StartTimeStamp":"2020-09-07T09:28:14.5031909Z","EndTimeStamp":"2020-09-07T09:28:16.6297213Z","Elapsed":1984,"RunStatus":"Passed","VariablesBeforeExec":[],"VariablesAfterExec":[]}

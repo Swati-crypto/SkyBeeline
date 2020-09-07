@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<GingerRepositoryItem><Header ItemGuid="accd3f93-cf8b-4c44-b3c1-4e2dfe9d7bd0" ItemType="Activity" CreatedBy="shrpatil" Created="201811151216" GingerVersion="3.5.0.0" Version="58" LastUpdateBy="dishaj" LastUpdate="202009061214" />
+<Activity ActionRunOption="StopActionsRunOnFailure" Active="True" ActivityName="ACT_Logout" AutomationStatus="Automated" ErrorHandlerMappingType="AllAvailableHandlers" Guid="accd3f93-cf8b-4c44-b3c1-4e2dfe9d7bd0" ParentGuid="00000000-0000-0000-0000-000000000000" PercentAutomated="100%" TargetApplication="MyWebApp">
+<Acts>
+<ActGenElement Active="True" Description="Click Logout" GenElementAction="SimpleClick" Guid="9fb76dce-a68c-497b-b371-7520148ebc3d" MaxNumberOfRetries="2" ParentGuid="00000000-0000-0000-0000-000000000000" Platform="NA" RetryMechanismInterval="5" StatusConverter="None" WaitVE="1" WindowsToCapture="OnlyActiveWindow">
+<FlowControls>
+<FlowControl Active="True" BusinessFlowControlAction="GoToBusinessFlow" Condition="&quot;{ActionStatus}&quot; = &quot;Failed&quot;" FlowControlAction="GoToActivityByName" Guid="eb51b137-29a2-4ded-bf18-b7fe351717d9" Operator="Legacy" ParentGuid="00000000-0000-0000-0000-000000000000" Value="UpdateExecutionStatus_FAIL" />
+<FlowControl Active="True" BusinessFlowControlAction="GoToBusinessFlow" Condition="&quot;{ActionStatus}&quot; = &quot;Passed&quot;" FlowControlAction="GoToActivityByName" Guid="2c753999-cd64-4aec-819e-de730abb0f34" Operator="Legacy" ParentGuid="00000000-0000-0000-0000-000000000000" Value="UpdateExecutionStatus_PASS" />
+</FlowControls>
+
+<InputValues>
+<ActInputValue Guid="fe1bace3-9897-4503-a890-e2d77f337158" Param="LocateBy" ParentGuid="00000000-0000-0000-0000-000000000000" Value="ByXPath" />
+<ActInputValue Guid="cebb2694-15bc-45fa-9006-4582d111b022" Param="LocateValue" ParentGuid="00000000-0000-0000-0000-000000000000" Value="//a[contains(text(),'logout')]" />
+<ActInputValue Guid="0f13d45b-44ec-4e61-84b0-b1b13bd98516" Param="Value" ParentGuid="00000000-0000-0000-0000-000000000000" />
+<ActInputValue Guid="aaef9c47-0f04-4abe-8c45-933aef08f8bc" Param="Xoffset" ParentGuid="00000000-0000-0000-0000-000000000000" />
+<ActInputValue Guid="c6599eb1-3fe4-4b11-a7cf-31d38d3fcb67" Param="Yoffset" ParentGuid="00000000-0000-0000-0000-000000000000" />
+</InputValues>
+</ActGenElement>
+</Acts>
+
+<Variables>
+<VariableRandomString Guid="4c032dd7-e79b-41f7-98db-6721948604e1" IsDigit="True" MappedOutputType="None" Max="5" Min="5" Name="ACT_Unique_Number" ParentGuid="00000000-0000-0000-0000-000000000000" />
+</Variables>
+</Activity></GingerRepositoryItem>

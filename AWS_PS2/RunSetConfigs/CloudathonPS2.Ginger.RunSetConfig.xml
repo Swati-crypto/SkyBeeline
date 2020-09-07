@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<GingerRepositoryItem><Header ItemGuid="20d062dd-90da-4ca9-bac1-1211c897ff8a" ItemType="RunSetConfig" CreatedBy="Administrator" Created="202009070838" GingerVersion="3.5.0.0" Version="5" LastUpdateBy="Administrator" LastUpdate="202009070841" />
+<RunSetConfig Guid="20d062dd-90da-4ca9-bac1-1211c897ff8a" Name="CloudathonPS2" ParentGuid="00000000-0000-0000-0000-000000000000" RunWithAnalyzer="False">
+<GingerRunners>
+<GingerRunner Guid="a99440e3-c533-4f4e-8db3-4f3419fe4534" Name="Runner 1" ParentGuid="00000000-0000-0000-0000-000000000000" RunOption="ContinueToRunall">
+<ApplicationAgents>
+<ApplicationAgent AgentID="dfcb5496-5918-4599-a47a-0fe0b5d68da8" AgentName="Chrome" AppID="13999d4b-2b95-41fd-aced-758c549e0f55" AppName="MyWebApp" Guid="e88975e0-9834-4a72-add5-b8b58c222bbc" ParentGuid="00000000-0000-0000-0000-000000000000" />
+<ApplicationAgent AgentID="00000000-0000-0000-0000-000000000000" AppID="00000000-0000-0000-0000-000000000000" AppName="MyWebServicesApp" Guid="2ba16150-26fd-4df6-80e7-32ea101b316a" ParentGuid="00000000-0000-0000-0000-000000000000" />
+<ApplicationAgent AgentID="00000000-0000-0000-0000-000000000000" AppID="00000000-0000-0000-0000-000000000000" AppName="MyUnix" Guid="ad6312f9-34d0-406f-b0e6-01ba1de9b54c" ParentGuid="00000000-0000-0000-0000-000000000000" />
+<ApplicationAgent AgentID="00000000-0000-0000-0000-000000000000" AppID="00000000-0000-0000-0000-000000000000" AppName="MyWebIE" Guid="5865bab8-20bc-4063-b438-de7fd5dacc97" ParentGuid="00000000-0000-0000-0000-000000000000" />
+</ApplicationAgents>
+
+<BusinessFlowsRunList>
+<BusinessFlowRun BusinessFlowGuid="d3cf2ef6-818c-4bd8-a01d-9783bdfea932" BusinessFlowInstanceGuid="e172f9c8-e260-47a8-a7ae-a8e23db4caca" BusinessFlowIsActive="True" BusinessFlowName="Author_Search_and_Review" Guid="40c1b501-aa61-4be8-89f1-881e77607750" ParentGuid="00000000-0000-0000-0000-000000000000" />
+<BusinessFlowRun BusinessFlowGuid="dd5431a4-d71a-4609-8615-1c1d613b061c" BusinessFlowInstanceGuid="81234930-1cb7-43f1-8def-f66abb02023a" BusinessFlowIsActive="True" BusinessFlowName="Book_Search_and_Review" Guid="fd3e6f83-c8ba-414c-8ea8-cccbe5c4979f" ParentGuid="00000000-0000-0000-0000-000000000000" />
+<BusinessFlowRun BusinessFlowGuid="aec57bb3-00d1-4553-8b82-ef66ffaea713" BusinessFlowInstanceGuid="7f3e356e-9c9f-4ee9-9c17-1474ee09407b" BusinessFlowIsActive="True" BusinessFlowName="Duplicate_Book_Review" Guid="c858a17f-a18a-41b7-8f0a-8417f641e222" ParentGuid="00000000-0000-0000-0000-000000000000" />
+</BusinessFlowsRunList>
+</GingerRunner>
+</GingerRunners>
+
+<RunSetActions>
+<RunSetActionHTMLReportSendEmail Condition="AlwaysRun" Guid="653dd612-05c3-4b07-89fe-0ec6f56e6329" HTMLReportTemplate="HTMLReport" MailCC="disha.jain@amdocs.com" MailFrom="disha.jain@amdocs.com" MailTo="rohan.garg@amdocs.com" Name="Send HTML Report Email" ParentGuid="00000000-0000-0000-0000-000000000000" RunAt="ExecutionEnd" Subject="PS2 Run SEt">
+<Email>
+<Email EmailMethod="SMTP" EnableSSL="False" Guid="ad2db5d4-fc96-4929-a87d-8ba0e6e236b0" ParentGuid="00000000-0000-0000-0000-000000000000" SMTPMailHost="cmimail.corp.amdocs.com" SMTPPort="25">
+<Attachments>
+</Attachments>
+</Email>
+</Email>
+
+<EmailAttachments>
+<EmailHtmlReportAttachment AttachmentType="Report" ExtraInformation="C:\Test\HTMLReports" Guid="4aa0b33d-1e07-46fa-9750-c25c6daec92a" IsAlternameFolderUsed="True" IsLinkEnabled="True" Name="Default" ParentGuid="00000000-0000-0000-0000-000000000000" ZipIt="True" />
+</EmailAttachments>
+</RunSetActionHTMLReportSendEmail>
+</RunSetActions>
+</RunSetConfig></GingerRepositoryItem>
